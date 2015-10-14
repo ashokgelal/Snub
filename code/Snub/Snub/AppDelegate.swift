@@ -7,21 +7,29 @@
 //
 
 import Cocoa
+import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
+    
+    override init() {
+        super.init()
+        setupLogger()
+    }
+    
+    private func setupLogger(){
+        defaultDebugLevel = DDLogLevel.Debug
+        DDLog.addLogger(DDASLLogger.sharedInstance())
+        DDLog.addLogger(DDTTYLogger.sharedInstance())
+        DDTTYLogger.sharedInstance().colorsEnabled = true
+    }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
     }
-
-
 }
 
