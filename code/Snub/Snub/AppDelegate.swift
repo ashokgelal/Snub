@@ -13,6 +13,7 @@ import CocoaLumberjack
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     
     override init() {
         super.init()
@@ -27,6 +28,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        if let button = statusItem.button {
+            button.image = NSImage(named: "StatusBarButtonImage")
+            button.action = Selector("printQuote:")
+        }
+    }
+    
+    func printQuote(sender: AnyObject) {
+        let items = FinderSelectionProvider.instance.getSelectedItems()
+        for item in items {
+            DDLogDebug(item.path!)
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
