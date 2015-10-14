@@ -14,6 +14,10 @@
 		CD62A81D1BCE0FB9009D6B62 /* SnubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */; };
 		CD62A8281BCE0FB9009D6B62 /* SnubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */; };
 		CD62A8381BCE177D009D6B62 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
+		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
+		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
+		CDE27A601BCE22A6004B4107 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A5F1BCE22A6004B4107 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
+		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,11 @@
 		CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnubUITests.swift; sourceTree = "<group>"; };
 		CD62A8291BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		CDE27A5F1BCE22A6004B4107 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderSelectionProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */,
+				CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */,
 				BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +97,7 @@
 				CD62A80A1BCE0FB9009D6B62 /* Products */,
 				DF224FD50F3DED013B18BA69 /* Pods */,
 				DD52A8540352116A1A124BA7 /* Frameworks */,
+				CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,11 +114,13 @@
 		CD62A80B1BCE0FB9009D6B62 /* Snub */ = {
 			isa = PBXGroup;
 			children = (
+				CDE27A611BCE2896004B4107 /* Services */,
 				CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */,
 				CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */,
 				CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
 				CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */,
+				CDE27A5F1BCE22A6004B4107 /* Finder.swift */,
 			);
 			path = Snub;
 			sourceTree = "<group>";
@@ -129,9 +143,19 @@
 			path = SnubUITests;
 			sourceTree = "<group>";
 		};
+		CDE27A611BCE2896004B4107 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DD52A8540352116A1A124BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDE27A5D1BCE221E004B4107 /* CoreServices.framework */,
+				CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */,
 				01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */,
 			);
 			name = Frameworks;
@@ -211,6 +235,7 @@
 		CD62A8011BCE0FB9009D6B62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "RnA Apps";
 				TargetAttributes = {
@@ -327,7 +352,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */,
+				CDE27A601BCE22A6004B4107 /* Finder.swift in Sources */,
 				CD62A8381BCE177D009D6B62 /* CocoaLumberjack.swift in Sources */,
+				CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,11 +486,14 @@
 			baseConfigurationReference = 94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Snub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -472,11 +502,13 @@
 			baseConfigurationReference = 4C4E8E02C1F126C7912A1C05 /* Pods-Snub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Snub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
 			};
 			name = Release;
 		};
