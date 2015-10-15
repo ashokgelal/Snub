@@ -12,8 +12,9 @@ import CocoaLumberjack
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+    let contentPopover = NSPopover()
+    var eventMonitor: EventMonitor?
     
     override init() {
         super.init()
@@ -30,7 +31,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
-            button.action = Selector("printQuote:")
+            button.action = Selector("togglePopover:")
+        }
+        contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
+        setupEventMonitor()
+    }
+    
+    func setupEventMonitor() {
+        eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) {
+            [unowned self] event in
+            if self.contentPopover.shown {
+                self.closePopover(event)
+            }
         }
     }
     
@@ -43,5 +55,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
     }
+    
+    func togglePopover(sender: AnyObject?) {
+        if contentPopover.shown {
+            closePopover(sender)
+        } else {
+            showPopover(sender)
+        }
+    }
+    
+    func showPopover(sender: AnyObject?) {
+        if let button = statusItem.button {
+            contentPopover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+        }
+        eventMonitor?.start()
+    }
+    
+    func closePopover(sender: AnyObject?) {
+        contentPopover.performClose(sender)
+        eventMonitor?.stop()
+    }
 }
-

@@ -13,10 +13,13 @@
 		CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */; };
 		CD62A81D1BCE0FB9009D6B62 /* SnubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */; };
 		CD62A8281BCE0FB9009D6B62 /* SnubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */; };
-		CD62A8381BCE177D009D6B62 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD22D5E1BCF52D800308400 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D5C1BCF52D800308400 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD22D621BCF532300308400 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD22D601BCF532300308400 /* ContentViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D641BCF538E00308400 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D661BCF567000308400 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
-		CDE27A601BCE22A6004B4107 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A5F1BCE22A6004B4107 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
 		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -52,11 +55,14 @@
 		CD62A8231BCE0FB9009D6B62 /* SnubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnubUITests.swift; sourceTree = "<group>"; };
 		CD62A8291BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		CDD22D5C1BCF52D800308400 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
+		CDD22D601BCF532300308400 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		CDD22D641BCF538E00308400 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		CDD22D661BCF567000308400 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		CDE27A5F1BCE22A6004B4107 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 		CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderSelectionProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,13 +120,13 @@
 		CD62A80B1BCE0FB9009D6B62 /* Snub */ = {
 			isa = PBXGroup;
 			children = (
+				CDD22D631BCF533600308400 /* Controllers */,
+				CDD22D551BCF521F00308400 /* Views */,
 				CDE27A611BCE2896004B4107 /* Services */,
 				CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */,
 				CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */,
-				CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
-				CD62A8371BCE177D009D6B62 /* CocoaLumberjack.swift */,
-				CDE27A5F1BCE22A6004B4107 /* Finder.swift */,
+				CDD22D561BCF524D00308400 /* Vendors */,
 			);
 			path = Snub;
 			sourceTree = "<group>";
@@ -143,10 +149,37 @@
 			path = SnubUITests;
 			sourceTree = "<group>";
 		};
+		CDD22D551BCF521F00308400 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */,
+				CDD22D601BCF532300308400 /* ContentViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDD22D561BCF524D00308400 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */,
+				CDD22D5C1BCF52D800308400 /* Finder.swift */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		CDD22D631BCF533600308400 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDD22D641BCF538E00308400 /* ContentViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		CDE27A611BCE2896004B4107 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */,
+				CDD22D661BCF567000308400 /* EventMonitor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -279,6 +312,7 @@
 			files = (
 				CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */,
 				CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */,
+				CDD22D621BCF532300308400 /* ContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,10 +385,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */,
 				CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */,
-				CDE27A601BCE22A6004B4107 /* Finder.swift in Sources */,
-				CD62A8381BCE177D009D6B62 /* CocoaLumberjack.swift in Sources */,
+				CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */,
+				CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */,
 				CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */,
+				CDD22D5E1BCF52D800308400 /* Finder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +432,7 @@
 				CD62A8111BCE0FB9009D6B62 /* Base */,
 			);
 			name = MainMenu.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -490,6 +527,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Snub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
@@ -506,6 +544,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Snub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
