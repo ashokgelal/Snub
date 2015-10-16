@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     private func setupLogger(){
-        defaultDebugLevel = DDLogLevel.Debug
+        defaultDebugLevel = DDLogLevel.Verbose
         DDLog.addLogger(DDASLLogger.sharedInstance())
         DDLog.addLogger(DDTTYLogger.sharedInstance())
         DDTTYLogger.sharedInstance().colorsEnabled = true
@@ -37,6 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         contentPopover.animates = false
         contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
         setupEventMonitor()
+        GitIgnoreFileManager.instance
     }
     
     func setupEventMonitor() {
@@ -69,5 +70,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func closePopover(sender: AnyObject?) {
         contentPopover.performClose(sender)
         eventMonitor?.stop()
+    }
+}
+
+class GitIgnoreFileManager {
+    private let appDirectoryName = "Snub"
+    class var instance: GitIgnoreFileManager {
+        struct Singleton {
+            private static let instance = GitIgnoreFileManager()
+        }
+        return Singleton.instance
+    }
+    
+    private init() {
+        setupApplicationSupportDirectory()
+        //let url = NSBundle.mainBundle().URLForResource("gitignore-master", withExtension: "zip")
+    }
+    
+    private func setupApplicationSupportDirectory() {
+        let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
+        if let supportDirectory = paths.first {
+            let appDirectoryPath = (supportDirectory as NSString).stringByAppendingPathComponent(appDirectoryName)
+            let fm = NSFileManager.defaultManager()
+            var isDir: ObjCBool = false
+            let fileExists = fm.fileExistsAtPath(appDirectoryPath, isDirectory: &isDir)
+            if(fileExists && isDir) {
+                DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
+                return
+            }
+            do {
+                try fm.createDirectoryAtPath(appDirectoryPath, withIntermediateDirectories: false, attributes: nil)
+                DDLogVerbose("Successfully created App Support Directory \(appDirectoryPath)")
+            } catch {
+                DDLogError("Cannot create a directory \(appDirectoryPath)")
+            }
+        }
     }
 }
