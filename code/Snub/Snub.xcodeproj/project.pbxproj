@@ -19,6 +19,7 @@
 		CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D641BCF538E00308400 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D661BCF567000308400 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD9D7111BD0D7C800CF7B2F /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
 		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +64,7 @@
 		CDD22D641BCF538E00308400 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		CDD22D661BCF567000308400 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileManager.swift; sourceTree = "<group>"; };
+		CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -125,6 +127,7 @@
 		CD62A80B1BCE0FB9009D6B62 /* Snub */ = {
 			isa = PBXGroup;
 			children = (
+				CDD9D70F1BD0D73F00CF7B2F /* Extensions */,
 				CDD22D631BCF533600308400 /* Controllers */,
 				CDD22D551BCF521F00308400 /* Views */,
 				CDE27A611BCE2896004B4107 /* Services */,
@@ -178,6 +181,14 @@
 				CDD22D641BCF538E00308400 /* ContentViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CDD9D70F1BD0D73F00CF7B2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CDE27A611BCE2896004B4107 /* Services */ = {
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */,
+				CDD9D7111BD0D7C800CF7B2F /* FileManagerExtensions.swift in Sources */,
 				CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */,
 				CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */,
 				CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */,

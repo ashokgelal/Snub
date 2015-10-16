@@ -36,9 +36,7 @@ class FinderSelectionProvider {
         return items.filter {
             item -> Bool in
             let url = NSURL(string: item as! String)!
-            var isDir: ObjCBool = false
-            let fileExists = fm.fileExistsAtPath(url.path!, isDirectory: &isDir)
-            return fileExists && isDir
+            return fm.checkIfDirectoryExists(url.path!)
         }.map { return NSURL(string: $0 as! String)!}
     }
 }

@@ -22,7 +22,7 @@ class GitIgnoreFileManager {
     private init() {
         let applicationSupportPath = setupApplicationSupportDirectory()
         let unzippedPath = (applicationSupportPath as NSString).stringByAppendingPathComponent(masterGitIgnoreName)
-        if(checkIfDirectoryExists(unzippedPath)) {
+        if(NSFileManager.defaultManager().checkIfDirectoryExists(unzippedPath)) {
             DDLogVerbose("\(self.masterGitIgnoreName) folder already unzipped")
         }
         else {
@@ -54,7 +54,7 @@ class GitIgnoreFileManager {
     
     private func setupApplicationSupportDirectory() -> String {
         let appDirectoryPath = getApplicationDirectoryPath()
-        if(checkIfDirectoryExists(appDirectoryPath)) {
+        if(NSFileManager.defaultManager().checkIfDirectoryExists(appDirectoryPath)) {
             DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
             return appDirectoryPath
         }
@@ -67,13 +67,6 @@ class GitIgnoreFileManager {
             DDLogError("Cannot create a directory \(appDirectoryPath)")
         }
         return appDirectoryPath
-    }
-    
-    private func checkIfDirectoryExists(path: String) -> Bool {
-        let fm = NSFileManager.defaultManager()
-        var isDir: ObjCBool = false
-        let fileExists = fm.fileExistsAtPath(path, isDirectory: &isDir)
-        return fileExists && isDir
     }
     
     private func getApplicationDirectoryPath() -> String {
