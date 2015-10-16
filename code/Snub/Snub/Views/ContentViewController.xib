@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
@@ -40,8 +40,8 @@
                         <constraint firstAttribute="width" constant="260" id="dvS-l2-AtY"/>
                     </constraints>
                     <animations/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="~/Desktop/Snub" id="ouR-eE-Ufj">
-                        <font key="font" metaFont="systemLight" size="12"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="~/Snub" id="ouR-eE-Ufj">
+                        <font key="font" size="12" name=".HelveticaNeueDeskInterface-Light"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -53,16 +53,16 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-ms-Lgj">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-ms-Lgj">
                     <rect key="frame" x="14" y="244" width="47" height="16"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current" id="lql-eS-Cyz">
-                        <font key="font" metaFont="systemThin" size="12"/>
+                        <font key="font" size="12" name=".HelveticaNeueDeskInterface-Thin"/>
                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="deviceWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
                     <rect key="frame" x="18" y="219" width="130" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="XCode + CocoaPods" id="kO0-4e-pIL">
@@ -90,16 +90,16 @@
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-pC-prB">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADf-pC-prB">
                     <rect key="frame" x="14" y="195" width="65" height="16"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Suggested" id="DKf-gN-iSs">
-                        <font key="font" metaFont="systemThin" size="12"/>
+                        <font key="font" size="12" name=".HelveticaNeueDeskInterface-Thin"/>
                         <color key="textColor" white="0.0" alpha="0.5" colorSpace="deviceWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-AM-TgX">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxw-AM-TgX">
                     <rect key="frame" x="18" y="170" width="130" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="XCode + CocoaPods" id="yJq-fg-HdH">
@@ -174,7 +174,7 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
-                                            <tableCellView id="U1d-8r-L0g">
+                                            <tableCellView id="U1d-8r-L0g" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
                                                 <rect key="frame" x="1" y="1" width="273" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -190,7 +190,7 @@
                                                     <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="n7q-ic-Nyl">
                                                         <rect key="frame" x="238" y="-1" width="35" height="19"/>
                                                         <animations/>
-                                                        <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="Hj8-Mh-joI">
+                                                        <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="9Be-I3-aXg" id="Hj8-Mh-joI">
                                                             <behavior key="behavior" lightByContents="YES"/>
                                                             <font key="font" metaFont="systemBold" size="12"/>
                                                             <menu key="menu" id="uk8-hI-W2b">
@@ -198,13 +198,22 @@
                                                                     <menuItem state="on" image="NSAddTemplate" hidden="YES" id="9ps-pp-RA4"/>
                                                                     <menuItem title="Add this" id="U1P-Qs-clo">
                                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                                        <connections>
+                                                                            <action selector="add:" target="U1d-8r-L0g" id="CLd-UI-Qn0"/>
+                                                                        </connections>
                                                                     </menuItem>
                                                                     <menuItem isSeparatorItem="YES" id="HfV-kG-aLj"/>
                                                                     <menuItem title="Replace with this" id="9Be-I3-aXg">
                                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                                        <connections>
+                                                                            <action selector="replace:" target="U1d-8r-L0g" id="n8O-2m-cPR"/>
+                                                                        </connections>
                                                                     </menuItem>
                                                                     <menuItem title="Append this" id="DLD-6n-dCP">
                                                                         <modifierMask key="keyEquivalentModifierMask"/>
+                                                                        <connections>
+                                                                            <action selector="append:" target="U1d-8r-L0g" id="608-Q6-kOd"/>
+                                                                        </connections>
                                                                     </menuItem>
                                                                 </items>
                                                             </menu>
@@ -219,6 +228,9 @@
                                                 </constraints>
                                                 <animations/>
                                                 <connections>
+                                                    <outlet property="addMenuItem" destination="U1P-Qs-clo" id="N5O-pC-eSI"/>
+                                                    <outlet property="appendMenuItem" destination="DLD-6n-dCP" id="dJt-Wg-kuu"/>
+                                                    <outlet property="replaceMenuItem" destination="9Be-I3-aXg" id="OLX-9S-cO6"/>
                                                     <outlet property="textField" destination="vCW-Dd-q0R" id="zy0-qn-R1T"/>
                                                 </connections>
                                             </tableCellView>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
 		CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */; };
 		CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4E8E02C1F126C7912A1C05 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
+		80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreRowView.swift; sourceTree = "<group>"; };
 		94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */,
 				CDD22D601BCF532300308400 /* ContentViewController.xib */,
+				80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			files = (
 				CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */,
 				CDD9D7111BD0D7C800CF7B2F /* FileManagerExtensions.swift in Sources */,
+				80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */,
 				CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */,
 				CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */,
 				CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */,
