@@ -30,9 +30,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
+            button.image = NSImage(named: "statusIcon")
             button.action = Selector("togglePopover:")
+            button.toolTip = "Snub"
         }
+        contentPopover.animates = false
         contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
         setupEventMonitor()
     }
@@ -46,13 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func printQuote(sender: AnyObject) {
-        let items = FinderSelectionProvider.instance.getSelectedItems()
-        for item in items {
-            DDLogDebug(item.path!)
-        }
-    }
-
     func applicationWillTerminate(aNotification: NSNotification) {
     }
     

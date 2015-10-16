@@ -28,7 +28,6 @@ class EventMonitor {
     func stop() {
         if monitor != nil {
             NSEvent.removeMonitor(monitor!)
-            
         }
     }
 }

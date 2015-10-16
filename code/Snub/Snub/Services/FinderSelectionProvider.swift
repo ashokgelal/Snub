@@ -20,7 +20,7 @@ class FinderSelectionProvider {
     
     private init(){}
     
-    func getSelectedItems() -> [NSURL] {
+    func getSelectedFolders() -> [NSURL] {
         guard let finder = SBApplication(bundleIdentifier: "com.apple.finder") as? FinderApplication,
             let result = finder.selection else {
                 DDLogInfo("No items selected")
@@ -32,6 +32,13 @@ class FinderSelectionProvider {
         }
         
         let items = selection.arrayByApplyingSelector(Selector("URL"))
-        return items.map { return NSURL(string: $0 as! String)! }
+        let fm = NSFileManager.defaultManager()
+        return items.filter {
+            item -> Bool in
+            let url = NSURL(string: item as! String)!
+            var isDir: ObjCBool = false
+            let fileExists = fm.fileExistsAtPath(url.path!, isDirectory: &isDir)
+            return fileExists && isDir
+        }.map { return NSURL(string: $0 as! String)!}
     }
 }

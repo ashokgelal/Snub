@@ -21,6 +21,7 @@
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
 		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		CDE48DAB1BD0A77900465EB2 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderSelectionProvider.swift; sourceTree = "<group>"; };
+		CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "gitignore-master.zip"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				DF224FD50F3DED013B18BA69 /* Pods */,
 				DD52A8540352116A1A124BA7 /* Frameworks */,
 				CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */,
+				CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +315,7 @@
 			files = (
 				CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */,
 				CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */,
+				CDE48DAB1BD0A77900465EB2 /* gitignore-master.zip in Resources */,
 				CDD22D621BCF532300308400 /* ContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
