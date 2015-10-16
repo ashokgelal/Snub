@@ -10,6 +10,7 @@ import Cocoa
 
 class ContentViewController: NSViewController {
     @IBOutlet weak var selectedPathLbl: NSTextField!
+    @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
     private var selectedFolders: [NSURL] = []
     
     override func viewDidLoad() {
@@ -18,6 +19,8 @@ class ContentViewController: NSViewController {
     
     override func viewDidAppear() {
         showSelectedFolder()
+        let ignoreDict = detectGitIgnores()
+        showCurrentGitIgnoreValues(ignoreDict)
     }
     
     private func showSelectedFolder() {
@@ -30,6 +33,21 @@ class ContentViewController: NSViewController {
         } else {
             selectedPathLbl.stringValue = "No folder selected"
         }
+    }
+    
+    private func detectGitIgnores() -> [NSURL: NSURL?] {
+        return GitIgnoreDetector.instance.detect(selectedFolders)
+    }
+    
+    private func showCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) {
+        let gitIgnoreFilePaths = ignoreDict.values.filter { $0 != nil }
+        var outputVal = "[No .gitignore detected]"
+        if gitIgnoreFilePaths.count == 1 {
+            outputVal = "1 .gitignore detected"
+        } else if gitIgnoreFilePaths.count > 1 {
+            outputVal = "Multiple .gitignores detected"
+        }
+        currentGitIgnoreLbl.stringValue = outputVal
     }
 }
 
