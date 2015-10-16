@@ -11,7 +11,7 @@ import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     let contentPopover = NSPopover()
     var eventMonitor: EventMonitor?
@@ -27,7 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DDLog.addLogger(DDTTYLogger.sharedInstance())
         DDTTYLogger.sharedInstance().colorsEnabled = true
     }
-
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
@@ -70,40 +70,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func closePopover(sender: AnyObject?) {
         contentPopover.performClose(sender)
         eventMonitor?.stop()
-    }
-}
-
-class GitIgnoreFileManager {
-    private let appDirectoryName = "Snub"
-    class var instance: GitIgnoreFileManager {
-        struct Singleton {
-            private static let instance = GitIgnoreFileManager()
-        }
-        return Singleton.instance
-    }
-    
-    private init() {
-        setupApplicationSupportDirectory()
-        //let url = NSBundle.mainBundle().URLForResource("gitignore-master", withExtension: "zip")
-    }
-    
-    private func setupApplicationSupportDirectory() {
-        let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
-        if let supportDirectory = paths.first {
-            let appDirectoryPath = (supportDirectory as NSString).stringByAppendingPathComponent(appDirectoryName)
-            let fm = NSFileManager.defaultManager()
-            var isDir: ObjCBool = false
-            let fileExists = fm.fileExistsAtPath(appDirectoryPath, isDirectory: &isDir)
-            if(fileExists && isDir) {
-                DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
-                return
-            }
-            do {
-                try fm.createDirectoryAtPath(appDirectoryPath, withIntermediateDirectories: false, attributes: nil)
-                DDLogVerbose("Successfully created App Support Directory \(appDirectoryPath)")
-            } catch {
-                DDLogError("Cannot create a directory \(appDirectoryPath)")
-            }
-        }
     }
 }
