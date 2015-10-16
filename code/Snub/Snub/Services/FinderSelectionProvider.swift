@@ -11,12 +11,7 @@ import ScriptingBridge
 
 class FinderSelectionProvider {
     
-    class var instance: FinderSelectionProvider {
-        struct Singleton {
-            private static let instance = FinderSelectionProvider()
-        }
-        return Singleton.instance
-    }
+    static let instance = FinderSelectionProvider()
     
     private init(){}
     

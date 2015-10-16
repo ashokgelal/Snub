@@ -12,12 +12,7 @@ import PDKTZipArchive
 class GitIgnoreFileManager {
     private let appDirectoryName = "Snub"
     private let masterGitIgnoreName = "gitignore-master"
-    class var instance: GitIgnoreFileManager {
-        struct Singleton {
-            private static let instance = GitIgnoreFileManager()
-        }
-        return Singleton.instance
-    }
+    static let instance = GitIgnoreFileManager()
     
     private init() {
         let applicationSupportPath = setupApplicationSupportDirectory()
