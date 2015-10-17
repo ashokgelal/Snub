@@ -18,6 +18,11 @@ class ProjectDetector {
     private func addDetectors() {
         detectors.append(XcodeProjectDetector())
         detectors.append(JetBrainsProjectDetector())
+        detectors.append(VisualStudioCodeProjectDetector())
+        detectors.append(VisualStudioProjectDetector())
+        detectors.append(SublimeProjectDetector())
+        detectors.append(TextMateProjectDetector())
+        detectors.append(VagrantProjectDetector())
     }
     
     func identify(url: NSURL) throws -> [String] {
