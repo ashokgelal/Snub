@@ -7,7 +7,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ContentViewController" customModule="Snub" customModuleProvider="target">
             <connections>
                 <outlet property="currentGitIgnoreLbl" destination="mag-gv-85S" id="svq-uX-vJO"/>
+                <outlet property="gitIgnoreSelectionTab" destination="Ghs-fk-XmR" id="OmT-nZ-m1N"/>
                 <outlet property="selectedPathLbl" destination="KIl-Ys-kjI" id="WOY-k0-MWd"/>
+                <outlet property="suggestedTabViewItemController" destination="1c2-7m-Gav" id="Qwa-Qk-QCb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -112,8 +114,11 @@
                             <segment label="Others" width="85" selected="YES" tag="1"/>
                         </segments>
                     </segmentedCell>
+                    <connections>
+                        <action selector="changeGitIgnoreSelectionType:" target="-2" id="fws-an-UKF"/>
+                    </connections>
                 </segmentedControl>
-                <tabView drawsBackground="NO" type="noTabsNoBorder" initialItem="1EI-W4-6Pd" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-fk-XmR" userLabel="suggestionTablControl">
+                <tabView drawsBackground="NO" type="noTabsNoBorder" initialItem="kpP-Q2-Top" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-fk-XmR" userLabel="suggestionTabControl">
                     <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
                     <animations/>
                     <font key="font" metaFont="system"/>
@@ -123,21 +128,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-nT-209">
-                                        <rect key="frame" x="12" y="1" width="268" height="152"/>
-                                        <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="B8H-Jc-DqZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="152"/>
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-nT-209">
+                                        <rect key="frame" x="8" y="8" width="276" height="155"/>
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="B8H-Jc-DqZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="140"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="152"/>
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn width="265" minWidth="40" maxWidth="1000" id="joa-el-VZq">
+                                                        <tableColumn width="273" minWidth="40" maxWidth="1000" id="joa-el-VZq">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -150,8 +155,8 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="vKe-zg-wE8" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="265" height="17"/>
+                                                                <tableCellView identifier="suggestedGitIgnoreRowView" id="vKe-zg-wE8" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
+                                                                    <rect key="frame" x="1" y="1" width="273" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="oOe-hX-qVq">
@@ -164,7 +169,7 @@
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="bka-tW-9PZ">
-                                                                            <rect key="frame" x="230" y="-1" width="35" height="19"/>
+                                                                            <rect key="frame" x="238" y="-1" width="35" height="19"/>
                                                                             <animations/>
                                                                             <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="B9n-ON-Ymm" id="8bV-8f-4hZ">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
@@ -213,14 +218,18 @@
                                                             </prototypeCellViews>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="1c2-7m-Gav" id="m8a-TX-u0b"/>
+                                                        <outlet property="delegate" destination="1c2-7m-Gav" id="5Wp-I6-N9B"/>
+                                                    </connections>
                                                 </tableView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
-                                            <rect key="frame" x="0.0" y="-15" width="0.0" height="15"/>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="rQl-Yr-dSc">
+                                            <rect key="frame" x="0.0" y="140" width="276" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
@@ -231,6 +240,12 @@
                                         </scroller>
                                     </scrollView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="e3Y-nT-209" firstAttribute="leading" secondItem="Lg3-6K-oBh" secondAttribute="leading" constant="8" id="2LY-YP-qgd"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3Y-nT-209" secondAttribute="trailing" constant="8" id="7Ow-0c-haM"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3Y-nT-209" secondAttribute="bottom" constant="8" id="F2a-d9-AOa"/>
+                                    <constraint firstItem="e3Y-nT-209" firstAttribute="top" secondItem="Lg3-6K-oBh" secondAttribute="top" constant="8" id="alU-aH-OTC"/>
+                                </constraints>
                                 <animations/>
                             </view>
                         </tabViewItem>
@@ -239,14 +254,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j1z-kU-Ygx">
+                                        <rect key="frame" x="8" y="149" width="276" height="22"/>
+                                        <animations/>
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="wyS-on-M8d">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </searchFieldCell>
+                                    </searchField>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-Bq-Xl1">
                                         <rect key="frame" x="8" y="8" width="276" height="133"/>
-                                        <clipView key="contentView" copiesOnScroll="NO" id="qOC-iq-Fhy">
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="qOC-iq-Fhy">
                                             <rect key="frame" x="0.0" y="0.0" width="276" height="133"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="mXf-aZ-KH2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="133"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -346,15 +370,6 @@
                                             <animations/>
                                         </scroller>
                                     </scrollView>
-                                    <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j1z-kU-Ygx">
-                                        <rect key="frame" x="8" y="149" width="276" height="22"/>
-                                        <animations/>
-                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="wyS-on-M8d">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </searchFieldCell>
-                                    </searchField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="j1z-kU-Ygx" secondAttribute="trailing" constant="8" id="0JI-K9-P5q"/>
@@ -400,8 +415,16 @@
                 <constraint firstItem="YGN-8m-bRi" firstAttribute="centerY" secondItem="mag-gv-85S" secondAttribute="centerY" id="wb2-ub-d9H"/>
             </constraints>
             <animations/>
-            <point key="canvasLocation" x="670" y="428.5"/>
+            <point key="canvasLocation" x="385" y="435.5"/>
         </customView>
+        <customObject id="1c2-7m-Gav" customClass="SuggestedTabViewItemController" customModule="Snub" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="suggestedGitIgnoreRowView"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="tableView" destination="uTM-1X-Dxz" id="Edj-pL-DvI"/>
+            </connections>
+        </customObject>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

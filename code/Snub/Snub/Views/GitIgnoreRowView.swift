@@ -12,7 +12,6 @@ class GitIgnoreRowView: NSTableCellView {
     @IBOutlet weak var addMenuItem: NSMenuItem!
     @IBOutlet weak var replaceMenuItem: NSMenuItem!
     @IBOutlet weak var appendMenuItem: NSMenuItem!
-
 }
 
 // Mark: Menu Actions

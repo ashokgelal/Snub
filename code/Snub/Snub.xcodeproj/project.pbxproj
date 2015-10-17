@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
+		CD11D8CF1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
 		CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */; };
 		CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */; };
 		CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */; };
@@ -57,6 +58,7 @@
 		4C4E8E02C1F126C7912A1C05 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
 		80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreRowView.swift; sourceTree = "<group>"; };
 		94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
+		CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedTabViewItemController.swift; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD22D641BCF538E00308400 /* ContentViewController.swift */,
+				CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */,
 				CDD1283B1BD2CD98005EAE6C /* XcodeProjectDetector.swift in Sources */,
 				CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */,
+				CD11D8CF1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift in Sources */,
 				CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */,
 				CD702EF81BD1B7F700C97076 /* RegExp.swift in Sources */,
 				CDD128371BD2CD01005EAE6C /* ProjectTypeDetector.swift in Sources */,

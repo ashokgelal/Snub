@@ -8,24 +8,24 @@
 
 import Cocoa
 
+class ContentTabViewController: NSTabViewController {
+}
+
 class ContentViewController: NSViewController {
+    @IBOutlet weak var gitIgnoreSelectionTab: NSTabView!
     @IBOutlet weak var selectedPathLbl: NSTextField!
     @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
-    private var selectedFolders: [NSURL] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet var suggestedTabViewItemController: SuggestedTabViewItemController!
     
     override func viewDidAppear() {
-        selectedFolders = showSelectedFolder()
+        let selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
+        showSelectedFolder(selectedFolders)
         let gitIgnoreFilesWithTheirPaths = detectGitIgnores(selectedFolders)
         displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
-        showSuggestedProjectTypes(selectedFolders)
+        suggestedTabViewItemController.selectedFolders = selectedFolders
     }
     
-    private func showSelectedFolder() -> [NSURL] {
-        let folders = FinderSelectionProvider.instance.getSelectedFolders()
+    private func showSelectedFolder(selectedFolders: [NSURL]) {
         if(selectedFolders.count == 1) {
             let folder = selectedFolders.first!.path! as NSString
             selectedPathLbl.stringValue = "\(folder.stringByAbbreviatingWithTildeInPath)"
@@ -34,7 +34,6 @@ class ContentViewController: NSViewController {
         } else {
             selectedPathLbl.stringValue = "No folder selected"
         }
-        return folders
     }
     
     private func detectGitIgnores(selectedFolders: [NSURL]) -> [NSURL: NSURL?] {
@@ -60,28 +59,19 @@ class ContentViewController: NSViewController {
         }
         currentGitIgnoreLbl.stringValue = outputVal
     }
-    
-    private func showSuggestedProjectTypes(selectedFolders : [NSURL]) {
-        var outputVal = "[Couldn't determine project type]"
-        if selectedFolders.count == 1 {
-            do {
-                let projectTypes = try ProjectDetector.instance.identify(selectedFolders.first!)
-                if projectTypes.count > 0 {
-                    outputVal = projectTypes.joinWithSeparator("+")
-                }
-            } catch let error as NSError {
-                DDLogError("Error identifying: \(error.localizedDescription)")
-            }
-        } else if selectedFolders.count > 1 {
-            outputVal = "Multiple projects detected"
-        }
-        DDLogError(outputVal)
-    }
+
 }
 
 // MARK: Setting Actions
 extension ContentViewController {
     @IBAction func quitSnub(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(sender)
+    }
+}
+
+// MARK: Other Actions
+extension ContentViewController {
+    @IBAction func changeGitIgnoreSelectionType(sender: NSSegmentedControl) {
+        gitIgnoreSelectionTab.selectTabViewItemAtIndex(sender.selectedSegment)
     }
 }
