@@ -18,14 +18,14 @@ class ContentViewController: NSViewController {
     }
     
     override func viewDidAppear() {
-        showSelectedFolder()
-        let ignoreDict = detectGitIgnores()
-        showCurrentGitIgnoreValues(ignoreDict)
-        
+        selectedFolders = showSelectedFolder()
+        let gitIgnoreFilesWithTheirPaths = detectGitIgnores(selectedFolders)
+        displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
+        showSuggestedProjectTypes(selectedFolders)
     }
     
-    private func showSelectedFolder() {
-        selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
+    private func showSelectedFolder() -> [NSURL] {
+        let folders = FinderSelectionProvider.instance.getSelectedFolders()
         if(selectedFolders.count == 1) {
             let folder = selectedFolders.first!.path! as NSString
             selectedPathLbl.stringValue = "\(folder.stringByAbbreviatingWithTildeInPath)"
@@ -34,17 +34,17 @@ class ContentViewController: NSViewController {
         } else {
             selectedPathLbl.stringValue = "No folder selected"
         }
+        return folders
     }
     
-    private func detectGitIgnores() -> [NSURL: NSURL?] {
+    private func detectGitIgnores(selectedFolders: [NSURL]) -> [NSURL: NSURL?] {
         return GitIgnoreDetector.instance.detect(selectedFolders)
     }
     
-    private func showCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) {
+    private func displayCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) {
         let gitIgnoreFilePaths = Array(ignoreDict.values.filter { $0 != nil })
         var outputVal = "[No .gitignore detected]"
         if gitIgnoreFilePaths.count == 1 {
-            outputVal = "1 .gitignore detected"
             do {
                 let ignoreTypes = try GitIgnoreDetector.instance.identify(gitIgnoreFilePaths.first!!)
                 if ignoreTypes.count > 0 {
@@ -59,6 +59,23 @@ class ContentViewController: NSViewController {
             outputVal = "Multiple .gitignores detected"
         }
         currentGitIgnoreLbl.stringValue = outputVal
+    }
+    
+    private func showSuggestedProjectTypes(selectedFolders : [NSURL]) {
+        var outputVal = "[Couldn't determine project type]"
+        if selectedFolders.count == 1 {
+            do {
+                let projectTypes = try ProjectDetector.instance.identify(selectedFolders.first!)
+                if projectTypes.count > 0 {
+                    outputVal = projectTypes.joinWithSeparator("+")
+                }
+            } catch let error as NSError {
+                DDLogError("Error identifying: \(error.localizedDescription)")
+            }
+        } else if selectedFolders.count > 1 {
+            outputVal = "Multiple projects detected"
+        }
+        DDLogError(outputVal)
     }
 }
 
