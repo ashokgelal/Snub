@@ -21,6 +21,7 @@ class ContentViewController: NSViewController {
         showSelectedFolder()
         let ignoreDict = detectGitIgnores()
         showCurrentGitIgnoreValues(ignoreDict)
+        
     }
     
     private func showSelectedFolder() {
@@ -40,10 +41,20 @@ class ContentViewController: NSViewController {
     }
     
     private func showCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) {
-        let gitIgnoreFilePaths = ignoreDict.values.filter { $0 != nil }
+        let gitIgnoreFilePaths = Array(ignoreDict.values.filter { $0 != nil })
         var outputVal = "[No .gitignore detected]"
         if gitIgnoreFilePaths.count == 1 {
             outputVal = "1 .gitignore detected"
+            do {
+                let ignoreTypes = try GitIgnoreDetector.instance.identify(gitIgnoreFilePaths.first!!)
+                if ignoreTypes.count > 0 {
+                    outputVal = ignoreTypes.joinWithSeparator("+")
+                } else {
+                    outputVal = "[Couldn't determine .gitignore type]"
+                }
+            } catch let error as NSError {
+                DDLogError("Error identifying: \(error.localizedDescription)")
+            }
         } else if gitIgnoreFilePaths.count > 1 {
             outputVal = "Multiple .gitignores detected"
         }

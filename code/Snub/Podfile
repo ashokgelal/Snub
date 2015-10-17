@@ -3,7 +3,8 @@ use_frameworks!
 
 target 'Snub' do
     pod 'CocoaLumberjack', '2.1.0-beta'
-    pod 'PDKTZipArchive', :git => 'https://github.com/JoeMatt/PDKTZipArchive'
+    pod 'PDKTZipArchive', :git => 'https://github.com/ashokgelal/PDKTZipArchive'
+    pod 'SwiftRegExp', '~> 1.0'
 end
 
 target 'SnubTests' do

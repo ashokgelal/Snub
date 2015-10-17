@@ -10,36 +10,34 @@ import Cocoa
 import PDKTZipArchive
 
 class GitIgnoreFileManager {
-    private let appDirectoryName = "Snub"
-    private let masterGitIgnoreName = "gitignore-master"
     static let instance = GitIgnoreFileManager()
     
     private init() {
         let applicationSupportPath = setupApplicationSupportDirectory()
-        let unzippedPath = (applicationSupportPath as NSString).stringByAppendingPathComponent(masterGitIgnoreName)
+        let unzippedPath = (applicationSupportPath as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         if(NSFileManager.defaultManager().checkIfDirectoryExists(unzippedPath)) {
-            DDLogVerbose("\(self.masterGitIgnoreName) folder already unzipped")
+            DDLogVerbose("\(MagicStrings.MASTER_GITIGNORE_NAME) folder already unzipped")
         }
         else {
-            if let url = NSBundle.mainBundle().URLForResource(masterGitIgnoreName, withExtension: "zip") {
+            if let url = NSBundle.mainBundle().URLForResource(MagicStrings.MASTER_GITIGNORE_NAME, withExtension: "zip") {
                 if(PDKTZipArchive.unzipFileAtPath(url.path, toDestination: applicationSupportPath)) {
-                    DDLogVerbose("Successfully unzipped \(self.masterGitIgnoreName).zip")
+                    DDLogVerbose("Successfully unzipped \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 } else {
-                    DDLogError("Cannot unzip \(self.masterGitIgnoreName).zip")
+                    DDLogError("Cannot unzip \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 }
             } else {
-                DDLogError("\(self.masterGitIgnoreName).zip file is missing")
+                DDLogError("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing")
             }
         }
     }
     
     func getAllGitIgnoreFilePaths() -> [NSURL] {
         let fm = NSFileManager.defaultManager()
-        let unzippedPath = (getApplicationDirectoryPath() as NSString).stringByAppendingPathComponent(masterGitIgnoreName)
+        let unzippedPath = (getApplicationDirectoryPath() as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         let enumerator = fm.enumeratorAtPath(unzippedPath)
         var fileURLs:[NSURL] = []
         while let element = enumerator?.nextObject() as? String {
-            if element.hasSuffix(".gitignore") {
+            if element.hasSuffix(MagicStrings.GITIGNORE_EXTENSION) {
                 let fullPath = (unzippedPath as NSString).stringByAppendingPathComponent(element)
                 fileURLs += [NSURL(fileURLWithPath: fullPath)]
             }
@@ -67,6 +65,6 @@ class GitIgnoreFileManager {
     private func getApplicationDirectoryPath() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
         let supportDirectory = paths.first!
-        return (supportDirectory as NSString).stringByAppendingPathComponent(appDirectoryName)
+        return (supportDirectory as NSString).stringByAppendingPathComponent(MagicStrings.APPNAME)
     }
 }

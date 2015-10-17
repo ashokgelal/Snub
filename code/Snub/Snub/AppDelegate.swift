@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
             button.action = Selector("togglePopover:")
-            button.toolTip = "Snub"
+            button.toolTip = MagicStrings.APPNAME
         }
         contentPopover.animates = false
         contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
