@@ -10,7 +10,7 @@ import Cocoa
 
 class ContentViewController: NSViewController {
     @IBOutlet weak var gitIgnoreSelectionTab: NSTabView!
-    @IBOutlet weak var selectedPathLbl: NSTextField!
+    @IBOutlet weak var selectedPathBtn: NSButton!
     @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
     @IBOutlet var suggestedTabViewItemController: SuggestedTabViewItemController!
     @IBOutlet var masterGitIgnoreTabViewItemController: MasterGitIgnoreTabViewItemController!
@@ -34,32 +34,35 @@ class ContentViewController: NSViewController {
     }
     
     private func showSelectedFolder(selectedFolders: [NSURL]) {
+        var outputVal = "[No folders selected]"
+        selectedPathBtn.enabled = false
         if(selectedFolders.count == 1) {
             let folder = selectedFolders.first!.path! as NSString
-            selectedPathLbl.stringValue = "\(folder.stringByAbbreviatingWithTildeInPath)"
+            outputVal = "\(folder.stringByAbbreviatingWithTildeInPath)"
+            selectedPathBtn.enabled = true
         } else if(selectedFolders.count > 1) {
-            selectedPathLbl.stringValue = "\(selectedFolders.count) folders selected"
-        } else {
-            selectedPathLbl.stringValue = "No folder selected"
+            outputVal = "\(selectedFolders.count) folders selected"
+            selectedPathBtn.enabled = true
         }
+        selectedPathBtn.title = outputVal
     }
     
     private func displayCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) -> Array<NSURL?> {
         let filePaths = Array(ignoreDict.values.filter { $0 != nil })
-        var outputVal = "[No .gitignore detected]"
+        var outputVal = "[No .gitignore files detected]"
         if filePaths.count == 1 {
             do {
                 let ignoreTypes = try GitIgnoreTypeDetector.instance.identify(filePaths.first!!)
                 if ignoreTypes.count > 0 {
                     outputVal = ignoreTypes.joinWithSeparator(" + ")
                 } else {
-                    outputVal = "[Couldn't determine .gitignore type]"
+                    outputVal = "[Couldn't determine .gitignore's type]"
                 }
             } catch let error as NSError {
                 DDLogError("Error identifying: \(error.localizedDescription)")
             }
         } else if filePaths.count > 1 {
-            outputVal = "Multiple .gitignores detected"
+            outputVal = "Multiple .gitignore files detected"
         }
         currentGitIgnoreLbl.stringValue = outputVal
         return filePaths
@@ -77,6 +80,12 @@ extension ContentViewController {
 extension ContentViewController {
     @IBAction func changeGitIgnoreSelectionType(sender: NSSegmentedControl) {
         gitIgnoreSelectionTab.selectTabViewItemAtIndex(sender.selectedSegment)
+    }
+    
+    @IBAction func openSelectedFolders(sender: AnyObject) {
+        suggestedTabViewItemController.selectedFolders.forEach {
+            NSWorkspace.sharedWorkspace().openURL($0)
+        }
     }
     
     @IBAction func deleteCurrent(sender: AnyObject) {

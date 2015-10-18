@@ -9,7 +9,7 @@
                 <outlet property="currentGitIgnoreLbl" destination="mag-gv-85S" id="svq-uX-vJO"/>
                 <outlet property="gitIgnoreSelectionTab" destination="Ghs-fk-XmR" id="OmT-nZ-m1N"/>
                 <outlet property="masterGitIgnoreTabViewItemController" destination="XBC-Nv-pls" id="2yu-dW-v0z"/>
-                <outlet property="selectedPathLbl" destination="KIl-Ys-kjI" id="WOY-k0-MWd"/>
+                <outlet property="selectedPathBtn" destination="mdh-OU-72G" id="3NW-G4-VB0"/>
                 <outlet property="suggestedTabViewItemController" destination="1c2-7m-Gav" id="Qwa-Qk-QCb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -42,27 +42,15 @@
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KIl-Ys-kjI">
-                    <rect key="frame" x="14" y="277" width="264" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="260" id="dvS-l2-AtY"/>
-                    </constraints>
-                    <animations/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="~/Snub" id="ouR-eE-Ufj">
-                        <font key="font" size="12" name=".HelveticaNeueDeskInterface-Light"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="TKs-AX-vHQ">
-                    <rect key="frame" x="0.0" y="266" width="292" height="5"/>
+                    <rect key="frame" x="0.0" y="259" width="292" height="5"/>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-ms-Lgj">
-                    <rect key="frame" x="14" y="244" width="42" height="16"/>
+                    <rect key="frame" x="14" y="237" width="42" height="16"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current" id="lql-eS-Cyz">
                         <font key="font" size="12" name=".HelveticaNeueDeskInterface-Thin"/>
@@ -71,7 +59,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
-                    <rect key="frame" x="18" y="219" width="150" height="17"/>
+                    <rect key="frame" x="18" y="212" width="150" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="[No .gitignore detected]" id="kO0-4e-pIL">
                         <font key="font" metaFont="system"/>
@@ -80,9 +68,9 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="YGN-8m-bRi">
-                    <rect key="frame" x="246" y="218" width="38" height="19"/>
+                    <rect key="frame" x="246" y="211" width="38" height="19"/>
                     <animations/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="5KI-KQ-sZS" id="ccG-zO-k20">
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="ccG-zO-k20">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                         <menu key="menu" id="OgI-F0-cCr">
@@ -105,14 +93,14 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="mLn-xp-phb">
-                    <rect key="frame" x="0.0" y="207" width="292" height="5"/>
+                    <rect key="frame" x="0.0" y="200" width="292" height="5"/>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dkf-Jq-wBR" userLabel="suggestionSegmentControl">
-                    <rect key="frame" x="59" y="177" width="174" height="25"/>
+                    <rect key="frame" x="59" y="170" width="174" height="25"/>
                     <animations/>
                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="MBR-US-nvI">
                         <font key="font" metaFont="system"/>
@@ -126,23 +114,23 @@
                     </connections>
                 </segmentedControl>
                 <tabView drawsBackground="NO" type="noTabsNoBorder" initialItem="kpP-Q2-Top" translatesAutoresizingMaskIntoConstraints="NO" id="Ghs-fk-XmR" userLabel="suggestionTabControl">
-                    <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
+                    <rect key="frame" x="0.0" y="0.0" width="292" height="164"/>
                     <animations/>
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
                         <tabViewItem label="Suggested" identifier="1" id="kpP-Q2-Top">
                             <view key="view" id="Lg3-6K-oBh">
-                                <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
+                                <rect key="frame" x="0.0" y="0.0" width="292" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-nT-209">
-                                        <rect key="frame" x="8" y="8" width="276" height="155"/>
+                                        <rect key="frame" x="8" y="8" width="276" height="148"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="B8H-Jc-DqZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="148"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="155"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="148"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -380,6 +368,17 @@
                         </tabViewItem>
                     </tabViewItems>
                 </tabView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-OU-72G">
+                    <rect key="frame" x="8" y="268" width="276" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="bevel" title="/Applications/Snub.app" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="A7l-OP-5B9">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openSelectedFolders:" target="-2" id="iHj-k3-0xG"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mLn-xp-phb" secondAttribute="trailing" id="2ad-92-2sV"/>
@@ -395,18 +394,18 @@
                 <constraint firstItem="Dkf-Jq-wBR" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="PGg-Db-Ic7"/>
                 <constraint firstAttribute="trailing" secondItem="ejS-ey-tWz" secondAttribute="trailing" constant="8" id="QHT-c2-4jK"/>
                 <constraint firstItem="Ghs-fk-XmR" firstAttribute="top" secondItem="Dkf-Jq-wBR" secondAttribute="bottom" constant="8" id="RTh-Sa-BOs"/>
+                <constraint firstAttribute="trailing" secondItem="mdh-OU-72G" secondAttribute="trailing" constant="8" id="Rvg-tV-94Q"/>
                 <constraint firstItem="Dkf-Jq-wBR" firstAttribute="top" secondItem="mLn-xp-phb" secondAttribute="bottom" constant="8" id="T5n-4a-vhD"/>
                 <constraint firstItem="ejS-ey-tWz" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="TkV-bg-Il3"/>
-                <constraint firstItem="TKs-AX-vHQ" firstAttribute="top" secondItem="KIl-Ys-kjI" secondAttribute="bottom" constant="8" id="Vhk-Uv-3mm"/>
+                <constraint firstItem="mdh-OU-72G" firstAttribute="top" secondItem="ejS-ey-tWz" secondAttribute="bottom" constant="1" id="b4j-fw-Caj"/>
                 <constraint firstAttribute="trailing" secondItem="YGN-8m-bRi" secondAttribute="trailing" constant="8" id="czX-6S-6dK"/>
-                <constraint firstItem="KIl-Ys-kjI" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="em4-GL-SXt"/>
                 <constraint firstItem="7sE-ms-Lgj" firstAttribute="top" secondItem="TKs-AX-vHQ" secondAttribute="bottom" constant="8" id="fqq-gQ-KdO"/>
                 <constraint firstItem="7sE-ms-Lgj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="gNV-zc-VPg"/>
+                <constraint firstItem="TKs-AX-vHQ" firstAttribute="top" secondItem="mdh-OU-72G" secondAttribute="bottom" constant="6" id="gq1-Ko-0Nz"/>
                 <constraint firstAttribute="bottom" secondItem="Ghs-fk-XmR" secondAttribute="bottom" id="kJg-nh-nrs"/>
-                <constraint firstAttribute="trailing" secondItem="KIl-Ys-kjI" secondAttribute="trailing" constant="16" id="lhk-7c-eEE"/>
                 <constraint firstItem="mLn-xp-phb" firstAttribute="top" secondItem="mag-gv-85S" secondAttribute="bottom" constant="9" id="mGI-OE-XDA"/>
                 <constraint firstItem="mLn-xp-phb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="nqx-z6-yFB"/>
-                <constraint firstItem="KIl-Ys-kjI" firstAttribute="top" secondItem="ejS-ey-tWz" secondAttribute="bottom" constant="8" id="ojM-6x-zKo"/>
+                <constraint firstItem="mdh-OU-72G" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="uOe-T3-fqv"/>
                 <constraint firstItem="YGN-8m-bRi" firstAttribute="centerY" secondItem="mag-gv-85S" secondAttribute="centerY" id="wb2-ub-d9H"/>
             </constraints>
             <animations/>
