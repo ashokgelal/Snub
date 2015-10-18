@@ -58,15 +58,6 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
-                    <rect key="frame" x="18" y="212" width="150" height="17"/>
-                    <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="[No .gitignore detected]" id="kO0-4e-pIL">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="YGN-8m-bRi">
                     <rect key="frame" x="246" y="211" width="38" height="19"/>
                     <animations/>
@@ -216,7 +207,7 @@
                                         </clipView>
                                         <animations/>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
-                                            <rect key="frame" x="0.0" y="139" width="276" height="16"/>
+                                            <rect key="frame" x="0.0" y="132" width="276" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
@@ -379,6 +370,15 @@
                         <action selector="openSelectedFolders:" target="-2" id="iHj-k3-0xG"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
+                    <rect key="frame" x="18" y="212" width="132" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="[No folders selected]" id="kO0-4e-pIL">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mLn-xp-phb" secondAttribute="trailing" id="2ad-92-2sV"/>

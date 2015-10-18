@@ -20,10 +20,18 @@ class ContentViewController: NSViewController {
     override func viewDidAppear() {
         let selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
         showSelectedFolder(selectedFolders)
-        let gitIgnoreFilesWithTheirPaths = GitIgnoreTypeDetector.instance.detect(selectedFolders)
-        currentGitIgnoreFilePaths = displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
-        suggestedTabViewItemController.selectedFolders = selectedFolders
-        masterGitIgnoreTabViewItemController.selectedFolders = selectedFolders
+        if(selectedFolders.count > 0) {
+            do {
+                let gitIgnoreFilesWithTheirPaths = try GitIgnoreTypeDetector.instance.detect(selectedFolders)
+                currentGitIgnoreFilePaths = displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
+                suggestedTabViewItemController.selectedFolders = selectedFolders
+                masterGitIgnoreTabViewItemController.selectedFolders = selectedFolders
+            } catch let error as NSError {
+                DDLogError("Error detecting .gitignore types: \(error.localizedDescription)")
+            }
+        } else {
+            currentGitIgnoreLbl.stringValue = "[No folders selected]"
+        }
     }
     
     override func validateMenuItem(menuItem: NSMenuItem) -> Bool {
@@ -59,6 +67,7 @@ class ContentViewController: NSViewController {
                     outputVal = "[Couldn't determine .gitignore's type]"
                 }
             } catch let error as NSError {
+                outputVal = "[Error identifying .gitignore's type]"
                 DDLogError("Error identifying: \(error.localizedDescription)")
             }
         } else if filePaths.count > 1 {

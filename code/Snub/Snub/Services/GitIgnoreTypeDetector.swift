@@ -14,17 +14,14 @@ class GitIgnoreTypeDetector {
     
     private init() {}
     
-    func detect(urls: [NSURL]) -> [NSURL:NSURL?] {
+    func detect(urls: [NSURL]) throws -> [NSURL:NSURL?] {
         let fm = NSFileManager.defaultManager()
         var retVals: [NSURL:NSURL?] = [:]
-        for url in urls {
-            do {
-                let dirContents = try fm.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
-                let gitIgnoreUrl = dirContents.filter { $0.lastPathComponent == MagicStrings.GITIGNORE_EXTENSION }.first
-                retVals[url] = gitIgnoreUrl
-            } catch let error as NSError {
-                DDLogError("Error enumerating directory contents: \(error.localizedDescription)")
-            }
+        try urls.forEach {
+            url in
+            let dirContents = try fm.contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
+            let gitIgnoreUrl = dirContents.filter { $0.lastPathComponent == MagicStrings.GITIGNORE_EXTENSION }.first
+            retVals[url] = gitIgnoreUrl
         }
         return retVals
     }

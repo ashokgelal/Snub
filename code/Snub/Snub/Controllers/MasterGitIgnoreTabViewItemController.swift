@@ -18,10 +18,14 @@ class MasterGitIgnoreTabViewItemController: NSViewController {
         }
     }
     
-    var selectedFolders: [NSURL] = []
-    
-    override func viewDidAppear() {
-       gitIgnoreItems = GitIgnoreFileManager.instance.fetchMasterGitIgnoreItems()
+    var selectedFolders: [NSURL] = [] {
+        didSet {
+            if selectedFolders.count > 0 {
+                gitIgnoreItems = GitIgnoreFileManager.instance.fetchMasterGitIgnoreItems()
+            } else {
+                gitIgnoreItems = []
+            }
+        }
     }
 }
 

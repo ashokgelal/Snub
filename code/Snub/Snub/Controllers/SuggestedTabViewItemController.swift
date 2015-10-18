@@ -16,8 +16,6 @@ class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
         }
     }
     
-    override func viewDidAppear() { }
-    
     private func determineSuggestedProjectTypes(selectedFolders : [NSURL]) {
         var outputVal = "[Couldn't determine project type]"
         if selectedFolders.count == 1 {
