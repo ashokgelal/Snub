@@ -1,16 +1,16 @@
 //
-//  GitIgnoreDetector.swift
+//  GitIgnoreTypeDetector.swift
 //  Snub
 //
 //  Created by Ashok Gelal on 10/16/15.
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import SwiftRegExp
 
-class GitIgnoreDetector {
-    static let instance = GitIgnoreDetector()
+class GitIgnoreTypeDetector {
+    static let instance = GitIgnoreTypeDetector()
     
     private init() {}
     

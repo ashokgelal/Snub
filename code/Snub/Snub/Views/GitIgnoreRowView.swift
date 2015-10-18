@@ -9,23 +9,24 @@
 import Cocoa
 
 class GitIgnoreRowView: NSTableCellView {
+    weak var rowViewDelegate: GitIgnoreRowViewDelegate?
     @IBOutlet weak var addMenuItem: NSMenuItem!
-    @IBOutlet weak var replaceMenuItem: NSMenuItem!
     @IBOutlet weak var appendMenuItem: NSMenuItem!
+    
+    var projectDetectionResult: ProjectDetectionResult! {
+        didSet {
+            textField!.stringValue = projectDetectionResult.projectType
+        }
+    }
 }
 
 // Mark: Menu Actions
 extension GitIgnoreRowView {
-    
     @IBAction func add(sender: AnyObject?) {
-        DDLogError("Boom!")
-    }
-    
-    @IBAction func replace(sender: AnyObject?) {
-        DDLogError("Boom! Replace")
+        rowViewDelegate?.performAdd?(projectDetectionResult)
     }
     
     @IBAction func append(sender: AnyObject?) {
-        DDLogError("Boom! Replace")
+        rowViewDelegate?.performAppend?(projectDetectionResult)
     }
 }

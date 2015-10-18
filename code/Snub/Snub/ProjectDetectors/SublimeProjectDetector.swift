@@ -11,8 +11,8 @@ class SublimeProjectDetector: ProjectTypeDetector {
         let knownExtensions = ["sublime-workspace", "sublime-project"]
         let detectedTypes = fileExtensions.filter { return knownExtensions.contains($0) }
         if detectedTypes.count > 0 {
-            DDLogVerbose("Detected \(detectedTypes.count) Sublime project type")
-            return ProjectDetectionResult(projectType: "Sublime", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
+            DDLogVerbose("Detected \(detectedTypes.count) Sublime Text project type")
+            return ProjectDetectionResult(id: "SublimeText", projectType: "Sublime Text", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
         }
         return nil
     }

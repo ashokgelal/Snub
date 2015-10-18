@@ -131,15 +131,15 @@
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-nT-209">
                                         <rect key="frame" x="8" y="8" width="276" height="155"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="B8H-Jc-DqZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="155"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="0.0"/>
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="155"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
-                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
                                                         <tableColumn width="273" minWidth="40" maxWidth="1000" id="joa-el-VZq">
@@ -155,7 +155,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView identifier="suggestedGitIgnoreRowView" id="vKe-zg-wE8" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
+                                                                <tableCellView identifier="suggestedGitIgnoreRowView" wantsLayer="YES" id="vKe-zg-wE8" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="1" width="273" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -171,7 +171,7 @@
                                                                         <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="bka-tW-9PZ">
                                                                             <rect key="frame" x="238" y="-1" width="35" height="19"/>
                                                                             <animations/>
-                                                                            <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="B9n-ON-Ymm" id="8bV-8f-4hZ">
+                                                                            <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="8bV-8f-4hZ">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="systemBold" size="12"/>
                                                                                 <menu key="menu" id="mYc-Y7-uYo">
@@ -181,13 +181,6 @@
                                                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                                                             <connections>
                                                                                                 <action selector="add:" target="vKe-zg-wE8" id="Lm6-sq-87b"/>
-                                                                                            </connections>
-                                                                                        </menuItem>
-                                                                                        <menuItem isSeparatorItem="YES" id="Jgi-PJ-GrO"/>
-                                                                                        <menuItem title="Replace with this" id="2Fy-wO-R4P">
-                                                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                            <connections>
-                                                                                                <action selector="replace:" target="vKe-zg-wE8" id="hwo-IN-xeE"/>
                                                                                             </connections>
                                                                                         </menuItem>
                                                                                         <menuItem title="Append this" id="PU1-dT-rkw">
@@ -211,7 +204,6 @@
                                                                     <connections>
                                                                         <outlet property="addMenuItem" destination="x4U-7u-8Yy" id="8zX-Ms-MxH"/>
                                                                         <outlet property="appendMenuItem" destination="PU1-dT-rkw" id="ERs-Up-9Kj"/>
-                                                                        <outlet property="replaceMenuItem" destination="2Fy-wO-R4P" id="j3D-MR-kc1"/>
                                                                         <outlet property="textField" destination="oOe-hX-qVq" id="NGr-2a-0fR"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -225,10 +217,10 @@
                                                 </tableView>
                                             </subviews>
                                             <animations/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.5" horizontal="YES" id="rQl-Yr-dSc">
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
                                             <rect key="frame" x="0.0" y="140" width="276" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
@@ -274,7 +266,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
-                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
                                                         <tableColumn width="273" minWidth="40" maxWidth="1000" id="iS7-ya-wmZ">
@@ -306,7 +298,7 @@
                                                                         <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="n7q-ic-Nyl">
                                                                             <rect key="frame" x="238" y="-1" width="35" height="19"/>
                                                                             <animations/>
-                                                                            <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="9Be-I3-aXg" id="Hj8-Mh-joI">
+                                                                            <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="Hj8-Mh-joI">
                                                                                 <behavior key="behavior" lightByContents="YES"/>
                                                                                 <font key="font" metaFont="systemBold" size="12"/>
                                                                                 <menu key="menu" id="uk8-hI-W2b">
@@ -316,13 +308,6 @@
                                                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                                                             <connections>
                                                                                                 <action selector="add:" target="U1d-8r-L0g" id="CLd-UI-Qn0"/>
-                                                                                            </connections>
-                                                                                        </menuItem>
-                                                                                        <menuItem isSeparatorItem="YES" id="HfV-kG-aLj"/>
-                                                                                        <menuItem title="Replace with this" id="9Be-I3-aXg">
-                                                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                            <connections>
-                                                                                                <action selector="replace:" target="U1d-8r-L0g" id="n8O-2m-cPR"/>
                                                                                             </connections>
                                                                                         </menuItem>
                                                                                         <menuItem title="Append this" id="DLD-6n-dCP">
@@ -346,7 +331,6 @@
                                                                     <connections>
                                                                         <outlet property="addMenuItem" destination="U1P-Qs-clo" id="N5O-pC-eSI"/>
                                                                         <outlet property="appendMenuItem" destination="DLD-6n-dCP" id="dJt-Wg-kuu"/>
-                                                                        <outlet property="replaceMenuItem" destination="9Be-I3-aXg" id="OLX-9S-cO6"/>
                                                                         <outlet property="textField" destination="vCW-Dd-q0R" id="zy0-qn-R1T"/>
                                                                     </connections>
                                                                 </tableCellView>
@@ -356,7 +340,7 @@
                                                 </tableView>
                                             </subviews>
                                             <animations/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         </clipView>
                                         <animations/>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">

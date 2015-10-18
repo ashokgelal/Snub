@@ -6,7 +6,7 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 import PDKTZipArchive
 
 class GitIgnoreFileManager {
@@ -33,7 +33,7 @@ class GitIgnoreFileManager {
     
     func getAllGitIgnoreFilePaths() -> [NSURL] {
         let fm = NSFileManager.defaultManager()
-        let unzippedPath = (getApplicationDirectoryPath() as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
+        let unzippedPath = (fm.getApplicationDirectoryPath() as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         let enumerator = fm.enumeratorAtPath(unzippedPath)
         var fileURLs:[NSURL] = []
         while let element = enumerator?.nextObject() as? String {
@@ -46,8 +46,9 @@ class GitIgnoreFileManager {
     }
     
     private func setupApplicationSupportDirectory() -> String {
-        let appDirectoryPath = getApplicationDirectoryPath()
-        if(NSFileManager.defaultManager().checkIfDirectoryExists(appDirectoryPath)) {
+        let fm = NSFileManager.defaultManager()
+        let appDirectoryPath = fm.getApplicationDirectoryPath()
+        if(fm.checkIfDirectoryExists(appDirectoryPath)) {
             DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
             return appDirectoryPath
         }
@@ -62,9 +63,31 @@ class GitIgnoreFileManager {
         return appDirectoryPath
     }
     
-    private func getApplicationDirectoryPath() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
-        let supportDirectory = paths.first!
-        return (supportDirectory as NSString).stringByAppendingPathComponent(MagicStrings.APPNAME)
+    func addGitIgnoreWithId(id: String, toPath: NSURL) throws -> Bool {
+        guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
+            throw GitIgnoreError.SourceGitIgnoreNotFound
+        }
+        
+        let fm = NSFileManager.defaultManager()
+        let path = toPath.path!
+        let destinationFullPath = path.appendPathComponent(MagicStrings.GITIGNORE_EXTENSION)
+        
+        // first backup existing .gitignore
+        if(fm.checkIfFileExists(destinationFullPath)) {
+            let backupFilePath = path.appendPathComponent("\(MagicStrings.GITIGNORE_BACKUP_NAME)\(MagicStrings.GITIGNORE_EXTENSION)")
+            try fm.moveItemAtPath(destinationFullPath, toPath: backupFilePath)
+            DDLogInfo("Found and copied old .gitignore file to \(backupFilePath)")
+        }
+        
+        let gitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
+        let headerBrand = MagicStrings.createGitIgnoreFileHeaderBrand(id)
+        let contents = "\(headerBrand)\n\(gitIgnoreContents)"
+        try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
+        DDLogVerbose("Successfully copied \(id) .gitignore to \(destinationFullPath)")
+        return true
+    }
+    
+    func appendGitIgnoreWithId(id:String, toPath: NSURL) {
+        DDLogVerbose(id)
     }
 }

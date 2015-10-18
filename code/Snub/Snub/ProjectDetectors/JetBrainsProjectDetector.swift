@@ -12,7 +12,7 @@ class JetBrainsProjectDetector: ProjectTypeDetector {
         let detectedTypes = fileExtensions.filter { return knownExtensions.contains($0) }
         if detectedTypes.count > 0 {
             DDLogVerbose("Detected JetBrains/IntelliJ project type \(detectedTypes.count)")
-            return ProjectDetectionResult(projectType: "JetBrains/IntelliJ", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
+            return ProjectDetectionResult(id: "JetBrains", projectType: "JetBrains/IntelliJ", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
         }
         return nil
     }

@@ -12,7 +12,7 @@ class VisualStudioCodeProjectDetector: ProjectTypeDetector {
         let detectedTypes = fileExtensions.filter { return knownExtensions.contains($0) }
         if detectedTypes.count > 0 {
             DDLogVerbose("Detected \(detectedTypes.count) Visual Studio Code project type")
-            return ProjectDetectionResult(projectType: "Visual Studio Code", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
+            return ProjectDetectionResult(id: "VisualStudioCode", projectType: "Visual Studio Code", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
         }
         return nil
     }

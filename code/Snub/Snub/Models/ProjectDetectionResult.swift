@@ -6,11 +6,15 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
+import Foundation
 
-struct ProjectDetectionResult {
+class ProjectDetectionResult: NSObject {
     let projectType: String
     let confidencePercent: Double
-    init(projectType: String, confidencePercent: Double) {
+    let id: String
+    
+    init(id: String, projectType: String, confidencePercent: Double) {
+        self.id = id
         self.projectType = projectType
         self.confidencePercent = confidencePercent
     }

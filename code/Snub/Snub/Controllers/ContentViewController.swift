@@ -8,9 +8,6 @@
 
 import Cocoa
 
-class ContentTabViewController: NSTabViewController {
-}
-
 class ContentViewController: NSViewController {
     @IBOutlet weak var gitIgnoreSelectionTab: NSTabView!
     @IBOutlet weak var selectedPathLbl: NSTextField!
@@ -37,7 +34,7 @@ class ContentViewController: NSViewController {
     }
     
     private func detectGitIgnores(selectedFolders: [NSURL]) -> [NSURL: NSURL?] {
-        return GitIgnoreDetector.instance.detect(selectedFolders)
+        return GitIgnoreTypeDetector.instance.detect(selectedFolders)
     }
     
     private func displayCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) {
@@ -45,9 +42,9 @@ class ContentViewController: NSViewController {
         var outputVal = "[No .gitignore detected]"
         if gitIgnoreFilePaths.count == 1 {
             do {
-                let ignoreTypes = try GitIgnoreDetector.instance.identify(gitIgnoreFilePaths.first!!)
+                let ignoreTypes = try GitIgnoreTypeDetector.instance.identify(gitIgnoreFilePaths.first!!)
                 if ignoreTypes.count > 0 {
-                    outputVal = ignoreTypes.joinWithSeparator("+")
+                    outputVal = ignoreTypes.joinWithSeparator(" + ")
                 } else {
                     outputVal = "[Couldn't determine .gitignore type]"
                 }

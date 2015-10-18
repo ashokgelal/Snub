@@ -6,7 +6,7 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 class ProjectDetector {
     static let instance = ProjectDetector()
@@ -25,10 +25,10 @@ class ProjectDetector {
         detectors.append(VagrantProjectDetector())
     }
     
-    func identify(url: NSURL) throws -> [String] {
+    func identify(url: NSURL) throws -> [ProjectDetectionResult] {
         let fm = NSFileManager.defaultManager()
-        let subs = try fm.subpathsOfDirectoryAtPath(url.path!).map { ($0 as NSString).pathExtension }
+        let subs = try fm.subpathsOfDirectoryAtPath(url.path!).map { $0.fileExtension() }
         let results = detectors.map { $0.detect(subs) }.filter { $0 != nil }
-        return results.sort{ $0!.confidencePercent > $1!.confidencePercent }.map { $0!.projectType }
+        return results.sort{ $0!.confidencePercent > $1!.confidencePercent }.map { $0! }
     }
 }

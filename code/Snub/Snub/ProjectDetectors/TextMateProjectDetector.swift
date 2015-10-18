@@ -12,7 +12,7 @@ class TextMateProjectDetector: ProjectTypeDetector {
         let detectedTypes = fileExtensions.filter { return knownExtensions.contains($0) }
         if detectedTypes.count > 0 {
             DDLogVerbose("Detected \(detectedTypes.count) TextMate project type")
-            return ProjectDetectionResult(projectType: "TextMate", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
+            return ProjectDetectionResult(id: "TextMate", projectType: "TextMate", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
         }
         return nil
     }

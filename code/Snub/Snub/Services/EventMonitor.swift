@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+
 class EventMonitor {
     private var monitor: AnyObject?
     private let mask: NSEventMask

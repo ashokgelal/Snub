@@ -7,34 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		801DBB0C1BD2D927002614DB /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801DBB0B1BD2D927002614DB /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		80CCA2F41BD2DB1C004B433D /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CCA2F31BD2DB1C004B433D /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		80CCA2F61BD2DFF1004B433D /* SublimeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CCA2F51BD2DFF1004B433D /* SublimeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		80CCA2F81BD2E729004B433D /* TextMateProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CCA2F71BD2E729004B433D /* TextMateProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		80CCA2FA1BD2E9E1004B433D /* VagrantProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CCA2F91BD2E9E1004B433D /* VagrantProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
 		CD11D8CF1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C3B1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3A1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C3F1BD32869001CDFA8 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3D1BD32869001CDFA8 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C401BD32869001CDFA8 /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C421BD32894001CDFA8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C411BD32894001CDFA8 /* Enums.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C441BD328DC001CDFA8 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C431BD328DC001CDFA8 /* Protocols.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C461BD32A46001CDFA8 /* ProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C451BD32A46001CDFA8 /* ProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C521BD32A7A001CDFA8 /* JetBrainsProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4A1BD32A7A001CDFA8 /* JetBrainsProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C541BD32A7A001CDFA8 /* SublimeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4C1BD32A7A001CDFA8 /* SublimeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C551BD32A7A001CDFA8 /* TextMateProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4D1BD32A7A001CDFA8 /* TextMateProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C561BD32A7A001CDFA8 /* VagrantProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4E1BD32A7A001CDFA8 /* VagrantProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C571BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4F1BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C581BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C501BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C591BD32A7A001CDFA8 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */; };
 		CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */; };
 		CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */; };
 		CD62A81D1BCE0FB9009D6B62 /* SnubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */; };
 		CD62A8281BCE0FB9009D6B62 /* SnubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */; };
-		CD702EF61BD19CDB00C97076 /* GitIgnoreDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF51BD19CDB00C97076 /* GitIgnoreDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD702EF61BD19CDB00C97076 /* GitIgnoreTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF51BD19CDB00C97076 /* GitIgnoreTypeDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CD702EF81BD1B7F700C97076 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF71BD1B7F700C97076 /* RegExp.swift */; settings = {ASSET_TAGS = (); }; };
-		CD702EFA1BD1D04800C97076 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF91BD1D04800C97076 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD128351BD2B653005EAE6C /* ProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD128341BD2B653005EAE6C /* ProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD128371BD2CD01005EAE6C /* ProjectTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD128361BD2CD01005EAE6C /* ProjectTypeDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD128391BD2CD48005EAE6C /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD128381BD2CD48005EAE6C /* ProjectDetectionResult.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD1283B1BD2CD98005EAE6C /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1283A1BD2CD98005EAE6C /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD1283D1BD2CDDB005EAE6C /* JetBrainsProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1283C1BD2CDDB005EAE6C /* JetBrainsProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D5E1BCF52D800308400 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D5C1BCF52D800308400 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D621BCF532300308400 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD22D601BCF532300308400 /* ContentViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D641BCF538E00308400 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D661BCF567000308400 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		CDD9D7111BD0D7C800CF7B2F /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */; settings = {ASSET_TAGS = (); }; };
+		CDD9D7111BD0D7C800CF7B2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D7101BD0D7C800CF7B2F /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
 		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,14 +63,22 @@
 /* Begin PBXFileReference section */
 		01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4E8E02C1F126C7912A1C05 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
-		801DBB0B1BD2D927002614DB /* VisualStudioCodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioCodeProjectDetector.swift; sourceTree = "<group>"; };
-		80CCA2F31BD2DB1C004B433D /* VisualStudioProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioProjectDetector.swift; sourceTree = "<group>"; };
-		80CCA2F51BD2DFF1004B433D /* SublimeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublimeProjectDetector.swift; sourceTree = "<group>"; };
-		80CCA2F71BD2E729004B433D /* TextMateProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMateProjectDetector.swift; sourceTree = "<group>"; };
-		80CCA2F91BD2E9E1004B433D /* VagrantProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VagrantProjectDetector.swift; sourceTree = "<group>"; };
 		80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreRowView.swift; sourceTree = "<group>"; };
 		94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
 		CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedTabViewItemController.swift; sourceTree = "<group>"; };
+		CD476C3A1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileFinder.swift; sourceTree = "<group>"; };
+		CD476C3D1BD32869001CDFA8 /* MagicStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicStrings.swift; sourceTree = "<group>"; };
+		CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetectionResult.swift; sourceTree = "<group>"; };
+		CD476C411BD32894001CDFA8 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		CD476C431BD328DC001CDFA8 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CD476C451BD32A46001CDFA8 /* ProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C4A1BD32A7A001CDFA8 /* JetBrainsProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JetBrainsProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C4C1BD32A7A001CDFA8 /* SublimeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublimeProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C4D1BD32A7A001CDFA8 /* TextMateProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMateProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C4E1BD32A7A001CDFA8 /* VagrantProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VagrantProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C4F1BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioCodeProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C501BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProjectDetector.swift; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,21 +90,15 @@
 		CD62A8231BCE0FB9009D6B62 /* SnubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnubUITests.swift; sourceTree = "<group>"; };
 		CD62A8291BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD702EF51BD19CDB00C97076 /* GitIgnoreDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreDetector.swift; sourceTree = "<group>"; };
+		CD702EF51BD19CDB00C97076 /* GitIgnoreTypeDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreTypeDetector.swift; sourceTree = "<group>"; };
 		CD702EF71BD1B7F700C97076 /* RegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegExp.swift; path = ../../Pods/SwiftRegExp/RegExp.swift; sourceTree = "<group>"; };
-		CD702EF91BD1D04800C97076 /* MagicStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicStrings.swift; sourceTree = "<group>"; };
-		CDD128341BD2B653005EAE6C /* ProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetector.swift; sourceTree = "<group>"; };
-		CDD128361BD2CD01005EAE6C /* ProjectTypeDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTypeDetector.swift; sourceTree = "<group>"; };
-		CDD128381BD2CD48005EAE6C /* ProjectDetectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetectionResult.swift; sourceTree = "<group>"; };
-		CDD1283A1BD2CD98005EAE6C /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProjectDetector.swift; sourceTree = "<group>"; };
-		CDD1283C1BD2CDDB005EAE6C /* JetBrainsProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JetBrainsProjectDetector.swift; sourceTree = "<group>"; };
 		CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
 		CDD22D5C1BCF52D800308400 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 		CDD22D601BCF532300308400 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		CDD22D641BCF538E00308400 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		CDD22D661BCF567000308400 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileManager.swift; sourceTree = "<group>"; };
-		CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		CDD9D7101BD0D7C800CF7B2F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -130,6 +134,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD476C3C1BD327E2001CDFA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD476C3D1BD32869001CDFA8 /* MagicStrings.swift */,
+				CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */,
+				CD476C411BD32894001CDFA8 /* Enums.swift */,
+				CD476C431BD328DC001CDFA8 /* Protocols.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD476C491BD32A5D001CDFA8 /* ProjectDetectors */ = {
+			isa = PBXGroup;
+			children = (
+				CD476C4A1BD32A7A001CDFA8 /* JetBrainsProjectDetector.swift */,
+				CD476C4C1BD32A7A001CDFA8 /* SublimeProjectDetector.swift */,
+				CD476C4D1BD32A7A001CDFA8 /* TextMateProjectDetector.swift */,
+				CD476C4E1BD32A7A001CDFA8 /* VagrantProjectDetector.swift */,
+				CD476C4F1BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift */,
+				CD476C501BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift */,
+				CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */,
+			);
+			path = ProjectDetectors;
+			sourceTree = "<group>";
+		};
 		CD62A8001BCE0FB9009D6B62 = {
 			isa = PBXGroup;
 			children = (
@@ -157,15 +186,16 @@
 		CD62A80B1BCE0FB9009D6B62 /* Snub */ = {
 			isa = PBXGroup;
 			children = (
-				CDD9D70F1BD0D73F00CF7B2F /* Extensions */,
-				CDD22D631BCF533600308400 /* Controllers */,
+				CD476C3C1BD327E2001CDFA8 /* Models */,
 				CDD22D551BCF521F00308400 /* Views */,
+				CDD22D631BCF533600308400 /* Controllers */,
 				CDE27A611BCE2896004B4107 /* Services */,
+				CD476C491BD32A5D001CDFA8 /* ProjectDetectors */,
+				CDD9D70F1BD0D73F00CF7B2F /* Extensions */,
+				CDD22D561BCF524D00308400 /* Vendors */,
 				CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */,
 				CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
-				CDD22D561BCF524D00308400 /* Vendors */,
-				CD702EF91BD1D04800C97076 /* MagicStrings.swift */,
 			);
 			path = Snub;
 			sourceTree = "<group>";
@@ -220,7 +250,7 @@
 		CDD9D70F1BD0D73F00CF7B2F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CDD9D7101BD0D7C800CF7B2F /* FileManagerExtensions.swift */,
+				CDD9D7101BD0D7C800CF7B2F /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,30 +258,14 @@
 		CDE27A611BCE2896004B4107 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CDFA304C1BD2B11200DC4B51 /* ProjectDetectors */,
+				CD476C451BD32A46001CDFA8 /* ProjectDetector.swift */,
 				CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */,
 				CDD22D661BCF567000308400 /* EventMonitor.swift */,
 				CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */,
-				CD702EF51BD19CDB00C97076 /* GitIgnoreDetector.swift */,
+				CD702EF51BD19CDB00C97076 /* GitIgnoreTypeDetector.swift */,
+				CD476C3A1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		CDFA304C1BD2B11200DC4B51 /* ProjectDetectors */ = {
-			isa = PBXGroup;
-			children = (
-				CDD128341BD2B653005EAE6C /* ProjectDetector.swift */,
-				CDD128361BD2CD01005EAE6C /* ProjectTypeDetector.swift */,
-				CDD128381BD2CD48005EAE6C /* ProjectDetectionResult.swift */,
-				CDD1283A1BD2CD98005EAE6C /* XcodeProjectDetector.swift */,
-				CDD1283C1BD2CDDB005EAE6C /* JetBrainsProjectDetector.swift */,
-				801DBB0B1BD2D927002614DB /* VisualStudioCodeProjectDetector.swift */,
-				80CCA2F31BD2DB1C004B433D /* VisualStudioProjectDetector.swift */,
-				80CCA2F51BD2DFF1004B433D /* SublimeProjectDetector.swift */,
-				80CCA2F71BD2E729004B433D /* TextMateProjectDetector.swift */,
-				80CCA2F91BD2E9E1004B433D /* VagrantProjectDetector.swift */,
-			);
-			path = ProjectDetectors;
 			sourceTree = "<group>";
 		};
 		DD52A8540352116A1A124BA7 /* Frameworks */ = {
@@ -456,29 +470,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD702EF61BD19CDB00C97076 /* GitIgnoreDetector.swift in Sources */,
-				80CCA2F61BD2DFF1004B433D /* SublimeProjectDetector.swift in Sources */,
+				CD476C571BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift in Sources */,
+				CD476C3B1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift in Sources */,
+				CD476C3F1BD32869001CDFA8 /* MagicStrings.swift in Sources */,
+				CD476C581BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift in Sources */,
+				CD476C421BD32894001CDFA8 /* Enums.swift in Sources */,
+				CD702EF61BD19CDB00C97076 /* GitIgnoreTypeDetector.swift in Sources */,
 				CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */,
-				CDD128391BD2CD48005EAE6C /* ProjectDetectionResult.swift in Sources */,
-				80CCA2F81BD2E729004B433D /* TextMateProjectDetector.swift in Sources */,
-				CDD1283D1BD2CDDB005EAE6C /* JetBrainsProjectDetector.swift in Sources */,
-				80CCA2F41BD2DB1C004B433D /* VisualStudioProjectDetector.swift in Sources */,
-				CDD9D7111BD0D7C800CF7B2F /* FileManagerExtensions.swift in Sources */,
+				CD476C551BD32A7A001CDFA8 /* TextMateProjectDetector.swift in Sources */,
+				CD476C441BD328DC001CDFA8 /* Protocols.swift in Sources */,
+				CDD9D7111BD0D7C800CF7B2F /* Extensions.swift in Sources */,
 				80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */,
-				CD702EFA1BD1D04800C97076 /* MagicStrings.swift in Sources */,
 				CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */,
 				CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */,
 				CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */,
-				CDD1283B1BD2CD98005EAE6C /* XcodeProjectDetector.swift in Sources */,
+				CD476C541BD32A7A001CDFA8 /* SublimeProjectDetector.swift in Sources */,
+				CD476C561BD32A7A001CDFA8 /* VagrantProjectDetector.swift in Sources */,
 				CDD22D671BCF567000308400 /* EventMonitor.swift in Sources */,
 				CD11D8CF1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift in Sources */,
-				801DBB0C1BD2D927002614DB /* VisualStudioCodeProjectDetector.swift in Sources */,
 				CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */,
 				CD702EF81BD1B7F700C97076 /* RegExp.swift in Sources */,
-				CDD128371BD2CD01005EAE6C /* ProjectTypeDetector.swift in Sources */,
+				CD476C401BD32869001CDFA8 /* ProjectDetectionResult.swift in Sources */,
 				CDD22D5E1BCF52D800308400 /* Finder.swift in Sources */,
-				CDD128351BD2B653005EAE6C /* ProjectDetector.swift in Sources */,
-				80CCA2FA1BD2E9E1004B433D /* VagrantProjectDetector.swift in Sources */,
+				CD476C591BD32A7A001CDFA8 /* XcodeProjectDetector.swift in Sources */,
+				CD476C461BD32A46001CDFA8 /* ProjectDetector.swift in Sources */,
+				CD476C521BD32A7A001CDFA8 /* JetBrainsProjectDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
