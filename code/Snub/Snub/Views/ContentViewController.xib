@@ -230,22 +230,25 @@
                         </tabViewItem>
                         <tabViewItem label="Others" identifier="2" id="1EI-W4-6Pd">
                             <view key="view" id="oqS-Mp-guq">
-                                <rect key="frame" x="0.0" y="0.0" width="292" height="171"/>
+                                <rect key="frame" x="0.0" y="0.0" width="292" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <searchField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j1z-kU-Ygx">
-                                        <rect key="frame" x="8" y="149" width="276" height="22"/>
+                                        <rect key="frame" x="8" y="142" width="276" height="22"/>
                                         <animations/>
-                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" id="wyS-on-M8d">
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" id="wyS-on-M8d">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </searchFieldCell>
+                                        <connections>
+                                            <action selector="search:" target="XBC-Nv-pls" id="fqo-CX-Kkx"/>
+                                        </connections>
                                     </searchField>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFm-Bq-Xl1">
-                                        <rect key="frame" x="8" y="8" width="276" height="133"/>
+                                        <rect key="frame" x="8" y="8" width="276" height="126"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="qOC-iq-Fhy">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="126"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="mXf-aZ-KH2">
@@ -334,8 +337,8 @@
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
-                                            <rect key="frame" x="0.0" y="-15" width="0.0" height="15"/>
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
+                                            <rect key="frame" x="0.0" y="110" width="276" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>

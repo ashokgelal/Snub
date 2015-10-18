@@ -10,6 +10,7 @@
 		80EE55421BD0E071008DE170 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
 		CD11D8CF1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
+		CD2C20CB1BD36FF90061938C /* StringScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C20CA1BD36FF90061938C /* StringScore.swift */; settings = {ASSET_TAGS = (); }; };
 		CD476C3B1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3A1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift */; settings = {ASSET_TAGS = (); }; };
 		CD476C3F1BD32869001CDFA8 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3D1BD32869001CDFA8 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
 		CD476C401BD32869001CDFA8 /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */; settings = {ASSET_TAGS = (); }; };
@@ -68,6 +69,7 @@
 		80EE55411BD0E071008DE170 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreRowView.swift; sourceTree = "<group>"; };
 		94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
 		CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedTabViewItemController.swift; sourceTree = "<group>"; };
+		CD2C20CA1BD36FF90061938C /* StringScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringScore.swift; sourceTree = "<group>"; };
 		CD476C3A1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileFinder.swift; sourceTree = "<group>"; };
 		CD476C3D1BD32869001CDFA8 /* MagicStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicStrings.swift; sourceTree = "<group>"; };
 		CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectDetectionResult.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				CD702EF71BD1B7F700C97076 /* RegExp.swift */,
 				CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */,
 				CDD22D5C1BCF52D800308400 /* Finder.swift */,
+				CD2C20CA1BD36FF90061938C /* StringScore.swift */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */,
 				CD702EF81BD1B7F700C97076 /* RegExp.swift in Sources */,
 				CD476C401BD32869001CDFA8 /* ProjectDetectionResult.swift in Sources */,
+				CD2C20CB1BD36FF90061938C /* StringScore.swift in Sources */,
 				CDD22D5E1BCF52D800308400 /* Finder.swift in Sources */,
 				CD476C591BD32A7A001CDFA8 /* XcodeProjectDetector.swift in Sources */,
 				CD476C461BD32A46001CDFA8 /* ProjectDetector.swift in Sources */,

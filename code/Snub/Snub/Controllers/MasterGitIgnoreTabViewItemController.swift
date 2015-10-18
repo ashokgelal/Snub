@@ -8,15 +8,20 @@
 
 import Cocoa
 import Async
+import FuzzySearch
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBInspectable var cellIdentifier: String!
     @IBOutlet weak var tableView: NSTableView!
+    
     var selectedFolders: [NSURL] = []
+    var searchResults: [GitIgnoreFileItem] = [] {
+        didSet { tableView.reloadData() }
+    }
     
     var gitIgnoreItems: [GitIgnoreFileItem] = [] {
-        didSet { tableView.reloadData() }
+        didSet { searchResults = gitIgnoreItems }
     }
     
     func loadSelectedFolders(selectedFolders: [NSURL]) {
@@ -38,7 +43,7 @@ class MasterGitIgnoreTabViewItemController: NSViewController {
 // MARK: Table View Delegates
 extension MasterGitIgnoreTabViewItemController: NSTableViewDelegate, NSTableViewDataSource  {
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return gitIgnoreItems.count
+        return searchResults.count
     }
     
     func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
@@ -49,7 +54,7 @@ extension MasterGitIgnoreTabViewItemController: NSTableViewDelegate, NSTableView
         guard let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as? GitIgnoreRowView else {
             return nil
         }
-        let result = gitIgnoreItems[row]
+        let result = searchResults[row]
         cell.gitIgnoreItem = result
         cell.rowViewDelegate = self
         return cell
@@ -86,5 +91,20 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
             }
         }
         // todo: show success
+    }
+}
+
+// MARK: Actions
+extension MasterGitIgnoreTabViewItemController {
+    @IBAction func search(sender: NSTextField) {
+        let searchText = sender.stringValue
+        if searchText == "" {
+            searchResults = gitIgnoreItems
+        } else {
+            searchResults = gitIgnoreItems.filter {
+                item in
+                return FuzzySearch.score(originalString: item.name, stringToMatch: searchText, fuzziness: 0.8) > 0.5
+            }
+        }
     }
 }
