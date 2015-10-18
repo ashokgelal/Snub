@@ -82,17 +82,23 @@
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="YGN-8m-bRi">
                     <rect key="frame" x="246" y="218" width="38" height="19"/>
                     <animations/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="ccG-zO-k20">
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="5KI-KQ-sZS" id="ccG-zO-k20">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                         <menu key="menu" id="OgI-F0-cCr">
                             <items>
                                 <menuItem state="on" image="NSActionTemplate" hidden="YES" id="s2h-fm-gM6"/>
+                                <menuItem title="Edit" id="5KI-KQ-sZS">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="editCurrent:" target="-2" id="eXe-UV-IpY"/>
+                                    </connections>
+                                </menuItem>
                                 <menuItem title="Delete" id="CtZ-hc-30g">
                                     <modifierMask key="keyEquivalentModifierMask"/>
-                                </menuItem>
-                                <menuItem title="Disable" id="5KI-KQ-sZS">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="deleteCurrent:" target="-2" id="IPm-6c-5YD"/>
+                                    </connections>
                                 </menuItem>
                             </items>
                         </menu>
@@ -222,7 +228,7 @@
                                         </clipView>
                                         <animations/>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
-                                            <rect key="frame" x="0.0" y="140" width="276" height="15"/>
+                                            <rect key="frame" x="0.0" y="139" width="276" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>

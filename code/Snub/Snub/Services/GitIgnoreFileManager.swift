@@ -109,7 +109,6 @@ class GitIgnoreFileManager {
                 fileURLs += [NSURL(fileURLWithPath: fullPath)]
             }
         }
-        print(fileURLs)
         return fileURLs
     }()
 }
