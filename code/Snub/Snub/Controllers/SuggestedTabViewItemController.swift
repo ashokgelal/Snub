@@ -84,7 +84,13 @@ extension SuggestedTabViewItemController: GitIgnoreRowViewDelegate {
         // todo: show spinner
         selectedFolders.forEach {
             url in
-            GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: url)
+            do {
+                try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: url)
+            } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                DDLogError("Didn't find source .gitignore with id: \(result.id)")
+            } catch let error as NSError {
+                DDLogError("Error appending .gitignore: \(error.localizedDescription)")
+            }
         }
         // todo: show success
     }

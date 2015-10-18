@@ -12,7 +12,7 @@ class XcodeProjectDetector: ProjectTypeDetector {
         let detectedTypes = fileExtensions.filter { return knownExtensions.contains($0) }
         if detectedTypes.count > 0 {
             DDLogVerbose("Detected \(detectedTypes.count) Xcode project type")
-            return ProjectDetectionResult(id: "xxxXcode", projectType: "Xcode", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
+            return ProjectDetectionResult(id: "Xcode", projectType: "Xcode", confidencePercent: Double(detectedTypes.count) * 100.0/Double(knownExtensions.count))
         }
         return nil
     }

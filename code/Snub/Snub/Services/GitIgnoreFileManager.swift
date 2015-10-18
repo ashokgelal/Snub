@@ -63,31 +63,43 @@ class GitIgnoreFileManager {
         return appDirectoryPath
     }
     
-    func addGitIgnoreWithId(id: String, toPath: NSURL) throws -> Bool {
+    func addGitIgnoreWithId(id: String, toPath: NSURL) throws {
         guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
             throw GitIgnoreError.SourceGitIgnoreNotFound
         }
         
-        let fm = NSFileManager.defaultManager()
         let path = toPath.path!
         let destinationFullPath = path.appendPathComponent(MagicStrings.GITIGNORE_EXTENSION)
         
         // first backup existing .gitignore
+        let fm = NSFileManager.defaultManager()
         if(fm.checkIfFileExists(destinationFullPath)) {
             let backupFilePath = path.appendPathComponent("\(MagicStrings.GITIGNORE_BACKUP_NAME)\(MagicStrings.GITIGNORE_EXTENSION)")
             try fm.moveItemAtPath(destinationFullPath, toPath: backupFilePath)
             DDLogInfo("Found and copied old .gitignore file to \(backupFilePath)")
         }
         
-        let gitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
+        let netGitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
         let headerBrand = MagicStrings.createGitIgnoreFileHeaderBrand(id)
-        let contents = "\(headerBrand)\n\(gitIgnoreContents)"
+        
+        let contents = "\(headerBrand)\n\(netGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
         DDLogVerbose("Successfully copied \(id) .gitignore to \(destinationFullPath)")
-        return true
     }
     
-    func appendGitIgnoreWithId(id:String, toPath: NSURL) {
-        DDLogVerbose(id)
+    func appendGitIgnoreWithId(id:String, toPath: NSURL) throws {
+        guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
+            throw GitIgnoreError.SourceGitIgnoreNotFound
+        }
+        
+        let destinationFullPath = toPath.path!.appendPathComponent(MagicStrings.GITIGNORE_EXTENSION)
+        let existingGitIgnoreContents = try String(contentsOfFile: destinationFullPath)
+        
+        let newGitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
+        let headerBrand = MagicStrings.createGitIgnoreFileHeaderBrand(id)
+        
+        let contents = "\(existingGitIgnoreContents)\n\n\(headerBrand)\n\(newGitIgnoreContents)"
+        try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
+        DDLogVerbose("Successfully appended \(id) .gitignore to \(destinationFullPath)")
     }
 }
