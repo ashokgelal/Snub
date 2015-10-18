@@ -1,4 +1,5 @@
 PODS:
+  - Async (1.3.1)
   - CocoaLumberjack (2.1.0-beta):
     - CocoaLumberjack/Default (= 2.1.0-beta)
     - CocoaLumberjack/Extensions (= 2.1.0-beta)
@@ -11,20 +12,27 @@ PODS:
   - SwiftRegExp (1.2)
 
 DEPENDENCIES:
+  - Async (from `https://github.com/JohnCoates/Async.git`)
   - CocoaLumberjack (= 2.1.0-beta)
   - PDKTZipArchive (from `https://github.com/ashokgelal/PDKTZipArchive`)
   - SwiftRegExp (~> 1.0)
 
 EXTERNAL SOURCES:
+  Async:
+    :git: https://github.com/JohnCoates/Async.git
   PDKTZipArchive:
     :git: https://github.com/ashokgelal/PDKTZipArchive
 
 CHECKOUT OPTIONS:
+  Async:
+    :commit: 23d9de3675f8357e7ad7d4c8b8b7d7caf9b73570
+    :git: https://github.com/JohnCoates/Async.git
   PDKTZipArchive:
     :commit: d123ebf984d610b6d7e5a340797cd55a8c118cf7
     :git: https://github.com/ashokgelal/PDKTZipArchive
 
 SPEC CHECKSUMS:
+  Async: 2aaa4263645846a8ea1c5829067fb2f8e694af36
   CocoaLumberjack: 89ff78bbc0723eec8f761f1274993e0699facab8
   PDKTZipArchive: 60211ac8eb1655ef23001b450de1f55b3fbfeac7
   SwiftRegExp: a59efb97a7e33f302e82312fd8c8644ac6e8da97

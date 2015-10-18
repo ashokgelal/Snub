@@ -8,6 +8,7 @@
 
 import Cocoa
 import CocoaLumberjack
+import Async
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -37,7 +38,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         contentPopover.animates = false
         contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
         setupEventMonitor()
-        GitIgnoreFileManager.instance
+        
+        Async.background {
+            GitIgnoreFileManager.instance
+        }
     }
     
     func setupEventMonitor() {

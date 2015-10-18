@@ -7,24 +7,30 @@
 //
 
 import Cocoa
+import Async
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBInspectable var cellIdentifier: String!
     @IBOutlet weak var tableView: NSTableView!
+    var selectedFolders: [NSURL] = []
     
     var gitIgnoreItems: [GitIgnoreFileItem] = [] {
-        didSet {
-            tableView.reloadData()
-        }
+        didSet { tableView.reloadData() }
     }
     
-    var selectedFolders: [NSURL] = [] {
-        didSet {
-            if selectedFolders.count > 0 {
-                gitIgnoreItems = GitIgnoreFileManager.instance.fetchMasterGitIgnoreItems()
-            } else {
-                gitIgnoreItems = []
+    func loadSelectedFolders(selectedFolders: [NSURL]) {
+        if selectedFolders.count > 0 {
+            var items: [GitIgnoreFileItem] = []
+            progressIndicator.startAnimation(self)
+            Async.background {
+                items = GitIgnoreFileManager.instance.fetchMasterGitIgnoreItems()
+            }.main { [unowned self] in
+                self.gitIgnoreItems = items
+                self.progressIndicator.stopAnimation(self)
             }
+        } else {
+            gitIgnoreItems = []
         }
     }
 }

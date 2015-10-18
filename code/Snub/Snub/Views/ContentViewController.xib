@@ -9,6 +9,7 @@
                 <outlet property="currentGitIgnoreLbl" destination="mag-gv-85S" id="svq-uX-vJO"/>
                 <outlet property="gitIgnoreSelectionTab" destination="Ghs-fk-XmR" id="OmT-nZ-m1N"/>
                 <outlet property="masterGitIgnoreTabViewItemController" destination="XBC-Nv-pls" id="2yu-dW-v0z"/>
+                <outlet property="progressIndicator" destination="xid-vf-TYT" id="uJ1-Q1-Dbe"/>
                 <outlet property="selectedPathBtn" destination="mdh-OU-72G" id="3NW-G4-VB0"/>
                 <outlet property="suggestedTabViewItemController" destination="1c2-7m-Gav" id="Qwa-Qk-QCb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -20,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="292" height="329"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xid-vf-TYT">
+                <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xid-vf-TYT">
                     <rect key="frame" x="220" y="303" width="16" height="16"/>
                     <animations/>
                 </progressIndicator>
@@ -50,7 +51,7 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7sE-ms-Lgj">
-                    <rect key="frame" x="14" y="237" width="42" height="16"/>
+                    <rect key="frame" x="6" y="237" width="42" height="16"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current" id="lql-eS-Cyz">
                         <font key="font" size="12" name=".HelveticaNeueDeskInterface-Thin"/>
@@ -121,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="uTM-1X-Dxz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="148"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <animations/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -361,8 +362,11 @@
                 </tabView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mdh-OU-72G">
                     <rect key="frame" x="8" y="268" width="276" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="276" id="Udp-2j-ldD"/>
+                    </constraints>
                     <animations/>
-                    <buttonCell key="cell" type="bevel" title="/Applications/Snub.app" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="A7l-OP-5B9">
+                    <buttonCell key="cell" type="bevel" title="/Applications/Snub.app" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingHead" imageScaling="proportionallyDown" inset="2" id="A7l-OP-5B9">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -371,7 +375,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
-                    <rect key="frame" x="18" y="212" width="132" height="17"/>
+                    <rect key="frame" x="6" y="212" width="132" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="[No folders selected]" id="kO0-4e-pIL">
                         <font key="font" metaFont="system"/>
@@ -388,7 +392,7 @@
                 <constraint firstItem="YGN-8m-bRi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mag-gv-85S" secondAttribute="trailing" constant="8" id="CM6-Ai-oiw"/>
                 <constraint firstItem="mag-gv-85S" firstAttribute="top" secondItem="7sE-ms-Lgj" secondAttribute="bottom" constant="8" id="Ih9-Zk-MUW"/>
                 <constraint firstAttribute="trailing" secondItem="Ghs-fk-XmR" secondAttribute="trailing" id="Ld8-aY-Wld"/>
-                <constraint firstItem="mag-gv-85S" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Mon-QV-4Uc"/>
+                <constraint firstItem="mag-gv-85S" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="Mon-QV-4Uc"/>
                 <constraint firstItem="TKs-AX-vHQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="NkM-xm-wh4"/>
                 <constraint firstAttribute="trailing" secondItem="TKs-AX-vHQ" secondAttribute="trailing" id="OjN-ta-vhL"/>
                 <constraint firstItem="Dkf-Jq-wBR" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="PGg-Db-Ic7"/>
@@ -400,7 +404,7 @@
                 <constraint firstItem="mdh-OU-72G" firstAttribute="top" secondItem="ejS-ey-tWz" secondAttribute="bottom" constant="1" id="b4j-fw-Caj"/>
                 <constraint firstAttribute="trailing" secondItem="YGN-8m-bRi" secondAttribute="trailing" constant="8" id="czX-6S-6dK"/>
                 <constraint firstItem="7sE-ms-Lgj" firstAttribute="top" secondItem="TKs-AX-vHQ" secondAttribute="bottom" constant="8" id="fqq-gQ-KdO"/>
-                <constraint firstItem="7sE-ms-Lgj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="gNV-zc-VPg"/>
+                <constraint firstItem="7sE-ms-Lgj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="gNV-zc-VPg"/>
                 <constraint firstItem="TKs-AX-vHQ" firstAttribute="top" secondItem="mdh-OU-72G" secondAttribute="bottom" constant="6" id="gq1-Ko-0Nz"/>
                 <constraint firstAttribute="bottom" secondItem="Ghs-fk-XmR" secondAttribute="bottom" id="kJg-nh-nrs"/>
                 <constraint firstItem="mLn-xp-phb" firstAttribute="top" secondItem="mag-gv-85S" secondAttribute="bottom" constant="9" id="mGI-OE-XDA"/>
@@ -416,6 +420,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="suggestedGitIgnoreRowView"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="progressIndicator" destination="xid-vf-TYT" id="DXv-eS-x16"/>
                 <outlet property="tableView" destination="uTM-1X-Dxz" id="Edj-pL-DvI"/>
                 <outlet property="view" destination="Lg3-6K-oBh" id="CYJ-fN-tgH"/>
             </connections>
@@ -425,6 +430,7 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="masterGitIgnoreRowView"/>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="progressIndicator" destination="xid-vf-TYT" id="gaj-Np-tnq"/>
                 <outlet property="tableView" destination="mXf-aZ-KH2" id="wpO-In-THO"/>
                 <outlet property="view" destination="oqS-Mp-guq" id="Qkw-hg-5D2"/>
             </connections>

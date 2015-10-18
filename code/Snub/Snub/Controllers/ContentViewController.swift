@@ -7,8 +7,10 @@
 //
 
 import Cocoa
+import Async
 
 class ContentViewController: NSViewController {
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var gitIgnoreSelectionTab: NSTabView!
     @IBOutlet weak var selectedPathBtn: NSButton!
     @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
@@ -20,17 +22,23 @@ class ContentViewController: NSViewController {
     override func viewDidAppear() {
         let selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
         showSelectedFolder(selectedFolders)
-        if(selectedFolders.count > 0) {
+        guard selectedFolders.count > 0 else {
+            currentGitIgnoreLbl.stringValue = "[No folders selected]"
+            return
+        }
+        var gitIgnoreFilesWithTheirPaths: [NSURL:NSURL?] = [:]
+        progressIndicator.startAnimation(self)
+        Async.background {
             do {
-                let gitIgnoreFilesWithTheirPaths = try GitIgnoreTypeDetector.instance.detect(selectedFolders)
-                currentGitIgnoreFilePaths = displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
-                suggestedTabViewItemController.selectedFolders = selectedFolders
-                masterGitIgnoreTabViewItemController.selectedFolders = selectedFolders
+                gitIgnoreFilesWithTheirPaths = try GitIgnoreTypeDetector.instance.detect(selectedFolders)
             } catch let error as NSError {
                 DDLogError("Error detecting .gitignore types: \(error.localizedDescription)")
             }
-        } else {
-            currentGitIgnoreLbl.stringValue = "[No folders selected]"
+        }.main { [unowned self] in
+            self.progressIndicator.stopAnimation(self)
+            self.suggestedTabViewItemController.loadSelectedFolders(selectedFolders)
+            self.masterGitIgnoreTabViewItemController.loadSelectedFolders(selectedFolders)
+            self.currentGitIgnoreFilePaths = self.displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
         }
     }
     
