@@ -11,6 +11,7 @@ import Async
 
 class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
     override func loadSelectedFolders(selectedFolders: [NSURL]) {
+        self.selectedFolders = selectedFolders
         var items: [GitIgnoreFileItem] = []
         progressIndicator.startAnimation(self)
         Async.background { [unowned self] in

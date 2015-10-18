@@ -25,6 +25,7 @@ class MasterGitIgnoreTabViewItemController: NSViewController {
     }
     
     func loadSelectedFolders(selectedFolders: [NSURL]) {
+        self.selectedFolders = selectedFolders
         if selectedFolders.count > 0 {
             var items: [GitIgnoreFileItem] = []
             progressIndicator.startAnimation(self)
