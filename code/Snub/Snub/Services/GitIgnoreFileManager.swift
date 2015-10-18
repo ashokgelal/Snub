@@ -31,7 +31,6 @@ class GitIgnoreFileManager {
         }
     }
     
-    
     private func setupApplicationSupportDirectory() -> String {
         let fm = NSFileManager.defaultManager()
         let appDirectoryPath = fm.getApplicationDirectoryPath()

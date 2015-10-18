@@ -80,6 +80,15 @@ extension ContentViewController {
     }
     
     @IBAction func deleteCurrent(sender: AnyObject) {
+        currentGitIgnoreFilePaths.forEach {
+            let path = $0!.path!
+            do {
+                try NSFileManager.defaultManager().trashItemAtURL($0!, resultingItemURL: nil)
+                DDLogVerbose("Deleted file \(path)")
+            } catch let error as NSError {
+                DDLogWarn("Error deleting file \(path): \(error.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func editCurrent(sender: AnyObject) {
