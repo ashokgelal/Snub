@@ -62,6 +62,7 @@ class ContentViewController: NSViewController {
             selectedPathBtn.enabled = true
         }
         selectedPathBtn.title = outputVal
+        selectedPathBtn.toolTip = outputVal
     }
     
     private func displayCurrentGitIgnoreValues(ignoreDict : [NSURL: NSURL?]) -> Array<NSURL?> {
@@ -83,6 +84,7 @@ class ContentViewController: NSViewController {
             outputVal = "Multiple .gitignore files detected"
         }
         currentGitIgnoreLbl.stringValue = outputVal
+        currentGitIgnoreLbl.toolTip = outputVal
         return filePaths
     }
 }

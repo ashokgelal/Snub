@@ -379,7 +379,7 @@
                         <constraint firstAttribute="width" constant="276" id="Udp-2j-ldD"/>
                     </constraints>
                     <animations/>
-                    <buttonCell key="cell" type="bevel" title="/Applications/Snub.app" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingHead" imageScaling="proportionallyDown" inset="2" id="A7l-OP-5B9">
+                    <buttonCell key="cell" type="bevel" title="/Applications/Snub.app" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingMiddle" imageScaling="proportionallyDown" inset="2" id="A7l-OP-5B9">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -390,7 +390,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mag-gv-85S">
                     <rect key="frame" x="6" y="212" width="132" height="17"/>
                     <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="[No folders selected]" id="kO0-4e-pIL">
+                    <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="[No folders selected]" id="kO0-4e-pIL">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
