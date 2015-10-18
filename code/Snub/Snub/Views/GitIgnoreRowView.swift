@@ -13,9 +13,9 @@ class GitIgnoreRowView: NSTableCellView {
     @IBOutlet weak var addMenuItem: NSMenuItem!
     @IBOutlet weak var appendMenuItem: NSMenuItem!
     
-    var projectDetectionResult: ProjectDetectionResult! {
+    var gitIgnoreItem: GitIgnoreFileItem! {
         didSet {
-            textField!.stringValue = projectDetectionResult.projectType
+            textField!.stringValue = gitIgnoreItem.name
         }
     }
 }
@@ -23,10 +23,10 @@ class GitIgnoreRowView: NSTableCellView {
 // Mark: Menu Actions
 extension GitIgnoreRowView {
     @IBAction func add(sender: AnyObject?) {
-        rowViewDelegate?.performAdd?(projectDetectionResult)
+        rowViewDelegate?.performAdd?(gitIgnoreItem)
     }
     
     @IBAction func append(sender: AnyObject?) {
-        rowViewDelegate?.performAppend?(projectDetectionResult)
+        rowViewDelegate?.performAppend?(gitIgnoreItem)
     }
 }

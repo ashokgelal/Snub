@@ -8,14 +8,11 @@
 
 import Foundation
 
-class ProjectDetectionResult: NSObject {
-    let projectType: String
+class ProjectDetectionResult: GitIgnoreFileItem {
     let confidencePercent: Double
-    let id: String
     
-    init(id: String, projectType: String, confidencePercent: Double) {
-        self.id = id
-        self.projectType = projectType
+    init(id: String, name: String, confidencePercent: Double) {
         self.confidencePercent = confidencePercent
+        super.init(id: id, name: name)
     }
 }

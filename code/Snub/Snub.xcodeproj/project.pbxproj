@@ -23,6 +23,8 @@
 		CD476C571BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C4F1BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CD476C581BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C501BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CD476C591BD32A7A001CDFA8 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C5B1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C5A1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
+		CD476C5D1BD3349C001CDFA8 /* GitIgnoreFileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD476C5C1BD3349C001CDFA8 /* GitIgnoreFileItem.swift */; settings = {ASSET_TAGS = (); }; };
 		CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */; };
 		CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */; };
 		CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */; };
@@ -79,6 +81,8 @@
 		CD476C4F1BD32A7A001CDFA8 /* VisualStudioCodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioCodeProjectDetector.swift; sourceTree = "<group>"; };
 		CD476C501BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualStudioProjectDetector.swift; sourceTree = "<group>"; };
 		CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProjectDetector.swift; sourceTree = "<group>"; };
+		CD476C5A1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterGitIgnoreTabViewItemController.swift; sourceTree = "<group>"; };
+		CD476C5C1BD3349C001CDFA8 /* GitIgnoreFileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileItem.swift; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				CD476C3E1BD32869001CDFA8 /* ProjectDetectionResult.swift */,
 				CD476C411BD32894001CDFA8 /* Enums.swift */,
 				CD476C431BD328DC001CDFA8 /* Protocols.swift */,
+				CD476C5C1BD3349C001CDFA8 /* GitIgnoreFileItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			children = (
 				CDD22D641BCF538E00308400 /* ContentViewController.swift */,
 				CD11D8CE1BD2E3BD00E4D141 /* SuggestedTabViewItemController.swift */,
+				CD476C5A1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -474,6 +480,8 @@
 				CD476C3B1BD327BE001CDFA8 /* GitIgnoreFileFinder.swift in Sources */,
 				CD476C3F1BD32869001CDFA8 /* MagicStrings.swift in Sources */,
 				CD476C581BD32A7A001CDFA8 /* VisualStudioProjectDetector.swift in Sources */,
+				CD476C5B1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift in Sources */,
+				CD476C5D1BD3349C001CDFA8 /* GitIgnoreFileItem.swift in Sources */,
 				CD476C421BD32894001CDFA8 /* Enums.swift in Sources */,
 				CD702EF61BD19CDB00C97076 /* GitIgnoreTypeDetector.swift in Sources */,
 				CDD22D651BCF538E00308400 /* ContentViewController.swift in Sources */,

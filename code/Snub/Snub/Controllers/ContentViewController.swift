@@ -13,6 +13,7 @@ class ContentViewController: NSViewController {
     @IBOutlet weak var selectedPathLbl: NSTextField!
     @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
     @IBOutlet var suggestedTabViewItemController: SuggestedTabViewItemController!
+    @IBOutlet var masterGitIgnoreTabViewItemController: MasterGitIgnoreTabViewItemController!
     
     override func viewDidAppear() {
         let selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
@@ -20,6 +21,7 @@ class ContentViewController: NSViewController {
         let gitIgnoreFilesWithTheirPaths = detectGitIgnores(selectedFolders)
         displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
         suggestedTabViewItemController.selectedFolders = selectedFolders
+        masterGitIgnoreTabViewItemController.selectedFolders = selectedFolders
     }
     
     private func showSelectedFolder(selectedFolders: [NSURL]) {
@@ -56,7 +58,6 @@ class ContentViewController: NSViewController {
         }
         currentGitIgnoreLbl.stringValue = outputVal
     }
-
 }
 
 // MARK: Setting Actions

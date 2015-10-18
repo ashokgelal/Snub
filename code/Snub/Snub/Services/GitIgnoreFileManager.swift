@@ -31,9 +31,9 @@ class GitIgnoreFileManager {
         }
     }
     
-    func getAllGitIgnoreFilePaths() -> [NSURL] {
+    private func getAllGitIgnoreFilePaths() -> [NSURL] {
         let fm = NSFileManager.defaultManager()
-        let unzippedPath = (fm.getApplicationDirectoryPath() as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
+        let unzippedPath = fm.getApplicationDirectoryPath().appendPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         let enumerator = fm.enumeratorAtPath(unzippedPath)
         var fileURLs:[NSURL] = []
         while let element = enumerator?.nextObject() as? String {
@@ -101,5 +101,15 @@ class GitIgnoreFileManager {
         let contents = "\(existingGitIgnoreContents)\n\n\(headerBrand)\n\(newGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
         DDLogVerbose("Successfully appended \(id) .gitignore to \(destinationFullPath)")
+    }
+    
+    func fetchMasterGitIgnoreItems() -> [GitIgnoreFileItem] {
+        // TODO: make this lazy
+        let gitIgnoreFiles = getAllGitIgnoreFilePaths()
+        return gitIgnoreFiles.map {
+            file -> GitIgnoreFileItem in
+            let name = file.path!.fileName()
+            return GitIgnoreFileItem(id: name, name: name)
+        }
     }
 }

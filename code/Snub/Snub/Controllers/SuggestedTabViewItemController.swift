@@ -8,28 +8,22 @@
 
 import Cocoa
 
-class SuggestedTabViewItemController: NSViewController {
-    @IBInspectable var cellIdentifier: String!
-    @IBOutlet weak var tableView: NSTableView!
+class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
     
-    var selectedFolders: [NSURL] = [] {
+    override var selectedFolders: [NSURL] {
         didSet {
             determineSuggestedProjectTypes(selectedFolders)
         }
     }
     
-    private var projectDetectionResults: [ProjectDetectionResult] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    override func viewDidAppear() { }
     
     private func determineSuggestedProjectTypes(selectedFolders : [NSURL]) {
         var outputVal = "[Couldn't determine project type]"
         if selectedFolders.count == 1 {
             do {
-                projectDetectionResults = try ProjectDetector.instance.identify(selectedFolders.first!)
-                if(projectDetectionResults.count > 0) {
+                gitIgnoreItems = try ProjectDetector.instance.identify(selectedFolders.first!)
+                if(gitIgnoreItems.count > 0) {
                     outputVal = "Was able to determine project types"
                 }
             } catch let error as NSError {
@@ -42,56 +36,3 @@ class SuggestedTabViewItemController: NSViewController {
     }
 }
 
-// MARK: Table View Delegates
-extension SuggestedTabViewItemController: NSTableViewDelegate, NSTableViewDataSource  {
-    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        return projectDetectionResults.count
-    }
-    
-    func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        return false
-    }
-    
-    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as? GitIgnoreRowView else {
-            return nil
-        }
-        let result = projectDetectionResults[row]
-        cell.projectDetectionResult = result
-        cell.rowViewDelegate = self
-        return cell
-    }
-}
-
-// MARK: Row View Delegates
-extension SuggestedTabViewItemController: GitIgnoreRowViewDelegate {
-    func performAdd(result: ProjectDetectionResult) {
-        // todo: show spinner
-        selectedFolders.forEach {
-            url in
-            do {
-                try GitIgnoreFileManager.instance.addGitIgnoreWithId(result.id, toPath: url)
-            } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                DDLogError("Didn't find source .gitignore with id: \(result.id)")
-            } catch let error as NSError {
-                DDLogError("Error adding .gitignore: \(error.localizedDescription)")
-            }
-        }
-        // todo: show success
-    }
-    
-    func performAppend(result: ProjectDetectionResult) {
-        // todo: show spinner
-        selectedFolders.forEach {
-            url in
-            do {
-                try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: url)
-            } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                DDLogError("Didn't find source .gitignore with id: \(result.id)")
-            } catch let error as NSError {
-                DDLogError("Error appending .gitignore: \(error.localizedDescription)")
-            }
-        }
-        // todo: show success
-    }
-}

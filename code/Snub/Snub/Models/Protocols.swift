@@ -14,6 +14,6 @@ protocol ProjectTypeDetector {
 
 // Mark: Protocols
 @objc protocol GitIgnoreRowViewDelegate {
-    optional func performAdd(sender: ProjectDetectionResult)
-    optional func performAppend(sender: ProjectDetectionResult)
+    optional func performAdd(sender: GitIgnoreFileItem)
+    optional func performAppend(sender: GitIgnoreFileItem)
 }

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="currentGitIgnoreLbl" destination="mag-gv-85S" id="svq-uX-vJO"/>
                 <outlet property="gitIgnoreSelectionTab" destination="Ghs-fk-XmR" id="OmT-nZ-m1N"/>
+                <outlet property="masterGitIgnoreTabViewItemController" destination="XBC-Nv-pls" id="2yu-dW-v0z"/>
                 <outlet property="selectedPathLbl" destination="KIl-Ys-kjI" id="WOY-k0-MWd"/>
                 <outlet property="suggestedTabViewItemController" destination="1c2-7m-Gav" id="Qwa-Qk-QCb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -220,12 +221,12 @@
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="rQl-Yr-dSc">
                                             <rect key="frame" x="0.0" y="140" width="276" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nAR-fL-2zj">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="nAR-fL-2zj">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
@@ -282,7 +283,7 @@
                                                             </textFieldCell>
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
-                                                                <tableCellView id="U1d-8r-L0g" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
+                                                                <tableCellView identifier="masterGitIgnoreRowView" id="U1d-8r-L0g" customClass="GitIgnoreRowView" customModule="Snub" customModuleProvider="target">
                                                                     <rect key="frame" x="1" y="1" width="273" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -337,18 +338,22 @@
                                                             </prototypeCellViews>
                                                         </tableColumn>
                                                     </tableColumns>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="XBC-Nv-pls" id="llj-nh-ckM"/>
+                                                        <outlet property="delegate" destination="XBC-Nv-pls" id="y4u-Zo-0f4"/>
+                                                    </connections>
                                                 </tableView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
                                             <rect key="frame" x="0.0" y="-15" width="0.0" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
-                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="EzM-Y7-1zb">
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="EzM-Y7-1zb">
                                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
@@ -407,6 +412,16 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="tableView" destination="uTM-1X-Dxz" id="Edj-pL-DvI"/>
+                <outlet property="view" destination="Lg3-6K-oBh" id="CYJ-fN-tgH"/>
+            </connections>
+        </customObject>
+        <customObject id="XBC-Nv-pls" customClass="MasterGitIgnoreTabViewItemController" customModule="Snub" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="masterGitIgnoreRowView"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="tableView" destination="mXf-aZ-KH2" id="wpO-In-THO"/>
+                <outlet property="view" destination="oqS-Mp-guq" id="Qkw-hg-5D2"/>
             </connections>
         </customObject>
     </objects>
