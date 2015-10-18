@@ -11,6 +11,7 @@
                 <outlet property="masterGitIgnoreTabViewItemController" destination="XBC-Nv-pls" id="2yu-dW-v0z"/>
                 <outlet property="progressIndicator" destination="xid-vf-TYT" id="uJ1-Q1-Dbe"/>
                 <outlet property="selectedPathBtn" destination="mdh-OU-72G" id="3NW-G4-VB0"/>
+                <outlet property="statusImage" destination="1EO-Ob-C8U" id="IwY-pV-sN3"/>
                 <outlet property="suggestedTabViewItemController" destination="1c2-7m-Gav" id="Qwa-Qk-QCb"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -22,9 +23,18 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="xid-vf-TYT">
-                    <rect key="frame" x="220" y="303" width="16" height="16"/>
+                    <rect key="frame" x="192" y="303" width="16" height="16"/>
                     <animations/>
                 </progressIndicator>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1EO-Ob-C8U">
+                    <rect key="frame" x="216" y="301" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="iVt-4v-HC4"/>
+                        <constraint firstAttribute="width" constant="20" id="yJr-fE-vYz"/>
+                    </constraints>
+                    <animations/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="checkIcon" id="kZP-Xe-eFz"/>
+                </imageView>
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ey-tWz">
                     <rect key="frame" x="244" y="301" width="40" height="20"/>
                     <animations/>
@@ -337,7 +347,7 @@
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                         </clipView>
                                         <animations/>
-                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bv4-9K-ihI">
                                             <rect key="frame" x="0.0" y="110" width="276" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
@@ -389,11 +399,10 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mLn-xp-phb" secondAttribute="trailing" id="2ad-92-2sV"/>
-                <constraint firstItem="xid-vf-TYT" firstAttribute="centerY" secondItem="ejS-ey-tWz" secondAttribute="centerY" id="5EO-n8-EP7"/>
                 <constraint firstItem="Ghs-fk-XmR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="6zI-qr-Rtk"/>
-                <constraint firstItem="ejS-ey-tWz" firstAttribute="leading" secondItem="xid-vf-TYT" secondAttribute="trailing" constant="8" id="8ip-z7-gZZ"/>
                 <constraint firstItem="YGN-8m-bRi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mag-gv-85S" secondAttribute="trailing" constant="8" id="CM6-Ai-oiw"/>
                 <constraint firstItem="mag-gv-85S" firstAttribute="top" secondItem="7sE-ms-Lgj" secondAttribute="bottom" constant="8" id="Ih9-Zk-MUW"/>
+                <constraint firstItem="xid-vf-TYT" firstAttribute="centerY" secondItem="1EO-Ob-C8U" secondAttribute="centerY" id="K8T-kJ-OLN"/>
                 <constraint firstAttribute="trailing" secondItem="Ghs-fk-XmR" secondAttribute="trailing" id="Ld8-aY-Wld"/>
                 <constraint firstItem="mag-gv-85S" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="Mon-QV-4Uc"/>
                 <constraint firstItem="TKs-AX-vHQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="NkM-xm-wh4"/>
@@ -404,6 +413,7 @@
                 <constraint firstAttribute="trailing" secondItem="mdh-OU-72G" secondAttribute="trailing" constant="8" id="Rvg-tV-94Q"/>
                 <constraint firstItem="Dkf-Jq-wBR" firstAttribute="top" secondItem="mLn-xp-phb" secondAttribute="bottom" constant="8" id="T5n-4a-vhD"/>
                 <constraint firstItem="ejS-ey-tWz" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="TkV-bg-Il3"/>
+                <constraint firstItem="1EO-Ob-C8U" firstAttribute="leading" secondItem="xid-vf-TYT" secondAttribute="trailing" constant="8" id="aQ9-rr-OXL"/>
                 <constraint firstItem="mdh-OU-72G" firstAttribute="top" secondItem="ejS-ey-tWz" secondAttribute="bottom" constant="1" id="b4j-fw-Caj"/>
                 <constraint firstAttribute="trailing" secondItem="YGN-8m-bRi" secondAttribute="trailing" constant="8" id="czX-6S-6dK"/>
                 <constraint firstItem="7sE-ms-Lgj" firstAttribute="top" secondItem="TKs-AX-vHQ" secondAttribute="bottom" constant="8" id="fqq-gQ-KdO"/>
@@ -414,6 +424,8 @@
                 <constraint firstItem="mLn-xp-phb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="nqx-z6-yFB"/>
                 <constraint firstItem="mdh-OU-72G" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="uOe-T3-fqv"/>
                 <constraint firstItem="YGN-8m-bRi" firstAttribute="centerY" secondItem="mag-gv-85S" secondAttribute="centerY" id="wb2-ub-d9H"/>
+                <constraint firstItem="ejS-ey-tWz" firstAttribute="leading" secondItem="1EO-Ob-C8U" secondAttribute="trailing" constant="8" symbolic="YES" id="x7M-t3-cgg"/>
+                <constraint firstItem="1EO-Ob-C8U" firstAttribute="centerY" secondItem="ejS-ey-tWz" secondAttribute="centerY" id="yRS-P7-m6J"/>
             </constraints>
             <animations/>
             <point key="canvasLocation" x="385" y="435.5"/>
@@ -442,6 +454,7 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="checkIcon" width="20" height="20"/>
         <image name="gearIcon" width="16" height="16"/>
     </resources>
 </document>

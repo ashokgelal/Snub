@@ -17,6 +17,7 @@ class ContentViewController: NSViewController {
     @IBOutlet var suggestedTabViewItemController: SuggestedTabViewItemController!
     @IBOutlet var masterGitIgnoreTabViewItemController: MasterGitIgnoreTabViewItemController!
     
+    @IBOutlet weak var statusImage: NSImageView!
     private var currentGitIgnoreFilePaths: Array<NSURL?> = []
     
     override func viewDidAppear() {
@@ -34,11 +35,11 @@ class ContentViewController: NSViewController {
             } catch let error as NSError {
                 DDLogError("Error detecting .gitignore types: \(error.localizedDescription)")
             }
-        }.main { [unowned self] in
-            self.progressIndicator.stopAnimation(self)
-            self.suggestedTabViewItemController.loadSelectedFolders(selectedFolders)
-            self.masterGitIgnoreTabViewItemController.loadSelectedFolders(selectedFolders)
-            self.currentGitIgnoreFilePaths = self.displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
+            }.main { [unowned self] in
+                self.progressIndicator.stopAnimation(self)
+                self.suggestedTabViewItemController.loadSelectedFolders(selectedFolders)
+                self.masterGitIgnoreTabViewItemController.loadSelectedFolders(selectedFolders)
+                self.currentGitIgnoreFilePaths = self.displayCurrentGitIgnoreValues(gitIgnoreFilesWithTheirPaths)
         }
     }
     
@@ -106,14 +107,29 @@ extension ContentViewController {
     }
     
     @IBAction func deleteCurrent(sender: AnyObject) {
+        var succeeded = false
         currentGitIgnoreFilePaths.forEach {
             let path = $0!.path!
             do {
                 try NSFileManager.defaultManager().trashItemAtURL($0!, resultingItemURL: nil)
+                succeeded = true
                 DDLogVerbose("Deleted file \(path)")
             } catch let error as NSError {
+                succeeded = false
                 DDLogWarn("Error deleting file \(path): \(error.localizedDescription)")
             }
+        }
+        if succeeded {
+            statusImage.image = NSImage(named: "checkIcon")
+            statusImage.toolTip = "Successfully deleted \(currentGitIgnoreFilePaths.count) .gitignore(s)"
+        } else {
+            statusImage.image = NSImage(named: "crossIcon")
+            statusImage.toolTip = "Error deleting \(currentGitIgnoreFilePaths.count) .gitignore(s)"
+        }
+        statusImage.animator().hidden = false
+        Async.main(after: 5) { [unowned self] in
+            self.statusImage.animator().hidden = true
+            self.statusImage.toolTip = ""
         }
     }
     
