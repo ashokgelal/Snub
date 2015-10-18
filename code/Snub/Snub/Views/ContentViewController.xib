@@ -436,6 +436,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="progressIndicator" destination="xid-vf-TYT" id="DXv-eS-x16"/>
+                <outlet property="statusImage" destination="1EO-Ob-C8U" id="hdG-DJ-2r7"/>
                 <outlet property="tableView" destination="uTM-1X-Dxz" id="Edj-pL-DvI"/>
                 <outlet property="view" destination="Lg3-6K-oBh" id="CYJ-fN-tgH"/>
             </connections>
@@ -446,6 +447,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="progressIndicator" destination="xid-vf-TYT" id="gaj-Np-tnq"/>
+                <outlet property="statusImage" destination="1EO-Ob-C8U" id="VrU-mG-3eY"/>
                 <outlet property="tableView" destination="mXf-aZ-KH2" id="wpO-In-THO"/>
                 <outlet property="view" destination="oqS-Mp-guq" id="Qkw-hg-5D2"/>
             </connections>

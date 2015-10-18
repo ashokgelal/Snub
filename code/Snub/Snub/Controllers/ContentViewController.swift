@@ -115,7 +115,6 @@ extension ContentViewController {
                 succeeded = true
                 DDLogVerbose("Deleted file \(path)")
             } catch let error as NSError {
-                succeeded = false
                 DDLogWarn("Error deleting file \(path): \(error.localizedDescription)")
             }
         }
@@ -127,7 +126,7 @@ extension ContentViewController {
             statusImage.toolTip = "Error deleting \(currentGitIgnoreFilePaths.count) .gitignore(s)"
         }
         statusImage.animator().hidden = false
-        Async.main(after: 5) { [unowned self] in
+        delay(5) { [unowned self] in
             self.statusImage.animator().hidden = true
             self.statusImage.toolTip = ""
         }

@@ -11,9 +11,10 @@ import Async
 import FuzzySearch
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
-    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBInspectable var cellIdentifier: String!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var statusImage: NSImageView!
     
     var selectedFolders: [NSURL] = []
     var searchResults: [GitIgnoreFileItem] = [] {
@@ -66,40 +67,65 @@ extension MasterGitIgnoreTabViewItemController: NSTableViewDelegate, NSTableView
 extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
     func performAdd(result: GitIgnoreFileItem) {
         progressIndicator.startAnimation(self)
-        defer {
-            progressIndicator.stopAnimation(self)
-        }
+        var succeeded = false
         Async.background { [unowned self] in
             self.selectedFolders.forEach {
                 do {
                     try GitIgnoreFileManager.instance.addGitIgnoreWithId(result.id, toPath: $0)
+                    succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
                     DDLogError("Didn't find source .gitignore with id: \(result.id)")
                 } catch let error as NSError {
                     DDLogError("Error adding .gitignore: \(error.localizedDescription)")
                 }
             }
+        } .main { [unowned self] in
+            self.progressIndicator.stopAnimation(self)
+            if succeeded {
+                self.showStatusImage(true, tooltip: "Successfully added \(result.name) .gitignore")
+            } else {
+                self.showStatusImage(false, tooltip: "Error adding \(result.name) .gitignore")
+            }
         }
-        // todo: show success
     }
     
     func performAppend(result: GitIgnoreFileItem) {
         progressIndicator.startAnimation(self)
-        defer {
-            progressIndicator.stopAnimation(self)
-        }
+        var succeeded = false
         Async.background { [unowned self] in
             self.selectedFolders.forEach {
                 do {
                     try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: $0)
+                    succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
                     DDLogError("Didn't find source .gitignore with id: \(result.id)")
                 } catch let error as NSError {
                     DDLogError("Error appending .gitignore: \(error.localizedDescription)")
                 }
             }
+            }.main { [unowned self] in
+                self.progressIndicator.stopAnimation(self)
+                if succeeded {
+                    self.showStatusImage(true, tooltip: "Successfully appended \(result.name) .gitignore")
+                } else {
+                    self.showStatusImage(false, tooltip: "Error appending \(result.name) .gitignore")
+                }
         }
-        // todo: show success
+    }
+    
+    private func showStatusImage(isSuccessful: Bool, tooltip: String) {
+        if isSuccessful {
+            statusImage.image = NSImage(named: "checkIcon")
+        } else {
+            statusImage.image = NSImage(named: "crossIcon")
+        }
+        
+        statusImage.toolTip = tooltip
+        statusImage.animator().hidden = false
+        delay(5) { [unowned self] in
+            self.statusImage.animator().hidden = true
+            self.statusImage.toolTip = ""
+        }
     }
 }
 
@@ -115,8 +141,7 @@ extension MasterGitIgnoreTabViewItemController {
             searchResults = gitIgnoreItems
         } else {
             searchResults = gitIgnoreItems.filter {
-                item in
-                return FuzzySearch.score(originalString: item.name, stringToMatch: searchText, fuzziness: 0.8) > 0.5
+                return FuzzySearch.score(originalString: $0.name, stringToMatch: searchText, fuzziness: 0.8) > 0.5
             }
         }
     }
