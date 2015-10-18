@@ -31,19 +31,6 @@ class GitIgnoreFileManager {
         }
     }
     
-    private func getAllGitIgnoreFilePaths() -> [NSURL] {
-        let fm = NSFileManager.defaultManager()
-        let unzippedPath = fm.getApplicationDirectoryPath().appendPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
-        let enumerator = fm.enumeratorAtPath(unzippedPath)
-        var fileURLs:[NSURL] = []
-        while let element = enumerator?.nextObject() as? String {
-            if element.hasSuffix(MagicStrings.GITIGNORE_EXTENSION) {
-                let fullPath = (unzippedPath as NSString).stringByAppendingPathComponent(element)
-                fileURLs += [NSURL(fileURLWithPath: fullPath)]
-            }
-        }
-        return fileURLs
-    }
     
     private func setupApplicationSupportDirectory() -> String {
         let fm = NSFileManager.defaultManager()
@@ -104,12 +91,25 @@ class GitIgnoreFileManager {
     }
     
     func fetchMasterGitIgnoreItems() -> [GitIgnoreFileItem] {
-        // TODO: make this lazy
-        let gitIgnoreFiles = getAllGitIgnoreFilePaths()
-        return gitIgnoreFiles.map {
+        return allGitIgnoreFilePaths.map {
             file -> GitIgnoreFileItem in
             let name = file.path!.fileName()
             return GitIgnoreFileItem(id: name, name: name)
         }
     }
+    
+    private lazy var allGitIgnoreFilePaths: [NSURL] = {
+        let fm = NSFileManager.defaultManager()
+        let unzippedPath = fm.getApplicationDirectoryPath().appendPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
+        let enumerator = fm.enumeratorAtPath(unzippedPath)
+        var fileURLs:[NSURL] = []
+        while let element = enumerator?.nextObject() as? String {
+            if element.hasSuffix(MagicStrings.GITIGNORE_EXTENSION) {
+                let fullPath = (unzippedPath as NSString).stringByAppendingPathComponent(element)
+                fileURLs += [NSURL(fileURLWithPath: fullPath)]
+            }
+        }
+        print(fileURLs)
+        return fileURLs
+    }()
 }
