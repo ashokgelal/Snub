@@ -65,30 +65,38 @@ extension MasterGitIgnoreTabViewItemController: NSTableViewDelegate, NSTableView
 // MARK: Row View Delegates
 extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
     func performAdd(result: GitIgnoreFileItem) {
-        // todo: show spinner
-        selectedFolders.forEach {
-            url in
-            do {
-                try GitIgnoreFileManager.instance.addGitIgnoreWithId(result.id, toPath: url)
-            } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                DDLogError("Didn't find source .gitignore with id: \(result.id)")
-            } catch let error as NSError {
-                DDLogError("Error adding .gitignore: \(error.localizedDescription)")
+        progressIndicator.startAnimation(self)
+        defer {
+            progressIndicator.stopAnimation(self)
+        }
+        Async.background { [unowned self] in
+            self.selectedFolders.forEach {
+                do {
+                    try GitIgnoreFileManager.instance.addGitIgnoreWithId(result.id, toPath: $0)
+                } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                    DDLogError("Didn't find source .gitignore with id: \(result.id)")
+                } catch let error as NSError {
+                    DDLogError("Error adding .gitignore: \(error.localizedDescription)")
+                }
             }
         }
         // todo: show success
     }
     
     func performAppend(result: GitIgnoreFileItem) {
-        // todo: show spinner
-        selectedFolders.forEach {
-            url in
-            do {
-                try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: url)
-            } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                DDLogError("Didn't find source .gitignore with id: \(result.id)")
-            } catch let error as NSError {
-                DDLogError("Error appending .gitignore: \(error.localizedDescription)")
+        progressIndicator.startAnimation(self)
+        defer {
+            progressIndicator.stopAnimation(self)
+        }
+        Async.background { [unowned self] in
+            self.selectedFolders.forEach {
+                do {
+                    try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: $0)
+                } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                    DDLogError("Didn't find source .gitignore with id: \(result.id)")
+                } catch let error as NSError {
+                    DDLogError("Error appending .gitignore: \(error.localizedDescription)")
+                }
             }
         }
         // todo: show success
@@ -98,6 +106,10 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
 // MARK: Actions
 extension MasterGitIgnoreTabViewItemController {
     @IBAction func search(sender: NSTextField) {
+        progressIndicator.startAnimation(self)
+        defer {
+            progressIndicator.stopAnimation(self)
+        }
         let searchText = sender.stringValue
         if searchText == "" {
             searchResults = gitIgnoreItems
