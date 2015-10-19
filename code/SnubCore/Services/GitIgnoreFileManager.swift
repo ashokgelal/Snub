@@ -10,7 +10,7 @@ import Foundation
 import PDKTZipArchive
 
 public class GitIgnoreFileManager {
-    public static let instance = GitIgnoreFileManager()
+    public static let sharedInstance = GitIgnoreFileManager()
     
     private init() {
         let applicationSupportPath = setupApplicationSupportDirectory()

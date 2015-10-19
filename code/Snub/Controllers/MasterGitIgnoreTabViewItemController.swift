@@ -32,7 +32,7 @@ class MasterGitIgnoreTabViewItemController: NSViewController {
             var items: [GitIgnoreFileItem] = []
             progressIndicator.startAnimation(self)
             Async.background {
-                items = GitIgnoreFileManager.instance.fetchMasterGitIgnoreItems()
+                items = GitIgnoreFileManager.sharedInstance.fetchMasterGitIgnoreItems()
             }.main { [unowned self] in
                 self.gitIgnoreItems = items
                 self.progressIndicator.stopAnimation(self)
@@ -72,7 +72,7 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
         Async.background { [unowned self] in
             self.selectedFolders.forEach {
                 do {
-                    try GitIgnoreFileManager.instance.addGitIgnoreWithId(result.id, toPath: $0)
+                    try GitIgnoreFileManager.sharedInstance.addGitIgnoreWithId(result.id, toPath: $0)
                     succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
                     DDLogError("Didn't find source .gitignore with id: \(result.id)")
@@ -96,7 +96,7 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
         Async.background { [unowned self] in
             self.selectedFolders.forEach {
                 do {
-                    try GitIgnoreFileManager.instance.appendGitIgnoreWithId(result.id, toPath: $0)
+                    try GitIgnoreFileManager.sharedInstance.appendGitIgnoreWithId(result.id, toPath: $0)
                     succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
                     DDLogError("Didn't find source .gitignore with id: \(result.id)")

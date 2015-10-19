@@ -13,7 +13,7 @@ public class MagicStrings {
     public static let GITIGNORE_EXTENSION = ".gitignore"
     public static let GITIGNORE_BACKUP_NAME = "Snub.OldBackup"
     public static let MASTER_GITIGNORE_NAME = "gitignore-master"
-    public static let APPNAME = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String
+    public static let APPNAME = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String ?? "Snub"
     
     static func createGitIgnoreFileHeaderBrand(gitIgnoreType: String) -> String {
        return "# Snub created this #===#\(gitIgnoreType)#===# .gitignore file"

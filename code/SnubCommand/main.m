@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@import SnubCore;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        [[Bootstrapper sharedInstance] setupForCommandLine];
     }
     return 0;
 }

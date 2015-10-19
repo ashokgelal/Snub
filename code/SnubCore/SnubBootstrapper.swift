@@ -10,21 +10,29 @@ import Foundation
 import CocoaLumberjack
 import Async
 
-public class Bootstrapper {
+@objc public class Bootstrapper : NSObject {
+    public static let sharedInstance = Bootstrapper()
     
-    public init() {
+    private override init() {
+        super.init()
         setupLogger()
-        DDLogVerbose("Bootstrapper initialized")
     }
     
     private func setupLogger(){
-        defaultDebugLevel = DDLogLevel.Verbose
         DDLog.addLogger(DDASLLogger.sharedInstance())
         DDLog.addLogger(DDTTYLogger.sharedInstance())
         DDTTYLogger.sharedInstance().colorsEnabled = true
     }
     
-    public func setup() {
-        Async.background { GitIgnoreFileManager.instance }
+    public func setupForUI() {
+        defaultDebugLevel = DDLogLevel.Verbose
+        DDLogVerbose("Setting up Snub for UI");
+        Async.background { GitIgnoreFileManager.sharedInstance }
+    }
+    
+    public func setupForCommandLine() {
+        defaultDebugLevel = DDLogLevel.Error
+        DDLogVerbose("Setting up Snub for Command");
+        GitIgnoreFileManager.sharedInstance 
     }
 }

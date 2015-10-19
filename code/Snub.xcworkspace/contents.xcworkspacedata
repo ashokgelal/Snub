@@ -8,6 +8,9 @@
       location = "group:Snub/Snub.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:SnubCommand/SnubCommand.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -16,12 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var eventMonitor: EventMonitor?
     
     override init() {
-        bootstrapper = Bootstrapper()
+        bootstrapper = Bootstrapper.sharedInstance
         super.init()
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        bootstrapper.setup()
+        bootstrapper.setupForUI()
         setupPopover()
         DDLogVerbose("Application finish launching")
     }
