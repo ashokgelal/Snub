@@ -58,36 +58,106 @@ class CommandLineHandler {
         let suggest = BoolOption(shortFlag: "s", longFlag: "suggest", helpMessage: "Suggests an appropriate .gitignore type.")
         let create = StringOption(shortFlag: "c", longFlag: "create", helpMessage: "Creates a .gitignore. Backs up any existing .gitignore file.")
         let append = StringOption(shortFlag: "a", longFlag: "append", helpMessage: "Appends to the current .gitignore file if it already exists. Otherwise creates a new .gitignore file.")
-        let printFile = BoolOption(shortFlag: "p", longFlag: "print", helpMessage: "Prints a .gitignore file.")
-        let directory = StringOption(shortFlag: "d", longFlag: "directory", helpMessage: "Target/Destination directory. If not provided, uses current directory.")
+        let printOption = StringOption(shortFlag: "p", longFlag: "print", helpMessage: "Prints a .gitignore file.")
+        let target = StringOption(shortFlag: "t", longFlag: "target", helpMessage: "Target/Destination directory. If not provided, uses current directory.")
         let lucky = BoolOption(shortFlag: "🍀", longFlag: "lucky", helpMessage: "Feeling lucky? Adds the most appropriate .gitignore if possible.")
         let help = BoolOption(shortFlag: "h", longFlag: "help", helpMessage: "Prints this help message.")
-        cli.addOptions(list, suggest, create, append, printFile, directory, lucky, help)
-        
-        guard args.count > 1 else {
-            cli.printUsage()
-            return
-        }
+        cli.addOptions(list, suggest, create, append, printOption, target, lucky, help)
         
         do {
-            try cli.parse()
+            if args.count == 1 {
+                try handleSuggestion(NSURL(fileURLWithPath: "."), true)
+                print("Try -h for help")
+                return
+            }
+            
+            guard args.count > 1 else {
+                cli.printUsage()
+                return
+            }
+        
+            try cli.parse(true)
+            
+            guard let destination = getTargetDirectory(target) else {
+                print(ANSIColors.red + "Invalid target directory \(target.value!)")
+                return
+            }
+            
             if help.value {
                 cli.printUsage()
                 return
             }
+            
             if list.value {
                 let allItems = GitIgnoreFileManager.sharedInstance.fetchMasterGitIgnoreItems().map { $0.name }.joinWithSeparator(", ")
                 print(allItems)
                 return
             }
-            if create.wasSet {
-                print("Create: \(create.value)")
+            
+            if try handlePrint(printOption) {
+                return
             }
             
-            if args.count == 2 && args[1] == "." {
+            if try handleSuggestion(destination, suggest.value) {
+                return
             }
+            
+            try handleCreate(destination, create)
+            
         } catch {
             cli.printUsage()
         }
+    }
+    
+    private func handleSuggestion(_ destination: NSURL, _ suggest: Bool) throws -> Bool {
+        if suggest {
+            let result = try ProjectDetector.sharedInstance.identify(destination)
+            if result.count == 0 {
+                print(ANSIColors.red + "Snub couldn't suggest any .gitignore for \(destination.lastPathComponent!) directory")
+            } else {
+                let suggestions = result.map { $0.id }.joinWithSeparator("+")
+                print(ANSIColors.green + "Snub suggests: \(suggestions)")
+            }
+            return true
+        }
+        return false
+    }
+    
+    private func handleCreate(_ destination: NSURL, _ create: StringOption) throws {
+        if let id = create.value {
+            do {
+                let outputPath = try GitIgnoreFileManager.sharedInstance.addGitIgnoreWithId(id, toPath: destination)
+                print(ANSIColors.green + "Snub successfully created the following file for you")
+                print(outputPath.stringByAbbreviatingWithTildeInPath())
+            } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                print(ANSIColors.red + "Snub couldn't create a .gitignore for you. \(id) gitignore type doesn't exist")
+            }
+        }
+    }
+    
+    private func handlePrint(_ printOption: StringOption) throws -> Bool {
+        if let id = printOption.value {
+            do {
+                let contents = try GitIgnoreFileManager.sharedInstance.getGitIgnoreContentsForId(id)
+                print(ANSIColors.green + contents)
+            } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                print(ANSIColors.red + "\(id) gitignore type doesn't exist")
+            }
+            return true
+        }
+        return false
+    }
+    
+    private func getTargetDirectory(option: StringOption) -> NSURL? {
+        var path: String = ""
+        if let dest = option.value {
+            path = dest
+        } else {
+            path = NSFileManager.defaultManager().currentDirectoryPath
+        }
+        if NSFileManager.defaultManager().checkIfDirectoryExists(path) {
+            return NSURL(fileURLWithPath: path)
+        }
+        return nil
     }
 }

@@ -44,4 +44,8 @@ public extension String {
     func appendPathComponent(suffix: String) -> String {
         return (self as NSString).stringByAppendingPathComponent(suffix)
     }
+    
+    func stringByAbbreviatingWithTildeInPath() -> String {
+        return (self as NSString).stringByAbbreviatingWithTildeInPath
+    }
 }

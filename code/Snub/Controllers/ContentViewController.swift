@@ -55,8 +55,7 @@ class ContentViewController: NSViewController {
         var outputVal = "[No folders selected]"
         selectedPathBtn.enabled = false
         if(selectedFolders.count == 1) {
-            let folder = selectedFolders.first!.path! as NSString
-            outputVal = "\(folder.stringByAbbreviatingWithTildeInPath)"
+            outputVal = selectedFolders.first!.path!.stringByAbbreviatingWithTildeInPath()
             selectedPathBtn.enabled = true
         } else if(selectedFolders.count > 1) {
             outputVal = "\(selectedFolders.count) folders selected"

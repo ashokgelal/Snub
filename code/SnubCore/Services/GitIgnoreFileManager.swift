@@ -49,7 +49,7 @@ public class GitIgnoreFileManager {
         return appDirectoryPath
     }
     
-    public func addGitIgnoreWithId(id: String, toPath: NSURL) throws {
+    public func addGitIgnoreWithId(id: String, toPath: NSURL) throws -> String {
         guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
             throw GitIgnoreError.SourceGitIgnoreNotFound
         }
@@ -71,9 +71,10 @@ public class GitIgnoreFileManager {
         let contents = "\(headerBrand)\n\(netGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
         DDLogVerbose("Successfully copied \(id) .gitignore to \(destinationFullPath)")
+        return destinationFullPath
     }
     
-    public func appendGitIgnoreWithId(id:String, toPath: NSURL) throws {
+    public func appendGitIgnoreWithId(id:String, toPath: NSURL) throws -> String {
         guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
             throw GitIgnoreError.SourceGitIgnoreNotFound
         }
@@ -87,6 +88,19 @@ public class GitIgnoreFileManager {
         let contents = "\(existingGitIgnoreContents)\n\n\(headerBrand)\n\(newGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
         DDLogVerbose("Successfully appended \(id) .gitignore to \(destinationFullPath)")
+        return destinationFullPath
+    }
+    
+    public func getGitIgnoreContentsForId(id:String) throws -> String {
+        guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
+            throw GitIgnoreError.SourceGitIgnoreNotFound
+        }
+        
+        let newGitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
+        let headerBrand = MagicStrings.createGitIgnoreFileHeaderBrand(id)
+        
+        let contents = "\(headerBrand)\n\(newGitIgnoreContents)"
+        return contents
     }
     
     public func fetchMasterGitIgnoreItems() -> [GitIgnoreFileItem] {

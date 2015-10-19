@@ -27,7 +27,7 @@ class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
         var items: [GitIgnoreFileItem] = []
         if selectedFolders.count == 1 {
             do {
-                items = try ProjectDetector.instance.identify(selectedFolders.first!)
+                items = try ProjectDetector.sharedInstance.identify(selectedFolders.first!)
                 if(items.count > 0) {
                     outputVal = "Was able to determine project types"
                 }
