@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProjectDetectionResult: GitIgnoreFileItem {
+public class ProjectDetectionResult: GitIgnoreFileItem {
     let confidencePercent: Double
     
     init(id: String, name: String, confidencePercent: Double) {

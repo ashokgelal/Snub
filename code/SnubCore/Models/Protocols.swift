@@ -11,9 +11,3 @@ import Foundation
 protocol ProjectTypeDetector {
     func detect(fileExtensions: [String]) -> ProjectDetectionResult?
 }
-
-// Mark: Protocols
-@objc protocol GitIgnoreRowViewDelegate {
-    optional func performAdd(sender: GitIgnoreFileItem)
-    optional func performAppend(sender: GitIgnoreFileItem)
-}

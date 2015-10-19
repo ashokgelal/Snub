@@ -6,30 +6,30 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
-import Cocoa
-import CocoaLumberjack
-import Async
+import SnubCore
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
-    let contentPopover = NSPopover()
-    var eventMonitor: EventMonitor?
+    private let bootstrapper: Bootstrapper
+    private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+    private let contentPopover = NSPopover()
+    private var eventMonitor: EventMonitor?
     
     override init() {
+        bootstrapper = Bootstrapper()
         super.init()
-        setupLogger()
-    }
-    
-    private func setupLogger(){
-        defaultDebugLevel = DDLogLevel.Verbose
-        DDLog.addLogger(DDASLLogger.sharedInstance())
-        DDLog.addLogger(DDTTYLogger.sharedInstance())
-        DDTTYLogger.sharedInstance().colorsEnabled = true
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        bootstrapper.setup()
+        setupPopover()
+        DDLogVerbose("Application finish launching")
+    }
+}
+
+// MARK: Status Item
+extension AppDelegate {
+    private func setupPopover() {
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
             button.action = Selector("togglePopover:")
@@ -38,22 +38,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         contentPopover.animates = false
         contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
         setupEventMonitor()
-        
-        Async.background {
-            GitIgnoreFileManager.instance
-        }
+        DDLogVerbose("Finished setting up status item")
     }
     
-    func setupEventMonitor() {
+    private func setupEventMonitor() {
         eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) {
             [unowned self] event in
             if self.contentPopover.shown {
                 self.closePopover(event)
             }
         }
-    }
-    
-    func applicationWillTerminate(aNotification: NSNotification) {
+        DDLogVerbose("Finished setting up event monitor")
     }
     
     func togglePopover(sender: AnyObject?) {
@@ -64,14 +59,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func showPopover(sender: AnyObject?) {
+    private func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             contentPopover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
         }
         eventMonitor?.start()
     }
     
-    func closePopover(sender: AnyObject?) {
+    private func closePopover(sender: AnyObject?) {
         contentPopover.performClose(sender)
         eventMonitor?.stop()
     }

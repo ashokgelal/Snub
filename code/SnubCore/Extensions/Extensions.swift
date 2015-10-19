@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: NSFileManager Extensions
-extension NSFileManager {
+public extension NSFileManager {
     func checkIfDirectoryExists(path: String) -> Bool {
         let fm = NSFileManager.defaultManager()
         var isDir: ObjCBool = false
@@ -32,7 +32,7 @@ extension NSFileManager {
 }
 
 // MARK: String Extensions
-extension String {
+public extension String {
     func fileName() -> String {
         return ((self as NSString).lastPathComponent as NSString).stringByDeletingPathExtension
     }
@@ -44,14 +44,4 @@ extension String {
     func appendPathComponent(suffix: String) -> String {
         return (self as NSString).stringByAppendingPathComponent(suffix)
     }
-}
-
-// MARK: Thread Functions
-func delay(delay: Double, closure:()->()) {
-    dispatch_after(
-        dispatch_time(
-            DISPATCH_TIME_NOW,
-            Int64(delay * Double(NSEC_PER_SEC))
-        ),
-        dispatch_get_main_queue(), closure)
 }

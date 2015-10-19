@@ -122,10 +122,10 @@
 		CD64FF541BD4521400A2E715 /* SnubCore */ = {
 			isa = PBXGroup;
 			children = (
-				CDBDE39D1BD46A9800EF5DB9 /* ProjectDetectors */,
-				CDBDE38A1BD469D900EF5DB9 /* Extensions */,
 				CDBDE3871BD469BC00EF5DB9 /* Models */,
 				CDBDE3841BD4698B00EF5DB9 /* Services */,
+				CDBDE39D1BD46A9800EF5DB9 /* ProjectDetectors */,
+				CDBDE38A1BD469D900EF5DB9 /* Extensions */,
 				CDBDE37F1BD4697600EF5DB9 /* Vendors */,
 				CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */,
 				CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GitIgnoreFileItem: NSObject {
+public class GitIgnoreFileItem: NSObject {
     let name: String
     let id: String
     

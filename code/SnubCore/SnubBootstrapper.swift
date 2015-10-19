@@ -10,13 +10,15 @@ import Foundation
 import CocoaLumberjack
 import Async
 
-public class BootStrapper {
+public class Bootstrapper {
     
     public init() {
+        setupLogger()
+        DDLogVerbose("Bootstrapper initialized")
     }
     
     private func setupLogger(){
-//        defaultDebugLevel = DDLogLevel.Verbose
+        defaultDebugLevel = DDLogLevel.Verbose
         DDLog.addLogger(DDASLLogger.sharedInstance())
         DDLog.addLogger(DDTTYLogger.sharedInstance())
         DDTTYLogger.sharedInstance().colorsEnabled = true
@@ -24,6 +26,5 @@ public class BootStrapper {
     
     public func setup() {
         Async.background { GitIgnoreFileManager.instance }
-        setupLogger()
     }
 }

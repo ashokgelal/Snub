@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GitIgnoreFileFinder {
+public class GitIgnoreFileFinder {
     static let instance = GitIgnoreFileFinder()
     private init(){}
     private lazy var masterGitIgnoreFiles: [String] = {
@@ -18,7 +18,7 @@ class GitIgnoreFileFinder {
             return try fm.subpathsOfDirectoryAtPath(gitIgnoreMasterDir)
         } catch { return [] } }()
     
-    func findById(id: String) -> String? {
+    public func findById(id: String) -> String? {
         let fm = NSFileManager.defaultManager()
         let gitIgnoreMasterDir = fm.getApplicationDirectoryPath().appendPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         for file in masterGitIgnoreFiles {

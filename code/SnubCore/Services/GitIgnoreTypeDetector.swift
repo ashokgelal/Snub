@@ -9,12 +9,12 @@
 import Foundation
 import SwiftRegExp
 
-class GitIgnoreTypeDetector {
+public class GitIgnoreTypeDetector {
     static let instance = GitIgnoreTypeDetector()
     
     private init() {}
     
-    func detect(urls: [NSURL]) throws -> [NSURL:NSURL?] {
+    public func detect(urls: [NSURL]) throws -> [NSURL:NSURL?] {
         let fm = NSFileManager.defaultManager()
         var retVals: [NSURL:NSURL?] = [:]
         try urls.forEach {
@@ -26,7 +26,7 @@ class GitIgnoreTypeDetector {
         return retVals
     }
     
-    func identify(url: NSURL) throws -> [String] {
+    public func identify(url: NSURL) throws -> [String] {
         let contents = try String(contentsOfFile: url.path!)
         if let regexp = try RegExp(pattern: MagicStrings.GITIGNORE_MATCH_PATTERN, options: NSRegularExpressionOptions()) {
             let matches = regexp.allMatches(contents).enumerate() // returns something like ["#===xcode===#", "xcode"]

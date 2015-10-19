@@ -9,7 +9,7 @@
 import Foundation
 import PDKTZipArchive
 
-class GitIgnoreFileManager {
+public class GitIgnoreFileManager {
     static let instance = GitIgnoreFileManager()
     
     private init() {
@@ -49,7 +49,7 @@ class GitIgnoreFileManager {
         return appDirectoryPath
     }
     
-    func addGitIgnoreWithId(id: String, toPath: NSURL) throws {
+    public func addGitIgnoreWithId(id: String, toPath: NSURL) throws {
         guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
             throw GitIgnoreError.SourceGitIgnoreNotFound
         }
@@ -73,7 +73,7 @@ class GitIgnoreFileManager {
         DDLogVerbose("Successfully copied \(id) .gitignore to \(destinationFullPath)")
     }
     
-    func appendGitIgnoreWithId(id:String, toPath: NSURL) throws {
+    public func appendGitIgnoreWithId(id:String, toPath: NSURL) throws {
         guard let sourceGitIgnorePath = GitIgnoreFileFinder.instance.findById(id) else {
             throw GitIgnoreError.SourceGitIgnoreNotFound
         }
@@ -89,7 +89,7 @@ class GitIgnoreFileManager {
         DDLogVerbose("Successfully appended \(id) .gitignore to \(destinationFullPath)")
     }
     
-    func fetchMasterGitIgnoreItems() -> [GitIgnoreFileItem] {
+    public func fetchMasterGitIgnoreItems() -> [GitIgnoreFileItem] {
         return allGitIgnoreFilePaths.map {
             file -> GitIgnoreFileItem in
             let name = file.path!.fileName()

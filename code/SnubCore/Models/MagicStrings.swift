@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MagicStrings {
+public class MagicStrings {
     static let GITIGNORE_MATCH_PATTERN = "#+===#+(\\S+)#+===#+"
     static let GITIGNORE_EXTENSION = ".gitignore"
     static let GITIGNORE_BACKUP_NAME = "Snub.OldBackup"

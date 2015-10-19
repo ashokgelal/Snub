@@ -9,13 +9,13 @@
 import Foundation
 import ScriptingBridge
 
-class FinderSelectionProvider {
+public class FinderSelectionProvider {
     
     static let instance = FinderSelectionProvider()
     
     private init(){}
     
-    func getSelectedFolders() -> [NSURL] {
+    public func getSelectedFolders() -> [NSURL] {
         guard let finder = SBApplication(bundleIdentifier: "com.apple.finder") as? FinderApplication,
             let result = finder.selection else {
                 DDLogInfo("No items selected")

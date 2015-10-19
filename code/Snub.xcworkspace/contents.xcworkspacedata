@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SnubCore/SnubCore.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Snub/Snub.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:SnubCore/SnubCore.xcodeproj">
    </FileRef>
 </Workspace>

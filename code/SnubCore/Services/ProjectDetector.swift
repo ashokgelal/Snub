@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProjectDetector {
+public class ProjectDetector {
     static let instance = ProjectDetector()
     private var detectors: [ProjectTypeDetector] = []
     private init() {
@@ -25,7 +25,7 @@ class ProjectDetector {
         detectors.append(VagrantProjectDetector())
     }
     
-    func identify(url: NSURL) throws -> [ProjectDetectionResult] {
+    public func identify(url: NSURL) throws -> [ProjectDetectionResult] {
         let fm = NSFileManager.defaultManager()
         let subs = try fm.subpathsOfDirectoryAtPath(url.path!).map { $0.fileExtension() }
         let results = detectors.map { $0.detect(subs) }.filter { $0 != nil }
