@@ -13,11 +13,8 @@
 		CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E441BD477A800CAF500 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E481BD477FA00CAF500 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E461BD477FA00CAF500 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E491BD477FA00CAF500 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E471BD477FA00CAF500 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E4F1BD4798000CAF500 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4E1BD4798000CAF500 /* RegExp.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E521BD47A4900CAF500 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
@@ -55,11 +52,8 @@
 		CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestedTabViewItemController.swift; path = Controllers/SuggestedTabViewItemController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Services/EventMonitor.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E441BD477A800CAF500 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E461BD477FA00CAF500 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Vendors/CocoaLumberjack.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E471BD477FA00CAF500 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Finder.swift; path = Vendors/Finder.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreRowView.swift; path = Views/GitIgnoreRowView.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E4E1BD4798000CAF500 /* RegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegExp.swift; path = Vendors/RegExp.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentViewController.xib; path = Views/ContentViewController.xib; sourceTree = SOURCE_ROOT; };
 		CDAB6E521BD47A4900CAF500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		CDBBBF731BD47C0D00DD515E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -108,7 +102,6 @@
 				CDD22D631BCF533600308400 /* Controllers */,
 				CDE27A611BCE2896004B4107 /* Services */,
 				CDD9D70F1BD0D73F00CF7B2F /* Extensions */,
-				CDD22D561BCF524D00308400 /* Vendors */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
 				CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */,
 				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
@@ -125,16 +118,6 @@
 				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CDD22D561BCF524D00308400 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-				CDAB6E4E1BD4798000CAF500 /* RegExp.swift */,
-				CDAB6E461BD477FA00CAF500 /* CocoaLumberjack.swift */,
-				CDAB6E471BD477FA00CAF500 /* Finder.swift */,
-			);
-			path = Vendors;
 			sourceTree = "<group>";
 		};
 		CDD22D631BCF533600308400 /* Controllers */ = {
@@ -334,13 +317,10 @@
 			files = (
 				CDAB6E281BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift in Sources */,
 				CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */,
-				CDAB6E481BD477FA00CAF500 /* CocoaLumberjack.swift in Sources */,
 				CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */,
 				CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */,
-				CDAB6E4F1BD4798000CAF500 /* RegExp.swift in Sources */,
 				CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */,
 				CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */,
-				CDAB6E491BD477FA00CAF500 /* Finder.swift in Sources */,
 				CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
