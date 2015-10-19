@@ -8,27 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
-		CDAB6E1F1BD4777000CAF500 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E1A1BD4777000CAF500 /* Enums.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E201BD4777000CAF500 /* GitIgnoreFileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E1B1BD4777000CAF500 /* GitIgnoreFileItem.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E211BD4777000CAF500 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E1C1BD4777000CAF500 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E221BD4777000CAF500 /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E1D1BD4777000CAF500 /* ProjectDetectionResult.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E231BD4777000CAF500 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E1E1BD4777000CAF500 /* Protocols.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E281BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E311BD4778D00CAF500 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2B1BD4778D00CAF500 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E321BD4778D00CAF500 /* GitIgnoreFileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2C1BD4778D00CAF500 /* GitIgnoreFileFinder.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E331BD4778D00CAF500 /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2D1BD4778D00CAF500 /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E341BD4778D00CAF500 /* GitIgnoreTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2E1BD4778D00CAF500 /* GitIgnoreTypeDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E351BD4778D00CAF500 /* ProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2F1BD4778D00CAF500 /* ProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E3D1BD4779B00CAF500 /* JetBrainsProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E361BD4779B00CAF500 /* JetBrainsProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E3E1BD4779B00CAF500 /* SublimeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E371BD4779B00CAF500 /* SublimeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E3F1BD4779B00CAF500 /* TextMateProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E381BD4779B00CAF500 /* TextMateProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E401BD4779B00CAF500 /* VagrantProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E391BD4779B00CAF500 /* VagrantProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E411BD4779B00CAF500 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E3A1BD4779B00CAF500 /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E421BD4779B00CAF500 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E3B1BD4779B00CAF500 /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E431BD4779B00CAF500 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E3C1BD4779B00CAF500 /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E441BD477A800CAF500 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E481BD477FA00CAF500 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E461BD477FA00CAF500 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E491BD477FA00CAF500 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E471BD477FA00CAF500 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,27 +50,10 @@
 		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDAB6E1A1BD4777000CAF500 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Enums.swift; path = Models/Enums.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E1B1BD4777000CAF500 /* GitIgnoreFileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreFileItem.swift; path = Models/GitIgnoreFileItem.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E1C1BD4777000CAF500 /* MagicStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicStrings.swift; path = Models/MagicStrings.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E1D1BD4777000CAF500 /* ProjectDetectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectDetectionResult.swift; path = Models/ProjectDetectionResult.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E1E1BD4777000CAF500 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Models/Protocols.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E241BD4778200CAF500 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = Controllers/ContentViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterGitIgnoreTabViewItemController.swift; path = Controllers/MasterGitIgnoreTabViewItemController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestedTabViewItemController.swift; path = Controllers/SuggestedTabViewItemController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Services/EventMonitor.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E2B1BD4778D00CAF500 /* FinderSelectionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinderSelectionProvider.swift; path = Services/FinderSelectionProvider.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E2C1BD4778D00CAF500 /* GitIgnoreFileFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreFileFinder.swift; path = Services/GitIgnoreFileFinder.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E2D1BD4778D00CAF500 /* GitIgnoreFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreFileManager.swift; path = Services/GitIgnoreFileManager.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E2E1BD4778D00CAF500 /* GitIgnoreTypeDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreTypeDetector.swift; path = Services/GitIgnoreTypeDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E2F1BD4778D00CAF500 /* ProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectDetector.swift; path = Services/ProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E361BD4779B00CAF500 /* JetBrainsProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JetBrainsProjectDetector.swift; path = ProjectDetectors/JetBrainsProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E371BD4779B00CAF500 /* SublimeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SublimeProjectDetector.swift; path = ProjectDetectors/SublimeProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E381BD4779B00CAF500 /* TextMateProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextMateProjectDetector.swift; path = ProjectDetectors/TextMateProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E391BD4779B00CAF500 /* VagrantProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VagrantProjectDetector.swift; path = ProjectDetectors/VagrantProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E3A1BD4779B00CAF500 /* VisualStudioCodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualStudioCodeProjectDetector.swift; path = ProjectDetectors/VisualStudioCodeProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E3B1BD4779B00CAF500 /* VisualStudioProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualStudioProjectDetector.swift; path = ProjectDetectors/VisualStudioProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E3C1BD4779B00CAF500 /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XcodeProjectDetector.swift; path = ProjectDetectors/XcodeProjectDetector.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E441BD477A800CAF500 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E461BD477FA00CAF500 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Vendors/CocoaLumberjack.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E471BD477FA00CAF500 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Finder.swift; path = Vendors/Finder.swift; sourceTree = SOURCE_ROOT; };
@@ -117,32 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD476C3C1BD327E2001CDFA8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CDAB6E1A1BD4777000CAF500 /* Enums.swift */,
-				CDAB6E1B1BD4777000CAF500 /* GitIgnoreFileItem.swift */,
-				CDAB6E1C1BD4777000CAF500 /* MagicStrings.swift */,
-				CDAB6E1D1BD4777000CAF500 /* ProjectDetectionResult.swift */,
-				CDAB6E1E1BD4777000CAF500 /* Protocols.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CD476C491BD32A5D001CDFA8 /* ProjectDetectors */ = {
-			isa = PBXGroup;
-			children = (
-				CDAB6E361BD4779B00CAF500 /* JetBrainsProjectDetector.swift */,
-				CDAB6E371BD4779B00CAF500 /* SublimeProjectDetector.swift */,
-				CDAB6E381BD4779B00CAF500 /* TextMateProjectDetector.swift */,
-				CDAB6E391BD4779B00CAF500 /* VagrantProjectDetector.swift */,
-				CDAB6E3A1BD4779B00CAF500 /* VisualStudioCodeProjectDetector.swift */,
-				CDAB6E3B1BD4779B00CAF500 /* VisualStudioProjectDetector.swift */,
-				CDAB6E3C1BD4779B00CAF500 /* XcodeProjectDetector.swift */,
-			);
-			path = ProjectDetectors;
-			sourceTree = "<group>";
-		};
 		CD62A8001BCE0FB9009D6B62 = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +104,9 @@
 		CD62A80B1BCE0FB9009D6B62 /* Snub */ = {
 			isa = PBXGroup;
 			children = (
-				CD476C3C1BD327E2001CDFA8 /* Models */,
 				CDD22D551BCF521F00308400 /* Views */,
 				CDD22D631BCF533600308400 /* Controllers */,
 				CDE27A611BCE2896004B4107 /* Services */,
-				CD476C491BD32A5D001CDFA8 /* ProjectDetectors */,
 				CDD9D70F1BD0D73F00CF7B2F /* Extensions */,
 				CDD22D561BCF524D00308400 /* Vendors */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
@@ -221,11 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */,
-				CDAB6E2B1BD4778D00CAF500 /* FinderSelectionProvider.swift */,
-				CDAB6E2C1BD4778D00CAF500 /* GitIgnoreFileFinder.swift */,
-				CDAB6E2D1BD4778D00CAF500 /* GitIgnoreFileManager.swift */,
-				CDAB6E2E1BD4778D00CAF500 /* GitIgnoreTypeDetector.swift */,
-				CDAB6E2F1BD4778D00CAF500 /* ProjectDetector.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -404,27 +337,10 @@
 				CDAB6E481BD477FA00CAF500 /* CocoaLumberjack.swift in Sources */,
 				CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */,
 				CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */,
-				CDAB6E221BD4777000CAF500 /* ProjectDetectionResult.swift in Sources */,
-				CDAB6E351BD4778D00CAF500 /* ProjectDetector.swift in Sources */,
-				CDAB6E1F1BD4777000CAF500 /* Enums.swift in Sources */,
-				CDAB6E331BD4778D00CAF500 /* GitIgnoreFileManager.swift in Sources */,
-				CDAB6E431BD4779B00CAF500 /* XcodeProjectDetector.swift in Sources */,
-				CDAB6E3F1BD4779B00CAF500 /* TextMateProjectDetector.swift in Sources */,
 				CDAB6E4F1BD4798000CAF500 /* RegExp.swift in Sources */,
-				CDAB6E3D1BD4779B00CAF500 /* JetBrainsProjectDetector.swift in Sources */,
-				CDAB6E231BD4777000CAF500 /* Protocols.swift in Sources */,
 				CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */,
-				CDAB6E321BD4778D00CAF500 /* GitIgnoreFileFinder.swift in Sources */,
-				CDAB6E211BD4777000CAF500 /* MagicStrings.swift in Sources */,
-				CDAB6E411BD4779B00CAF500 /* VisualStudioCodeProjectDetector.swift in Sources */,
-				CDAB6E421BD4779B00CAF500 /* VisualStudioProjectDetector.swift in Sources */,
 				CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */,
-				CDAB6E311BD4778D00CAF500 /* FinderSelectionProvider.swift in Sources */,
-				CDAB6E201BD4777000CAF500 /* GitIgnoreFileItem.swift in Sources */,
 				CDAB6E491BD477FA00CAF500 /* Finder.swift in Sources */,
-				CDAB6E341BD4778D00CAF500 /* GitIgnoreTypeDetector.swift in Sources */,
-				CDAB6E401BD4779B00CAF500 /* VagrantProjectDetector.swift in Sources */,
-				CDAB6E3E1BD4779B00CAF500 /* SublimeProjectDetector.swift in Sources */,
 				CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

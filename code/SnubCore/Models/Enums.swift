@@ -6,6 +6,6 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
-enum GitIgnoreError: ErrorType {
+public enum GitIgnoreError: ErrorType {
     case SourceGitIgnoreNotFound
 }

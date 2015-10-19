@@ -10,7 +10,7 @@ import Foundation
 import SwiftRegExp
 
 public class GitIgnoreTypeDetector {
-    static let instance = GitIgnoreTypeDetector()
+    public static let instance = GitIgnoreTypeDetector()
     
     private init() {}
     

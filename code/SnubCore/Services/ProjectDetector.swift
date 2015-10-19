@@ -9,7 +9,7 @@
 import Foundation
 
 public class ProjectDetector {
-    static let instance = ProjectDetector()
+    public static let instance = ProjectDetector()
     private var detectors: [ProjectTypeDetector] = []
     private init() {
         addDetectors()

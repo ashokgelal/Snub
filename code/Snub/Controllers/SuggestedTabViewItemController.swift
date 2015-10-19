@@ -8,6 +8,7 @@
 
 import Cocoa
 import Async
+import SnubCore
 
 class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
     override func loadSelectedFolders(selectedFolders: [NSURL]) {

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SnubCore
 
 class GitIgnoreRowView: NSTableCellView {
     weak var rowViewDelegate: GitIgnoreRowViewDelegate?
@@ -29,4 +30,10 @@ extension GitIgnoreRowView {
     @IBAction func append(sender: AnyObject?) {
         rowViewDelegate?.performAppend?(gitIgnoreItem)
     }
+}
+
+// Mark: Protocols
+@objc protocol GitIgnoreRowViewDelegate {
+    optional func performAdd(sender: GitIgnoreFileItem)
+    optional func performAppend(sender: GitIgnoreFileItem)
 }

@@ -11,7 +11,7 @@ import ScriptingBridge
 
 public class FinderSelectionProvider {
     
-    static let instance = FinderSelectionProvider()
+    public static let instance = FinderSelectionProvider()
     
     private init(){}
     

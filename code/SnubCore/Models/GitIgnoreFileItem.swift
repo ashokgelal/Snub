@@ -9,8 +9,8 @@
 import Foundation
 
 public class GitIgnoreFileItem: NSObject {
-    let name: String
-    let id: String
+    public let name: String
+    public let id: String
     
     init(id: String, name: String) {
         self.id = id

@@ -9,6 +9,7 @@
 import Cocoa
 import Async
 import FuzzySearch
+import SnubCore
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
     @IBInspectable var cellIdentifier: String!
