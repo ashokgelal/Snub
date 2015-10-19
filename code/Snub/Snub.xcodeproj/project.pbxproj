@@ -28,8 +28,6 @@
 		CD62A80D1BCE0FB9009D6B62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */; };
 		CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */; };
 		CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */; };
-		CD62A81D1BCE0FB9009D6B62 /* SnubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */; };
-		CD62A8281BCE0FB9009D6B62 /* SnubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */; };
 		CD702EF61BD19CDB00C97076 /* GitIgnoreTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF51BD19CDB00C97076 /* GitIgnoreTypeDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CD702EF81BD1B7F700C97076 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD702EF71BD1B7F700C97076 /* RegExp.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD22D5D1BCF52D800308400 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
@@ -40,27 +38,8 @@
 		CDD9D70E1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
 		CDD9D7111BD0D7C800CF7B2F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD9D7101BD0D7C800CF7B2F /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
-		CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5D1BCE221E004B4107 /* CoreServices.framework */; };
 		CDE27A631BCE28C7004B4107 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
-		CDE48DAB1BD0A77900465EB2 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CD62A8191BCE0FB9009D6B62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD62A8011BCE0FB9009D6B62 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD62A8081BCE0FB9009D6B62;
-			remoteInfo = Snub;
-		};
-		CD62A8241BCE0FB9009D6B62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD62A8011BCE0FB9009D6B62 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD62A8081BCE0FB9009D6B62;
-			remoteInfo = Snub;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,17 +62,12 @@
 		CD476C511BD32A7A001CDFA8 /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XcodeProjectDetector.swift; sourceTree = "<group>"; };
 		CD476C5A1BD32E99001CDFA8 /* MasterGitIgnoreTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterGitIgnoreTabViewItemController.swift; sourceTree = "<group>"; };
 		CD476C5C1BD3349C001CDFA8 /* GitIgnoreFileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileItem.swift; sourceTree = "<group>"; };
+		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD62A8111BCE0FB9009D6B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD62A8181BCE0FB9009D6B62 /* SnubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnubTests.swift; sourceTree = "<group>"; };
-		CD62A81E1BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD62A8231BCE0FB9009D6B62 /* SnubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnubUITests.swift; sourceTree = "<group>"; };
-		CD62A8291BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD702EF51BD19CDB00C97076 /* GitIgnoreTypeDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreTypeDetector.swift; sourceTree = "<group>"; };
 		CD702EF71BD1B7F700C97076 /* RegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegExp.swift; path = ../../Pods/SwiftRegExp/RegExp.swift; sourceTree = "<group>"; };
 		CDD22D5B1BCF52D800308400 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
@@ -103,11 +77,9 @@
 		CDD22D661BCF567000308400 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		CDD9D70D1BD0D5B500CF7B2F /* GitIgnoreFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitIgnoreFileManager.swift; sourceTree = "<group>"; };
 		CDD9D7101BD0D7C800CF7B2F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		CDE27A621BCE28C7004B4107 /* FinderSelectionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinderSelectionProvider.swift; sourceTree = "<group>"; };
-		CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "gitignore-master.zip"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,23 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE27A5E1BCE221E004B4107 /* CoreServices.framework in Frameworks */,
 				CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */,
 				BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD62A8151BCE0FB9009D6B62 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD62A8201BCE0FB9009D6B62 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,13 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				CD62A80B1BCE0FB9009D6B62 /* Snub */,
-				CD62A81B1BCE0FB9009D6B62 /* SnubTests */,
-				CD62A8261BCE0FB9009D6B62 /* SnubUITests */,
 				CD62A80A1BCE0FB9009D6B62 /* Products */,
 				DF224FD50F3DED013B18BA69 /* Pods */,
 				DD52A8540352116A1A124BA7 /* Frameworks */,
-				CDE27A571BCE1B30004B4107 /* Snub-Bridging-Header.h */,
-				CDE48DAA1BD0A77900465EB2 /* gitignore-master.zip */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,8 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				CD62A8091BCE0FB9009D6B62 /* Snub.app */,
-				CD62A8181BCE0FB9009D6B62 /* SnubTests.xctest */,
-				CD62A8231BCE0FB9009D6B62 /* SnubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,26 +152,9 @@
 				CD62A80C1BCE0FB9009D6B62 /* AppDelegate.swift */,
 				CD62A80E1BCE0FB9009D6B62 /* Assets.xcassets */,
 				CD62A8131BCE0FB9009D6B62 /* Info.plist */,
+				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
 			);
 			path = Snub;
-			sourceTree = "<group>";
-		};
-		CD62A81B1BCE0FB9009D6B62 /* SnubTests */ = {
-			isa = PBXGroup;
-			children = (
-				CD62A81C1BCE0FB9009D6B62 /* SnubTests.swift */,
-				CD62A81E1BCE0FB9009D6B62 /* Info.plist */,
-			);
-			path = SnubTests;
-			sourceTree = "<group>";
-		};
-		CD62A8261BCE0FB9009D6B62 /* SnubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CD62A8271BCE0FB9009D6B62 /* SnubUITests.swift */,
-				CD62A8291BCE0FB9009D6B62 /* Info.plist */,
-			);
-			path = SnubUITests;
 			sourceTree = "<group>";
 		};
 		CDD22D551BCF521F00308400 /* Views */ = {
@@ -316,42 +250,6 @@
 			productReference = CD62A8091BCE0FB9009D6B62 /* Snub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD62A8171BCE0FB9009D6B62 /* SnubTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD62A82F1BCE0FB9009D6B62 /* Build configuration list for PBXNativeTarget "SnubTests" */;
-			buildPhases = (
-				CD62A8141BCE0FB9009D6B62 /* Sources */,
-				CD62A8151BCE0FB9009D6B62 /* Frameworks */,
-				CD62A8161BCE0FB9009D6B62 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD62A81A1BCE0FB9009D6B62 /* PBXTargetDependency */,
-			);
-			name = SnubTests;
-			productName = SnubTests;
-			productReference = CD62A8181BCE0FB9009D6B62 /* SnubTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CD62A8221BCE0FB9009D6B62 /* SnubUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD62A8321BCE0FB9009D6B62 /* Build configuration list for PBXNativeTarget "SnubUITests" */;
-			buildPhases = (
-				CD62A81F1BCE0FB9009D6B62 /* Sources */,
-				CD62A8201BCE0FB9009D6B62 /* Frameworks */,
-				CD62A8211BCE0FB9009D6B62 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CD62A8251BCE0FB9009D6B62 /* PBXTargetDependency */,
-			);
-			name = SnubUITests;
-			productName = SnubUITests;
-			productReference = CD62A8231BCE0FB9009D6B62 /* SnubUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,14 +262,6 @@
 				TargetAttributes = {
 					CD62A8081BCE0FB9009D6B62 = {
 						CreatedOnToolsVersion = 7.0.1;
-					};
-					CD62A8171BCE0FB9009D6B62 = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = CD62A8081BCE0FB9009D6B62;
-					};
-					CD62A8221BCE0FB9009D6B62 = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = CD62A8081BCE0FB9009D6B62;
 					};
 				};
 			};
@@ -389,8 +279,6 @@
 			projectRoot = "";
 			targets = (
 				CD62A8081BCE0FB9009D6B62 /* Snub */,
-				CD62A8171BCE0FB9009D6B62 /* SnubTests */,
-				CD62A8221BCE0FB9009D6B62 /* SnubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,22 +290,7 @@
 			files = (
 				CD62A80F1BCE0FB9009D6B62 /* Assets.xcassets in Resources */,
 				CD62A8121BCE0FB9009D6B62 /* MainMenu.xib in Resources */,
-				CDE48DAB1BD0A77900465EB2 /* gitignore-master.zip in Resources */,
 				CDD22D621BCF532300308400 /* ContentViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD62A8161BCE0FB9009D6B62 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD62A8211BCE0FB9009D6B62 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,36 +379,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD62A8141BCE0FB9009D6B62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD62A81D1BCE0FB9009D6B62 /* SnubTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD62A81F1BCE0FB9009D6B62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD62A8281BCE0FB9009D6B62 /* SnubUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CD62A81A1BCE0FB9009D6B62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD62A8081BCE0FB9009D6B62 /* Snub */;
-			targetProxy = CD62A8191BCE0FB9009D6B62 /* PBXContainerItemProxy */;
-		};
-		CD62A8251BCE0FB9009D6B62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD62A8081BCE0FB9009D6B62 /* Snub */;
-			targetProxy = CD62A8241BCE0FB9009D6B62 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CD62A8101BCE0FB9009D6B62 /* MainMenu.xib */ = {
@@ -586,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -624,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -642,7 +486,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snub/Snub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -659,59 +503,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.Snub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Snub-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		CD62A8301BCE0FB9009D6B62 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SnubTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snub.app/Contents/MacOS/Snub";
-			};
-			name = Debug;
-		};
-		CD62A8311BCE0FB9009D6B62 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SnubTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snub.app/Contents/MacOS/Snub";
-			};
-			name = Release;
-		};
-		CD62A8331BCE0FB9009D6B62 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SnubUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Snub;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		CD62A8341BCE0FB9009D6B62 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SnubUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Snub;
-				USES_XCTRUNNER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Snub/Snub-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -732,24 +524,6 @@
 			buildConfigurations = (
 				CD62A82D1BCE0FB9009D6B62 /* Debug */,
 				CD62A82E1BCE0FB9009D6B62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD62A82F1BCE0FB9009D6B62 /* Build configuration list for PBXNativeTarget "SnubTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD62A8301BCE0FB9009D6B62 /* Debug */,
-				CD62A8311BCE0FB9009D6B62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD62A8321BCE0FB9009D6B62 /* Build configuration list for PBXNativeTarget "SnubUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD62A8331BCE0FB9009D6B62 /* Debug */,
-				CD62A8341BCE0FB9009D6B62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

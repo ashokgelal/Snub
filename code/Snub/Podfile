@@ -9,11 +9,3 @@ target 'Snub' do
     pod 'FuzzySearch', :git => 'https://github.com/ashokgelal/FuzzySearch'
 end
 
-target 'SnubTests' do
-
-end
-
-target 'SnubUITests' do
-
-end
-
