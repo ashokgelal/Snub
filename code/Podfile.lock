@@ -17,7 +17,7 @@ DEPENDENCIES:
   - CocoaLumberjack (= 2.1.0-beta)
   - FuzzySearch (from `https://github.com/ashokgelal/FuzzySearch`)
   - PDKTZipArchive (from `https://github.com/ashokgelal/PDKTZipArchive`)
-  - SwiftRegExp (~> 1.0)
+  - SwiftRegExp (~> 1.2)
 
 EXTERNAL SOURCES:
   Async:
