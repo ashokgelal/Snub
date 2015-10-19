@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CDE1EDEE1BD48E3E00828508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1EDED1BD48E3E00828508 /* main.m */; settings = {ASSET_TAGS = (); }; };
-		CDE1EE101BD48F1800828508 /* Snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE1EDE11BD48D7F00828508 /* Snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CDE1EE101BD48F1800828508 /* snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE1EDE11BD48D7F00828508 /* snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CDEFBC191BD4977000365797 /* SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; };
 		CDEFBC1A1BD4988800365797 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				CDE1EE101BD48F1800828508 /* Snub in CopyFiles */,
+				CDE1EE101BD48F1800828508 /* snub in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CDE1EDE11BD48D7F00828508 /* Snub */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Snub; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE1EDE11BD48D7F00828508 /* snub */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = snub; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE1EDED1BD48E3E00828508 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubCommand.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE1EDF51BD48E8F00828508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		CDE1EDE21BD48D7F00828508 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDE1EDE11BD48D7F00828508 /* Snub */,
+				CDE1EDE11BD48D7F00828508 /* snub */,
 				CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */,
 			);
 			name = Products;
@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDE1EDE01BD48D7F00828508 /* Snub */ = {
+		CDE1EDE01BD48D7F00828508 /* snub */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "Snub" */;
+			buildConfigurationList = CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "snub" */;
 			buildPhases = (
 				CDE1EDDD1BD48D7F00828508 /* Sources */,
 				CDE1EDDE1BD48D7F00828508 /* Frameworks */,
@@ -140,14 +140,14 @@
 			);
 			dependencies = (
 			);
-			name = Snub;
+			name = snub;
 			productName = SnubCommand;
-			productReference = CDE1EDE11BD48D7F00828508 /* Snub */;
+			productReference = CDE1EDE11BD48D7F00828508 /* snub */;
 			productType = "com.apple.product-type.tool";
 		};
-		CDE1EDF21BD48E8F00828508 /* SnubBundle */ = {
+		CDE1EDF21BD48E8F00828508 /* snubBundle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "SnubBundle" */;
+			buildConfigurationList = CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "snubBundle" */;
 			buildPhases = (
 				CDE1EDEF1BD48E8F00828508 /* Sources */,
 				CDE1EDF01BD48E8F00828508 /* Frameworks */,
@@ -160,7 +160,7 @@
 			dependencies = (
 				CDE1EE0E1BD48F0000828508 /* PBXTargetDependency */,
 			);
-			name = SnubBundle;
+			name = snubBundle;
 			productName = SnubCommandBundle;
 			productReference = CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -194,8 +194,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDE1EDE01BD48D7F00828508 /* Snub */,
-				CDE1EDF21BD48E8F00828508 /* SnubBundle */,
+				CDE1EDE01BD48D7F00828508 /* snub */,
+				CDE1EDF21BD48E8F00828508 /* snubBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -231,7 +231,7 @@
 /* Begin PBXTargetDependency section */
 		CDE1EE0E1BD48F0000828508 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CDE1EDE01BD48D7F00828508 /* Snub */;
+			target = CDE1EDE01BD48D7F00828508 /* snub */;
 			targetProxy = CDE1EE0D1BD48F0000828508 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "Snub" */ = {
+		CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "snub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDE1EDE91BD48D7F00828508 /* Debug */,
@@ -399,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "SnubBundle" */ = {
+		CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "snubBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDE1EDF71BD48E8F00828508 /* Debug */,

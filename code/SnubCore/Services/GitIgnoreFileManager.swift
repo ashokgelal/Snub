@@ -26,7 +26,7 @@ public class GitIgnoreFileManager {
                     DDLogError("Cannot unzip \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 }
             } else {
-                DDLogError("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing")
+                DDLogError("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.\nIf you are running from command line, make sure to run the UI at least once.")
             }
         }
     }
