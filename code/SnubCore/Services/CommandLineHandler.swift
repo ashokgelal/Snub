@@ -16,16 +16,103 @@ class CommandHandler {
     
     func run() {
         let args = NSProcessInfo.processInfo().arguments
-        if args.count == 1 {
+        
+        if(handleHelp(args)) { return }
+        if(handleVersion(args)) { return }
+        if(handleList(args)) { return }
+        do {
+            if(try handleSuggest(args)) { return }
+        } catch {
             printHelp()
         }
     }
     
+    private func seeIfArgumentIsAPath(arg: String?) -> NSURL? {
+        guard let path = arg else {
+            return nil
+        }
+        let fm = NSFileManager.defaultManager()
+        if fm.checkIfDirectoryExists(path) {
+            return NSURL(fileURLWithPath: path)
+        }
+        let argCouldBeFolder = fm.currentDirectoryPath.appendPathComponent(path)
+        if fm.checkIfDirectoryExists(argCouldBeFolder) {
+            return NSURL(fileURLWithPath: argCouldBeFolder)
+        }
+        return nil
+    }
+
+    private func handleVersion(args: [String]) -> Bool {
+        if args.count >= 2 && (args[1] == "-v" || args[1] == "--version") {
+            print(Format.green + "Snub \(MagicStrings.COMMANDLINE_VERSION) (Licensed to hellornaapps@gmail.com)")
+            return true
+        }
+        return false
+    }
+    
+    private func handleList(args: [String]) -> Bool {
+        if args.count >= 2 && args[1] == "list" {
+            let allItems = GitIgnoreFileManager.sharedInstance.fetchMasterGitIgnoreItems().map { $0.name }.joinWithSeparator(", ")
+            print(allItems)
+            return true
+        }
+        return false
+    }
+}
+// MARK: Suggest
+extension CommandHandler {
+    private func handleSuggest(args: [String]) throws -> Bool {
+        guard args[1] == "suggest" else {
+            return false
+        }
+        
+        guard args.count == 3 else {
+            print(Format.red + "[!] A target path is required")
+            print("")
+            print(Format.bold + "Usage:")
+            print("")
+            print("\(TAB)$ snub suggest " + (Format.red+"TARGET"))
+            print("")
+            print("\(TAB)  Suggests one or more appropriate .gitignore files for the given " + (Format.red + "`PATH`") + ".")
+            return true
+        }
+        
+        if let url = seeIfArgumentIsAPath(args[2]) {
+            let result = try ProjectDetector.sharedInstance.identify(url)
+            if result.count == 0 {
+                print(Format.red + "Snub couldn't suggest any .gitignore files for `\(url.lastPathComponent!)` directory")
+            } else {
+                let suggestions = result.map { $0.id }.joinWithSeparator("+")
+                print(Format.green + "Snub suggests \(suggestions)")
+            }
+        }
+        return false
+    }
+}
+
+// MARK: Help
+extension CommandHandler {
+    private func handleHelp(args: [String]) -> Bool {
+        if args.count == 1 {
+            printHelp()
+            return true
+        }
+        if args.count >= 2 && (args[1] == "-h" || args[1] == "--help") {
+            printHelp()
+            return true
+        }
+        return false
+    }
+    
     private func printHelp() {
-        printLogo()
+        //        printLogo()
+        print("")
         printUsage()
+        print("")
         printCommands()
+        print("")
         printOptions()
+        print("")
     }
     
     private func printLogo() {
@@ -36,20 +123,18 @@ class CommandHandler {
         print("|___/_| |_|\\__,_|_.__/  ")
         print("")
         print("Adding .gitignore files doesn't get any easier than this")
-        print("")
     }
     
     private func printUsage() {
-        print(Format.underline + "Usage:")
+        print(Format.bold + "Usage:")
         print("")
         print("\(TAB)$ snub COMMAND")
-        print("")
     }
     
     private func printCommands() {
-        print(Format.underline + "Commands:")
+        print(Format.bold + "Commands:")
         print("")
-
+        
         print(makeCommand("list"))
         print(makeCommand("add") + " <type1+type2+...> [target]   " + makeExample("snub add xcode+osx ."))
         print(makeCommand("append") + " <type1+type2+...> [target]" + makeExample("snub append xcode+osx ."))
@@ -57,16 +142,14 @@ class CommandHandler {
         print(makeCommand("suggest") + " [target]")
         print(makeCommand("lucky") + " [target]")
         print(makeCommand("help") + " <command>                   " + makeExample("snub help add"))
-        print("")
     }
     
     private func printOptions() {
-        print(Format.underline + "Options:")
+        print(Format.bold + "Options:")
         print("")
         
-        print(makeOption("(-v | -- version)") + makeSuffix("Show the version and licensing info"))
-        print(makeOption("(-h | -- help)   ") + makeSuffix("Print this help"))
-        print("")
+        print(makeOption("(-v | --version)") + makeSuffix("Show the version and licensing info"))
+        print(makeOption("(-h | --help)   ") + makeSuffix("Print this help"))
     }
     
     private func makeCommand(text: String) -> String {
