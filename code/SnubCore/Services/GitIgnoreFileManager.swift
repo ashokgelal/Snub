@@ -61,6 +61,10 @@ public class GitIgnoreFileManager {
         let fm = NSFileManager.defaultManager()
         if(fm.checkIfFileExists(destinationFullPath)) {
             let backupFilePath = path.appendPathComponent("\(MagicStrings.GITIGNORE_BACKUP_NAME)\(MagicStrings.GITIGNORE_EXTENSION)")
+            // remove previous backup file
+            if(fm.checkIfFileExists(backupFilePath)) {
+                try fm.removeItemAtPath(backupFilePath)
+            }
             try fm.moveItemAtPath(destinationFullPath, toPath: backupFilePath)
             DDLogInfo("Found and copied old .gitignore file to \(backupFilePath)")
         }
