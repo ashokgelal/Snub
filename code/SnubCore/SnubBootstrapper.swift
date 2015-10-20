@@ -34,7 +34,7 @@ import Async
         defaultDebugLevel = DDLogLevel.Error
         DDLogVerbose("Setting up Snub for Command");
         GitIgnoreFileManager.sharedInstance
-        CommandLineHandler.sharedInstance.handle()
+        CommandHandler.sharedInstance.run()
     }
 }
 
