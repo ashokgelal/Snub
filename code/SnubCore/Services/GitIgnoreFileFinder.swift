@@ -22,7 +22,7 @@ public class GitIgnoreFileFinder {
         let fm = NSFileManager.defaultManager()
         let gitIgnoreMasterDir = fm.getApplicationDirectoryPath().appendPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         for file in masterGitIgnoreFiles {
-            if (file.fileName() == id) {
+            if (file.fileName().lowercaseString == id.lowercaseString) {
                 return gitIgnoreMasterDir.appendPathComponent(file)
             }
         }
