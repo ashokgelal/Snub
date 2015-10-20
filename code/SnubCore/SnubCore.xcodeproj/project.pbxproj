@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		494FD046505CD51DD1CF59F7 /* Pods_SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A1EDB7F2DF58CDA8B7529 /* Pods_SnubCore.framework */; };
 		CD84F8821BD46300008DC230 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD84F8811BD46300008DC230 /* ScriptingBridge.framework */; };
+		CDAA1C081BD5E8B7005E393C /* CommandLineHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA1C071BD5E8B7005E393C /* CommandLineHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3751BD4671C00EF5DB9 /* SnubBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3771BD4683C00EF5DB9 /* SnubCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE3791BD468FA00EF5DB9 /* Vendors */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 		CD64FF521BD4521400A2E715 /* SnubCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnubCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD64FF571BD4521400A2E715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD84F8811BD46300008DC230 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		CDAA1C071BD5E8B7005E393C /* CommandLineHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLineHandler.swift; path = Services/CommandLineHandler.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnubBootstrapper.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnubCore.h; sourceTree = SOURCE_ROOT; };
 		CDBDE3791BD468FA00EF5DB9 /* Vendors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vendors; path = /Users/ashokgelal/Documents/projects/personal/Snub/code/SnubCore/Vendors; sourceTree = "<absolute>"; };
@@ -152,6 +154,7 @@
 				CDBDE3971BD46A6700EF5DB9 /* FinderSelectionProvider.swift */,
 				CDBDE38F1BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift */,
 				CDBDE3851BD469A600EF5DB9 /* GitIgnoreFileManager.swift */,
+				CDAA1C071BD5E8B7005E393C /* CommandLineHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				CDBDE3A61BD46AB000EF5DB9 /* SublimeProjectDetector.swift in Sources */,
 				CDBDE39B1BD46A7200EF5DB9 /* GitIgnoreTypeDetector.swift in Sources */,
 				CDBDE3901BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift in Sources */,
+				CDAA1C081BD5E8B7005E393C /* CommandLineHandler.swift in Sources */,
 				CDBDE3921BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift in Sources */,
 				CDBDE38E1BD469FC00EF5DB9 /* Enums.swift in Sources */,
 				CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */,
