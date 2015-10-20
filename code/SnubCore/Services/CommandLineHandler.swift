@@ -22,9 +22,11 @@ class CommandHandler {
         if(handleList(args)) { return }
         do {
             if(try handleSuggest(args)) { return }
+            if(try handleLucky(args)) { return }
         } catch {
             printHelp()
         }
+        printHelp()
     }
     
     private func seeIfArgumentIsAPath(arg: String?) -> NSURL? {
@@ -41,7 +43,7 @@ class CommandHandler {
         }
         return nil
     }
-
+    
     private func handleVersion(args: [String]) -> Bool {
         if args.count >= 2 && (args[1] == "-v" || args[1] == "--version") {
             print(Format.green + "Snub \(MagicStrings.COMMANDLINE_VERSION) (Licensed to hellornaapps@gmail.com)")
@@ -59,6 +61,49 @@ class CommandHandler {
         return false
     }
 }
+
+// MARK: Suggest
+extension CommandHandler {
+    private func handleLucky(args: [String]) throws -> Bool {
+        guard args[1] == "lucky" else {
+            return false
+        }
+        guard args.count == 3 else {
+            print(Format.red + "[!] A target path is required")
+            print("")
+            print(Format.bold + "Usage:")
+            print("")
+            print("\(TAB)$ snub lucky " + (Format.red+"TARGET"))
+            print("")
+            print("\(TAB)  If possible, adds one or more appropriate .gitignore files for the given" + (Format.red + " `PATH`") + ".")
+            print("\(TAB)  Feeling lucky? 🍀")
+            return true
+        }
+        guard let url = seeIfArgumentIsAPath(args[2]) else {
+            return false
+        }
+        let result = try ProjectDetector.sharedInstance.identify(url)
+        if result.count == 0 {
+            print(Format.red + "Not so lucky! Snub couldn't suggest any .gitignore files for `\(url.lastPathComponent!)` directory")
+        } else {
+            var suggestions = result.map { $0.id }
+            let joinedSuggestion = suggestions.joinWithSeparator("+")
+            
+            // add first .gitignore
+            let outputPath = try GitIgnoreFileManager.sharedInstance.addGitIgnoreWithId(suggestions.first!, toPath: url)
+            suggestions.removeFirst()
+            
+            // then append the rest
+            try suggestions.forEach {
+                try GitIgnoreFileManager.sharedInstance.appendGitIgnoreWithId($0, toPath: url)
+            }
+            print(Format.green + "Snub suggested \(joinedSuggestion)")
+            print(Format.green + "Snub added \(outputPath) for you")
+        }
+        return true
+    }
+}
+
 // MARK: Suggest
 extension CommandHandler {
     private func handleSuggest(args: [String]) throws -> Bool {
@@ -73,20 +118,22 @@ extension CommandHandler {
             print("")
             print("\(TAB)$ snub suggest " + (Format.red+"TARGET"))
             print("")
-            print("\(TAB)  Suggests one or more appropriate .gitignore files for the given " + (Format.red + "`PATH`") + ".")
+            print("\(TAB)  Suggests one or more appropriate .gitignore files for the given" + (Format.red + " `PATH`") + ".")
             return true
         }
         
-        if let url = seeIfArgumentIsAPath(args[2]) {
-            let result = try ProjectDetector.sharedInstance.identify(url)
-            if result.count == 0 {
-                print(Format.red + "Snub couldn't suggest any .gitignore files for `\(url.lastPathComponent!)` directory")
-            } else {
-                let suggestions = result.map { $0.id }.joinWithSeparator("+")
-                print(Format.green + "Snub suggests \(suggestions)")
-            }
+        guard let url = seeIfArgumentIsAPath(args[2]) else {
+            return false
         }
-        return false
+        
+        let result = try ProjectDetector.sharedInstance.identify(url)
+        if result.count == 0 {
+            print(Format.red + "Snub couldn't suggest any .gitignore files for `\(url.lastPathComponent!)` directory")
+        } else {
+            let suggestions = result.map { $0.id }.joinWithSeparator("+")
+            print(Format.green + "Snub suggests \(suggestions)")
+        }
+        return true
     }
 }
 
