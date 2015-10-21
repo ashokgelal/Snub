@@ -8,6 +8,7 @@
 
 import SnubCore
 import Async
+import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

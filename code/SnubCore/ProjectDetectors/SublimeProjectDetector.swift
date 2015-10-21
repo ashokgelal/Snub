@@ -6,6 +6,8 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
+import CocoaLumberjack
+
 class SublimeProjectDetector: ProjectTypeDetector {
     func detect(fileExtensions: [String]) -> ProjectDetectionResult? {
         let knownExtensions = ["sublime-workspace", "sublime-project"]

@@ -14,7 +14,6 @@
 		CDBDE3771BD4683C00EF5DB9 /* SnubCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE3791BD468FA00EF5DB9 /* Vendors */; settings = {ASSET_TAGS = (); }; };
 		CDBDE37C1BD4692800EF5DB9 /* Services in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE37B1BD4692800EF5DB9 /* Services */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3821BD4697600EF5DB9 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3801BD4697600EF5DB9 /* CocoaLumberjack.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3831BD4697600EF5DB9 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3811BD4697600EF5DB9 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3861BD469A600EF5DB9 /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3851BD469A600EF5DB9 /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3891BD469CE00EF5DB9 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3881BD469CE00EF5DB9 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
@@ -49,7 +48,6 @@
 		CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnubCore.h; sourceTree = SOURCE_ROOT; };
 		CDBDE3791BD468FA00EF5DB9 /* Vendors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Vendors; path = /Users/ashokgelal/Documents/projects/personal/Snub/code/SnubCore/Vendors; sourceTree = "<absolute>"; };
 		CDBDE37B1BD4692800EF5DB9 /* Services */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Services; path = /Users/ashokgelal/Documents/projects/personal/Snub/code/SnubCore/Services; sourceTree = "<absolute>"; };
-		CDBDE3801BD4697600EF5DB9 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
 		CDBDE3811BD4697600EF5DB9 /* Finder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finder.swift; sourceTree = "<group>"; };
 		CDBDE3851BD469A600EF5DB9 /* GitIgnoreFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreFileManager.swift; path = Services/GitIgnoreFileManager.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3881BD469CE00EF5DB9 /* MagicStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MagicStrings.swift; path = Models/MagicStrings.swift; sourceTree = SOURCE_ROOT; };
@@ -140,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				CDBDE3AC1BD46B2D00EF5DB9 /* RegExp.swift */,
-				CDBDE3801BD4697600EF5DB9 /* CocoaLumberjack.swift */,
 				CDBDE3811BD4697600EF5DB9 /* Finder.swift */,
 			);
 			path = Vendors;
@@ -329,7 +326,6 @@
 				CDBDE3921BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift in Sources */,
 				CDBDE38E1BD469FC00EF5DB9 /* Enums.swift in Sources */,
 				CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */,
-				CDBDE3821BD4697600EF5DB9 /* CocoaLumberjack.swift in Sources */,
 				CDBDE3AD1BD46B2D00EF5DB9 /* RegExp.swift in Sources */,
 				CDBDE3891BD469CE00EF5DB9 /* MagicStrings.swift in Sources */,
 			);

@@ -9,6 +9,7 @@
 import Cocoa
 import Async
 import SnubCore
+import CocoaLumberjack
 
 class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
     override func loadSelectedFolders(selectedFolders: [NSURL]) {

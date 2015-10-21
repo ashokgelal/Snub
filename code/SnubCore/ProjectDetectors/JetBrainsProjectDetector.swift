@@ -6,6 +6,8 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
+import CocoaLumberjack
+
 class JetBrainsProjectDetector: ProjectTypeDetector {
     func detect(fileExtensions: [String]) -> ProjectDetectionResult? {
         let knownExtensions = ["iml", "idea", "idea_modules"]

@@ -9,6 +9,7 @@
 import Cocoa
 import Async
 import SnubCore
+import CocoaLumberjack
 
 class ContentViewController: NSViewController {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!

@@ -6,6 +6,8 @@
 //  Copyright © 2015 RnA Apps. All rights reserved.
 //
 
+import CocoaLumberjack
+
 class VagrantProjectDetector: ProjectTypeDetector {
     func detect(fileExtensions: [String]) -> ProjectDetectionResult? {
         let knownExtensions = ["vagrant"]

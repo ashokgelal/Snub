@@ -10,6 +10,7 @@ import Cocoa
 import Async
 import FuzzySearch
 import SnubCore
+import CocoaLumberjack
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
     @IBInspectable var cellIdentifier: String!

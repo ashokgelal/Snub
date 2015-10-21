@@ -8,6 +8,7 @@
 
 import Foundation
 import PDKTZipArchive
+import CocoaLumberjack
 
 public class GitIgnoreFileManager {
     public static let sharedInstance = GitIgnoreFileManager()

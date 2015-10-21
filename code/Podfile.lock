@@ -1,13 +1,12 @@
 PODS:
   - Async (1.3.1)
-  - CocoaLumberjack (2.1.0-beta):
-    - CocoaLumberjack/Default (= 2.1.0-beta)
-    - CocoaLumberjack/Extensions (= 2.1.0-beta)
   - CocoaLumberjack/Core (2.1.0-beta)
   - CocoaLumberjack/Default (2.1.0-beta):
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.1.0-beta):
     - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (2.1.0-beta):
+    - CocoaLumberjack/Extensions
   - FuzzySearch (1.1.0)
   - PDKTZipArchive (0.3.5)
   - Sparkle (1.11.0)
@@ -15,7 +14,8 @@ PODS:
 
 DEPENDENCIES:
   - Async (from `https://github.com/JohnCoates/Async.git`)
-  - CocoaLumberjack (= 2.1.0-beta)
+  - CocoaLumberjack/Swift (from `https://github.com/CocoaLumberjack/CocoaLumberjack.git`,
+    tag `2.1.0-beta`)
   - FuzzySearch (from `https://github.com/ashokgelal/FuzzySearch`)
   - PDKTZipArchive (from `https://github.com/ashokgelal/PDKTZipArchive`)
   - Sparkle (~> 1.10)
@@ -24,6 +24,9 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Async:
     :git: https://github.com/JohnCoates/Async.git
+  CocoaLumberjack:
+    :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
+    :tag: 2.1.0-beta
   FuzzySearch:
     :git: https://github.com/ashokgelal/FuzzySearch
   PDKTZipArchive:
@@ -33,6 +36,9 @@ CHECKOUT OPTIONS:
   Async:
     :commit: 23d9de3675f8357e7ad7d4c8b8b7d7caf9b73570
     :git: https://github.com/JohnCoates/Async.git
+  CocoaLumberjack:
+    :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
+    :tag: 2.1.0-beta
   FuzzySearch:
     :commit: 631e9dac3e7edb83e7be76b74ad3f960940f672a
     :git: https://github.com/ashokgelal/FuzzySearch

@@ -8,6 +8,7 @@
 
 import Foundation
 import ScriptingBridge
+import CocoaLumberjack
 
 public class FinderSelectionProvider {
     
