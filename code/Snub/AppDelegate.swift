@@ -28,6 +28,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+// MARK: ContentViewControllerDelegate
+extension AppDelegate: ContentViewControllerDelegate {
+    func performDismissContentViewController(sender: AnyObject?) {
+        closePopover(sender)
+    }
+}
+
 // MARK: Status Item
 extension AppDelegate {
     private func setupPopover() {
@@ -37,7 +44,9 @@ extension AppDelegate {
             button.toolTip = MagicStrings.APPNAME
         }
         contentPopover.animates = false
-        contentPopover.contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
+        let contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
+        contentViewController?.contentViewControllerDelegate = self
+        contentPopover.contentViewController = contentViewController
         setupEventMonitor()
         DDLogVerbose("Finished setting up status item")
     }
