@@ -7,6 +7,7 @@
 //
 
 import SnubCore
+import Async
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -21,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        bootstrapper.setupForUI()
+        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
         setupPopover()
         DDLogVerbose("Application finish launching")
     }

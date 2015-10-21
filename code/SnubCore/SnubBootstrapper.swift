@@ -8,7 +8,6 @@
 
 import Foundation
 import CocoaLumberjack
-import Async
 
 @objc public class Bootstrapper : NSObject {
     public static let sharedInstance = Bootstrapper()
@@ -27,7 +26,7 @@ import Async
     public func setupForUI() {
         defaultDebugLevel = DDLogLevel.Verbose
         DDLogVerbose("Setting up Snub for UI");
-        Async.background { GitIgnoreFileManager.sharedInstance }
+        GitIgnoreFileManager.sharedInstance
     }
     
     public func setupForCommandLine() {
