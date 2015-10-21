@@ -29,6 +29,9 @@ class AboutWindowController: NSWindowController {
 // MARK: Actions
 extension AboutWindowController {
     @IBAction func showAcknowledgements(sender: AnyObject) {
+        if let url = NSBundle.mainBundle().URLForResource(MagicStrings.ACKNOWLEDGEMENT_FILE, withExtension: "pdf") {
+            NSWorkspace.sharedWorkspace().openURL(url)
+        }
     }
     
     @IBAction func showRegistration(sender: AnyObject) {

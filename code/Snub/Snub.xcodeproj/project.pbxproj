@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
+		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; settings = {ASSET_TAGS = (); }; };
+		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E281BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -20,7 +22,6 @@
 		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
-		CDF3FBC51BD7457000472F09 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		CDF4BA771BD47F3C008145F1 /* SnubCore.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,8 @@
 		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9455891BD7621000636351 /* Acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Acknowledgements.pdf; sourceTree = SOURCE_ROOT; };
+		CD94558B1BD7624600636351 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Controllers/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E241BD4778200CAF500 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = Controllers/ContentViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterGitIgnoreTabViewItemController.swift; path = Controllers/MasterGitIgnoreTabViewItemController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestedTabViewItemController.swift; path = Controllers/SuggestedTabViewItemController.swift; sourceTree = SOURCE_ROOT; };
@@ -63,7 +66,6 @@
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		CDEFBC231BD49C4700365797 /* gitignore-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "gitignore-master.zip"; sourceTree = SOURCE_ROOT; };
-		CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Views/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
 		CDF3FBC41BD7457000472F09 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Views/AboutWindow.xib; sourceTree = SOURCE_ROOT; };
 		CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnubCore.xcodeproj; path = ../SnubCore/SnubCore.xcodeproj; sourceTree = "<group>"; };
 		EE5CF2033A91327DC2E1ADD1 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */,
 				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
 				CDEFBC231BD49C4700365797 /* gitignore-master.zip */,
+				CD9455891BD7621000636351 /* Acknowledgements.pdf */,
 				CDAB6E521BD47A4900CAF500 /* Assets.xcassets */,
 			);
 			path = Snub;
@@ -123,7 +126,6 @@
 				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
 				CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */,
 				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
-				CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */,
 				CDF3FBC41BD7457000472F09 /* AboutWindow.xib */,
 			);
 			path = Views;
@@ -132,6 +134,7 @@
 		CDD22D631BCF533600308400 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD94558B1BD7624600636351 /* AboutWindowController.swift */,
 				CDAB6E241BD4778200CAF500 /* ContentViewController.swift */,
 				CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */,
 				CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
+				CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */,
 				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
 				CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */,
@@ -331,9 +335,9 @@
 				CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */,
 				CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */,
 				CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */,
+				CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */,
 				CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */,
 				CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */,
-				CDF3FBC51BD7457000472F09 /* AboutWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
