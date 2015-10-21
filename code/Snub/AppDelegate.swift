@@ -45,7 +45,7 @@ extension AppDelegate {
             button.toolTip = MagicStrings.APPNAME
         }
         contentPopover.animates = false
-        let contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
+        let contentViewController = ContentViewController(nibName: "ContentView", bundle: nil)
         contentViewController?.contentViewControllerDelegate = self
         contentPopover.contentViewController = contentViewController
         setupEventMonitor()

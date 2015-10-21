@@ -19,7 +19,7 @@
 		CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E441BD477A800CAF500 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentView.xib */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E521BD47A4900CAF500 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
@@ -75,7 +75,7 @@
 		CDAB6E441BD477A800CAF500 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitIgnoreRowView.swift; path = Views/GitIgnoreRowView.swift; sourceTree = SOURCE_ROOT; };
-		CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentViewController.xib; path = Views/ContentViewController.xib; sourceTree = SOURCE_ROOT; };
+		CDAB6E501BD47A0200CAF500 /* ContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentView.xib; path = Views/ContentView.xib; sourceTree = SOURCE_ROOT; };
 		CDAB6E521BD47A4900CAF500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		CDBBBF731BD47C0D00DD515E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
@@ -138,7 +138,7 @@
 		CDD22D551BCF521F00308400 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */,
+				CDAB6E501BD47A0200CAF500 /* ContentView.xib */,
 				CDF3FBC41BD7457000472F09 /* AboutWindow.xib */,
 				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
 				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
@@ -285,7 +285,7 @@
 				CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */,
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
 				CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */,
-				CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */,
+				CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */,
 				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
 				CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */,
 				CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */,
