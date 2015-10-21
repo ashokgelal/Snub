@@ -37,3 +37,7 @@ extension GitIgnoreRowView {
     optional func performAdd(sender: GitIgnoreFileItem)
     optional func performAppend(sender: GitIgnoreFileItem)
 }
+
+@objc protocol ContentViewControllerDelegate {
+    func performDismissContentViewController(sender: AnyObject?)
+}

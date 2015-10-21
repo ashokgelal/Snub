@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="Snub" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="se5-gp-TjO" id="5UN-ji-MIl"/>
+                <outlet property="licenseLbl" destination="0EM-c6-Omr" id="1ZP-fu-O8e"/>
+                <outlet property="titleLbl" destination="8s4-ET-gdV" id="fpJ-OQ-Rf1"/>
+                <outlet property="versionLbl" destination="4di-aZ-wC7" id="gtY-YG-4vn"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
+            <rect key="contentRect" x="468" y="427" width="530" height="190"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="530" height="190"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="adU-mj-jPB" userLabel="iconBtn">
+                        <rect key="frame" x="20" y="28" width="146" height="152"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="tTb-J7-uSy"/>
+                        </constraints>
+                        <animations/>
+                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="aboutLogo" imagePosition="overlaps" alignment="center" inset="2" id="dU4-Ln-x9e">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8s4-ET-gdV" userLabel="titleField">
+                        <rect key="frame" x="194" y="127" width="318" height="53"/>
+                        <animations/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Snub" id="Dyf-BO-JWX">
+                            <font key="font" metaFont="systemUltraLight" size="44"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4di-aZ-wC7" userLabel="versionField">
+                        <rect key="frame" x="194" y="105" width="318" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Ptw-P0-cFL"/>
+                        </constraints>
+                        <animations/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Version 1.0.0 (1)" id="HGp-Sb-2O4">
+                            <font key="font" metaFont="systemThin" size="13"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" red="0.20000000000000001" green="0.53725490200000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-c6-Omr" userLabel="licenseField">
+                        <rect key="frame" x="194" y="83" width="318" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="zuG-Rt-geY"/>
+                        </constraints>
+                        <animations/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Licensed to rnaapps" id="iwN-c9-ZfI">
+                            <font key="font" metaFont="systemThin" size="13"/>
+                            <color key="textColor" white="0.0" alpha="0.79659796099290781" colorSpace="deviceWhite"/>
+                            <color key="backgroundColor" red="0.20000000000000001" green="0.53725490200000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lUp-t0-UCQ">
+                        <rect key="frame" x="403" y="13" width="113" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Registration" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KzX-5m-Hvq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showRegistration:" target="-2" id="4fM-JW-VEQ"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="md7-1n-pV0">
+                        <rect key="frame" x="252" y="13" width="151" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Acknowledgments" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vk3-wd-xCw">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showAcknowledgements:" target="-2" id="LU8-UT-8wr"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="adU-mj-jPB" secondAttribute="bottom" constant="28" id="4yh-Ua-oIF"/>
+                    <constraint firstAttribute="trailing" secondItem="8s4-ET-gdV" secondAttribute="trailing" constant="20" symbolic="YES" id="83N-2R-cGB"/>
+                    <constraint firstItem="4di-aZ-wC7" firstAttribute="top" secondItem="8s4-ET-gdV" secondAttribute="bottom" id="Bdz-bi-hqi"/>
+                    <constraint firstItem="8s4-ET-gdV" firstAttribute="leading" secondItem="adU-mj-jPB" secondAttribute="trailing" constant="30" id="HrF-YC-KdK"/>
+                    <constraint firstAttribute="trailing" secondItem="lUp-t0-UCQ" secondAttribute="trailing" constant="20" symbolic="YES" id="NNK-vu-ZyB"/>
+                    <constraint firstItem="0EM-c6-Omr" firstAttribute="top" secondItem="4di-aZ-wC7" secondAttribute="bottom" id="Ub8-sE-DdD"/>
+                    <constraint firstAttribute="bottom" secondItem="lUp-t0-UCQ" secondAttribute="bottom" constant="20" symbolic="YES" id="VQj-wB-6nk"/>
+                    <constraint firstItem="adU-mj-jPB" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="gWv-rx-RH3"/>
+                    <constraint firstItem="4di-aZ-wC7" firstAttribute="trailing" secondItem="8s4-ET-gdV" secondAttribute="trailing" id="gXa-wv-vOL"/>
+                    <constraint firstItem="4di-aZ-wC7" firstAttribute="leading" secondItem="8s4-ET-gdV" secondAttribute="leading" id="iR6-LG-2Z0"/>
+                    <constraint firstItem="8s4-ET-gdV" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="10" id="m63-hl-1SY"/>
+                    <constraint firstAttribute="bottom" secondItem="md7-1n-pV0" secondAttribute="bottom" constant="20" symbolic="YES" id="mZP-hY-ne3"/>
+                    <constraint firstItem="0EM-c6-Omr" firstAttribute="trailing" secondItem="4di-aZ-wC7" secondAttribute="trailing" id="mfL-H5-gcZ"/>
+                    <constraint firstItem="lUp-t0-UCQ" firstAttribute="leading" secondItem="md7-1n-pV0" secondAttribute="trailing" constant="12" id="qyf-kV-HZ8"/>
+                    <constraint firstItem="adU-mj-jPB" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="10" id="r8U-QP-piq"/>
+                    <constraint firstItem="0EM-c6-Omr" firstAttribute="leading" secondItem="4di-aZ-wC7" secondAttribute="leading" id="rh9-FV-8T0"/>
+                </constraints>
+                <animations/>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="691" y="653"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="aboutLogo" width="146" height="146"/>
+    </resources>
+</document>

@@ -17,8 +17,10 @@ class ContentViewController: NSViewController {
     @IBOutlet weak var currentGitIgnoreLbl: NSTextField!
     @IBOutlet var suggestedTabViewItemController: SuggestedTabViewItemController!
     @IBOutlet var masterGitIgnoreTabViewItemController: MasterGitIgnoreTabViewItemController!
+    weak var contentViewControllerDelegate: ContentViewControllerDelegate!
     
     @IBOutlet weak var statusImage: NSImageView!
+    private var aboutWindowController: AboutWindowController!
     private var currentGitIgnoreFilePaths: Array<NSURL?> = []
     
     override func viewDidAppear() {
@@ -93,6 +95,12 @@ class ContentViewController: NSViewController {
 extension ContentViewController {
     @IBAction func quitSnub(sender: AnyObject) {
         NSApplication.sharedApplication().terminate(sender)
+    }
+    
+    @IBAction func showAboutWindow(sender: AnyObject) {
+        self.contentViewControllerDelegate.performDismissContentViewController(self)
+        aboutWindowController = AboutWindowController(windowNibName: "AboutWindow")
+        aboutWindowController.showWindow(self)
     }
 }
 

@@ -38,15 +38,22 @@
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ey-tWz">
                     <rect key="frame" x="244" y="301" width="40" height="20"/>
                     <animations/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="MXu-ta-Q1r">
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="wOU-lp-EFh" id="MXu-ta-Q1r">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                         <menu key="menu" id="TSt-q6-Mwq">
                             <items>
                                 <menuItem state="on" image="gearIcon" hidden="YES" id="qbn-Er-I0Y"/>
-                                <menuItem title="Quit Snub" keyEquivalent="q" id="wOU-lp-EFh">
+                                <menuItem title="About Snub" id="wOU-lp-EFh">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
                                     <connections>
-                                        <action selector="quitSnub:" target="-2" id="2IP-qB-ZQg"/>
+                                        <action selector="showAboutWindow:" target="-2" id="uMj-6s-jHh"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="QY3-zl-CjP"/>
+                                <menuItem title="Quit Snub" keyEquivalent="q" id="ISG-hb-c9j">
+                                    <connections>
+                                        <action selector="quitSnub:" target="-2" id="Bl4-f0-rg8"/>
                                     </connections>
                                 </menuItem>
                             </items>

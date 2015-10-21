@@ -20,6 +20,8 @@
 		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
+		CDF3FBC51BD7457000472F09 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		CDF4BA771BD47F3C008145F1 /* SnubCore.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		CDEFBC231BD49C4700365797 /* gitignore-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "gitignore-master.zip"; sourceTree = SOURCE_ROOT; };
+		CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Views/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
+		CDF3FBC41BD7457000472F09 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Views/AboutWindow.xib; sourceTree = SOURCE_ROOT; };
 		CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnubCore.xcodeproj; path = ../SnubCore/SnubCore.xcodeproj; sourceTree = "<group>"; };
 		EE5CF2033A91327DC2E1ADD1 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,8 @@
 				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
 				CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */,
 				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
+				CDF3FBC31BD7457000472F09 /* AboutWindowController.swift */,
+				CDF3FBC41BD7457000472F09 /* AboutWindow.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			files = (
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */,
+				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
 				CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */,
 				CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */,
 			);
@@ -326,6 +333,7 @@
 				CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */,
 				CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */,
 				CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */,
+				CDF3FBC51BD7457000472F09 /* AboutWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
