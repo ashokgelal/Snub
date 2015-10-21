@@ -34,6 +34,12 @@ extension AboutWindowController {
         }
     }
     
+    @IBAction func visitSnubSite(sender: AnyObject) {
+        if let url = NSBundle.mainBundle().objectForInfoDictionaryKey("SnubHomepage") as? String {
+            NSWorkspace.sharedWorkspace().openURL(NSURL(string: url)!)
+        }
+    }
+    
     @IBAction func showRegistration(sender: AnyObject) {
     }
 }

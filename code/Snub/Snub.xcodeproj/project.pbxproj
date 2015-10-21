@@ -123,10 +123,10 @@
 		CDD22D551BCF521F00308400 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
 				CDAB6E501BD47A0200CAF500 /* ContentViewController.xib */,
-				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
 				CDF3FBC41BD7457000472F09 /* AboutWindow.xib */,
+				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
+				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
