@@ -337,9 +337,9 @@ extension CommandHandler {
         print(makeCommand("list"))
         print(makeCommand("add") + " <type1+type2+...> [target]   " + makeExample("snub add xcode+osx ."))
         print(makeCommand("append") + " <type1+type2+...> [target]" + makeExample("snub append xcode+osx ."))
-        print(makeCommand("cat") + " <type1+type2+...>          " + makeExample("snub cat xcode+osx"))
-        print(makeCommand("suggest") + " [target]")
-        print(makeCommand("lucky") + " [target]")
+        print(makeCommand("suggest") + " [target]                 " + makeExample("snub suggest ."))
+        print(makeCommand("lucky") + " [target]                   " + makeExample("snub lucky ."))
+        print(makeCommand("cat") + " <type1+type2+...>            " + makeExample("snub cat xcode+osx"))
         print(makeCommand("help") + " <command>                   " + makeExample("snub help add"))
     }
     
@@ -360,7 +360,7 @@ extension CommandHandler {
     }
     
     private func makeExample(text: String) -> String {
-        return Format.darkGray + "\(TAB)\(TAB)E.g. $ \(text)"
+        return Format.darkGray + "\(TAB)\(TAB)e.g. $ \(text)"
     }
     
     private func makeSuffix(text: String) -> String {
