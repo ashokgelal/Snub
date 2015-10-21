@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDE1EDEE1BD48E3E00828508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1EDED1BD48E3E00828508 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		CDE1EE101BD48F1800828508 /* snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE1EDE11BD48D7F00828508 /* snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CDEFBC191BD4977000365797 /* SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; };
+		CDEFBC1A1BD4988800365797 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDE1EE0D1BD48F0000828508 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDE1EDD91BD48D7F00828508 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDE1EDE01BD48D7F00828508;
+			remoteInfo = SnubCommand;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDE1EDDF1BD48D7F00828508 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		CDE1EE0F1BD48F0600828508 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				CDE1EE101BD48F1800828508 /* snub in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDEFBBF11BD4910100365797 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDEFBC1A1BD4988800365797 /* SnubCore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CDE1EDE11BD48D7F00828508 /* snub */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = snub; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE1EDED1BD48E3E00828508 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnubCommand.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE1EDF51BD48E8F00828508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDEFBC181BD4977000365797 /* SnubCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnubCore.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Snub-cusytgygldlzuudgkyzeuordujax/Build/Products/Debug/SnubCore.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDE1EDDE1BD48D7F00828508 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDE1EDF01BD48E8F00828508 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDEFBC191BD4977000365797 /* SnubCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B03A20160E93B2D73494B550 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDEFBC181BD4977000365797 /* SnubCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDE1EDD81BD48D7F00828508 = {
+			isa = PBXGroup;
+			children = (
+				CDE1EDE31BD48D7F00828508 /* SnubCommand */,
+				CDE1EDF41BD48E8F00828508 /* SnubCommandBundle */,
+				CDE1EDE21BD48D7F00828508 /* Products */,
+				B03A20160E93B2D73494B550 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CDE1EDE21BD48D7F00828508 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1EDE11BD48D7F00828508 /* snub */,
+				CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDE1EDE31BD48D7F00828508 /* SnubCommand */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1EDED1BD48E3E00828508 /* main.m */,
+			);
+			path = SnubCommand;
+			sourceTree = "<group>";
+		};
+		CDE1EDF41BD48E8F00828508 /* SnubCommandBundle */ = {
+			isa = PBXGroup;
+			children = (
+				CDE1EDF51BD48E8F00828508 /* Info.plist */,
+			);
+			path = SnubCommandBundle;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDE1EDE01BD48D7F00828508 /* snub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "snub" */;
+			buildPhases = (
+				CDE1EDDD1BD48D7F00828508 /* Sources */,
+				CDE1EDDE1BD48D7F00828508 /* Frameworks */,
+				CDE1EDDF1BD48D7F00828508 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snub;
+			productName = SnubCommand;
+			productReference = CDE1EDE11BD48D7F00828508 /* snub */;
+			productType = "com.apple.product-type.tool";
+		};
+		CDE1EDF21BD48E8F00828508 /* snubBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "snubBundle" */;
+			buildPhases = (
+				CDE1EDEF1BD48E8F00828508 /* Sources */,
+				CDE1EDF01BD48E8F00828508 /* Frameworks */,
+				CDE1EDF11BD48E8F00828508 /* Resources */,
+				CDE1EE0F1BD48F0600828508 /* CopyFiles */,
+				CDEFBBF11BD4910100365797 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDE1EE0E1BD48F0000828508 /* PBXTargetDependency */,
+			);
+			name = snubBundle;
+			productName = SnubCommandBundle;
+			productReference = CDE1EDF31BD48E8F00828508 /* SnubCommand.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDE1EDD91BD48D7F00828508 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "RnA Apps";
+				TargetAttributes = {
+					CDE1EDE01BD48D7F00828508 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					CDE1EDF21BD48E8F00828508 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = CDE1EDDC1BD48D7F00828508 /* Build configuration list for PBXProject "SnubCommand" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CDE1EDD81BD48D7F00828508;
+			productRefGroup = CDE1EDE21BD48D7F00828508 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDE1EDE01BD48D7F00828508 /* snub */,
+				CDE1EDF21BD48E8F00828508 /* snubBundle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDE1EDF11BD48E8F00828508 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDE1EDDD1BD48D7F00828508 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE1EDEE1BD48E3E00828508 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDE1EDEF1BD48E8F00828508 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDE1EE0E1BD48F0000828508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDE1EDE01BD48D7F00828508 /* snub */;
+			targetProxy = CDE1EE0D1BD48F0000828508 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CDE1EDE61BD48D7F00828508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CDE1EDE71BD48D7F00828508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CDE1EDE91BD48D7F00828508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks @executable_path";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDE1EDEA1BD48D7F00828508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path";
+				OTHER_LDFLAGS = (
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CDE1EDF71BD48E8F00828508 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = SnubCommandBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubCommandBundle;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		CDE1EDF81BD48E8F00828508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = SnubCommandBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubCommandBundle;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDE1EDDC1BD48D7F00828508 /* Build configuration list for PBXProject "SnubCommand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDE1EDE61BD48D7F00828508 /* Debug */,
+				CDE1EDE71BD48D7F00828508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDE1EDE81BD48D7F00828508 /* Build configuration list for PBXNativeTarget "snub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDE1EDE91BD48D7F00828508 /* Debug */,
+				CDE1EDEA1BD48D7F00828508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDE1EDF61BD48E8F00828508 /* Build configuration list for PBXNativeTarget "snubBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDE1EDF71BD48E8F00828508 /* Debug */,
+				CDE1EDF81BD48E8F00828508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDE1EDD91BD48D7F00828508 /* Project object */;
+}

@@ -1,0 +1,22 @@
+#compdef snub
+_snub() {
+  local -a commands
+  commands=(
+    'list:list all available .gitignore files'
+    'add:add one or more .gitignore files'
+    'append:append one or more .gitignore file'
+    'print:print one or more .gitignore file'
+    'suggest:suggest one or more .gitignore for a target'
+    'lucky:feeling lucky? add one or more .gitignore files automatically'
+    'version:show the version'
+    'help:show help'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_snub
