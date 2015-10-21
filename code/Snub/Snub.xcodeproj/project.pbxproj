@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
 		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; settings = {ASSET_TAGS = (); }; };
+		CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDF4BA761BD47F33008145F1 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; settings = {ASSET_TAGS = (); }; };
 		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -24,7 +25,6 @@
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
 		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; settings = {ASSET_TAGS = (); }; };
-		CDF4BA771BD47F3C008145F1 /* SnubCore.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +43,19 @@
 			remoteInfo = SnubCore;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD8B79121BD76FFB00BDCCD1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF4BA771BD47F3C008145F1 /* SnubCore.xcodeproj in Frameworks */,
 				CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */,
 				BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */,
 			);
@@ -204,6 +216,7 @@
 				CD62A8071BCE0FB9009D6B62 /* Resources */,
 				B1171C3C91AD55580311FF2A /* Embed Pods Frameworks */,
 				C234E93A563041E7D7AF7446 /* Copy Pods Resources */,
+				CD8B79121BD76FFB00BDCCD1 /* CopyFiles */,
 			);
 			buildRules = (
 			);

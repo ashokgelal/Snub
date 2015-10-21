@@ -12,6 +12,9 @@ end
 
 target 'Snub' do
     xcodeproj 'Snub/Snub.xcodeproj'
+    pod 'CocoaLumberjack', '2.1.0-beta'
+    pod 'PDKTZipArchive', :git => 'https://github.com/ashokgelal/PDKTZipArchive'
+    pod 'SwiftRegExp', '~> 1.2'
     pod 'Async', :git => 'https://github.com/JohnCoates/Async.git'
     pod 'FuzzySearch', :git => 'https://github.com/ashokgelal/FuzzySearch'
     pod 'Sparkle', '~> 1.10'
