@@ -38,7 +38,7 @@
                 <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ey-tWz">
                     <rect key="frame" x="244" y="301" width="40" height="20"/>
                     <animations/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="wOU-lp-EFh" id="MXu-ta-Q1r">
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="MXu-ta-Q1r">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="systemBold" size="12"/>
                         <menu key="menu" id="TSt-q6-Mwq">
@@ -51,6 +51,13 @@
                                     </connections>
                                 </menuItem>
                                 <menuItem isSeparatorItem="YES" id="QY3-zl-CjP"/>
+                                <menuItem title="Check for Updates..." id="pUb-AG-puD">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="checkForUpdates:" target="gxR-mH-bYL" id="bNk-zo-rPH"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="gzg-Xw-E44"/>
                                 <menuItem title="Quit Snub" keyEquivalent="q" id="ISG-hb-c9j">
                                     <connections>
                                         <action selector="quitSnub:" target="-2" id="Bl4-f0-rg8"/>
@@ -459,6 +466,7 @@
                 <outlet property="view" destination="oqS-Mp-guq" id="Qkw-hg-5D2"/>
             </connections>
         </customObject>
+        <customObject id="gxR-mH-bYL" customClass="SUUpdater"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>

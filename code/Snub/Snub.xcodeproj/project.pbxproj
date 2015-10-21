@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
+		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; settings = {ASSET_TAGS = (); }; };
 		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; settings = {ASSET_TAGS = (); }; };
 		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
 		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +52,7 @@
 		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = ../../sign/dsa_pub.pem; sourceTree = "<group>"; };
 		CD9455891BD7621000636351 /* Acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Acknowledgements.pdf; sourceTree = SOURCE_ROOT; };
 		CD94558B1BD7624600636351 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Controllers/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E241BD4778200CAF500 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = Controllers/ContentViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -115,6 +117,7 @@
 				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
 				CDEFBC231BD49C4700365797 /* gitignore-master.zip */,
 				CD9455891BD7621000636351 /* Acknowledgements.pdf */,
+				CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */,
 				CDAB6E521BD47A4900CAF500 /* Assets.xcassets */,
 			);
 			path = Snub;
@@ -266,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */,
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
 				CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentViewController.xib in Resources */,
