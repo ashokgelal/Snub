@@ -16,10 +16,11 @@ class CommandHandler {
     func run() {
         let args = NSProcessInfo.processInfo().arguments
         
-        if(handleHelp(args)) { return }
-        if(handleVersion(args)) { return }
+        if(handleHelpOption(args)) { return }
+        if(handleVersionOption(args)) { return }
         if(handleList(args)) { return }
         do {
+            if(handleHelpCommand(args)) { return }
             if(try handleSuggest(args)) { return }
             if(try handleLucky(args)) { return }
             if(try handleAdd(args)) { return }
@@ -45,22 +46,75 @@ class CommandHandler {
         }
         return nil
     }
-    
-    private func handleVersion(args: [String]) -> Bool {
+}
+
+// MARK: List
+extension CommandHandler {
+    private func handleVersionOption(args: [String]) -> Bool {
         if args.count >= 2 && (args[1] == "-v" || args[1] == "--version") {
+            // todo: get license
             print(Format.green + "Snub \(MagicStrings.COMMANDLINE_VERSION) (Licensed to hellornaapps@gmail.com)")
             return true
         }
         return false
     }
-    
-    private func handleList(args: [String]) -> Bool {
-        if args.count >= 2 && args[1] == "list" {
-            let allItems = GitIgnoreFileManager.sharedInstance.fetchMasterGitIgnoreItems().map { $0.name }.joinWithSeparator(", ")
-            print(allItems)
+}
+
+// MARK: HelpCommand
+extension CommandHandler {
+    private func handleHelpCommand(args: [String]) -> Bool {
+        guard args[1] == "help" else {
+            return false
+        }
+        guard args.count >= 3 else {
+            printHelp()
             return true
         }
-        return false
+        
+        switch args[2] {
+        case "list":
+            printListHelp()
+            break
+        case "add":
+            printAddHelp()
+            break
+        case "append":
+            printAppendHelp()
+            break
+        case "suggest":
+            printSuggestHelp()
+            break
+        case "lucky":
+            printLuckyHelp()
+            break
+        case "cat":
+            printCatHelp()
+            break
+        default:
+            printHelp()
+        }
+        return true
+    }
+}
+
+// MARK: List
+extension CommandHandler {
+    private func handleList(args: [String]) -> Bool {
+        guard args.count >= 2 && args[1] == "list" else {
+            return false
+        }
+        
+        let allItems = GitIgnoreFileManager.sharedInstance.fetchMasterGitIgnoreItems().map { $0.name }.joinWithSeparator(", ")
+        print(allItems)
+        return true
+    }
+    
+    private func printListHelp() {
+        print(Format.bold + "Usage:")
+        print("")
+        print("\(TAB)$ snub list")
+        print("")
+        print("\(TAB)  Prints a list of all the available gitignore types.")
     }
 }
 
@@ -216,15 +270,9 @@ extension CommandHandler {
         guard args[1] == "lucky" else {
             return false
         }
+        
         guard args.count == 3 else {
-            print(Format.red + "[!] A target directory is required")
-            print("")
-            print(Format.bold + "Usage:")
-            print("")
-            print("\(TAB)$ snub lucky " + (Format.red+"TARGET_DIRECTORY"))
-            print("")
-            print("\(TAB)  If possible, adds one or more appropriate .gitignore files for the given" + (Format.red + " `TARGET_DIRECTORY`") + ".")
-            print("\(TAB)  Feeling lucky? 🍀")
+            printLuckyHelp()
             return true
         }
         
@@ -253,6 +301,17 @@ extension CommandHandler {
         print(Format.green + "Snub added \(outputPath) for you")
         return true
     }
+    
+    private func printLuckyHelp() {
+        print(Format.red + "[!] A target directory is required")
+        print("")
+        print(Format.bold + "Usage:")
+        print("")
+        print("\(TAB)$ snub lucky " + (Format.red+"TARGET_DIRECTORY"))
+        print("")
+        print("\(TAB)  If possible, adds one or more appropriate .gitignore files for the given" + (Format.red + " `TARGET_DIRECTORY`") + ".")
+        print("\(TAB)  Feeling lucky? 🍀")
+    }
 }
 
 // MARK: Suggest
@@ -263,13 +322,7 @@ extension CommandHandler {
         }
         
         guard args.count == 3 else {
-            print(Format.red + "[!] A target directory is required")
-            print("")
-            print(Format.bold + "Usage:")
-            print("")
-            print("\(TAB)$ snub suggest " + (Format.red+"TARGET_DIRECTORY"))
-            print("")
-            print("\(TAB)  Suggests one or more appropriate .gitignore files for the given" + (Format.red + " `TARGET_DIRECTORY`") + ".")
+            printSuggestHelp()
             return true
         }
         
@@ -287,11 +340,21 @@ extension CommandHandler {
         }
         return true
     }
+    
+    private func printSuggestHelp() {
+        print(Format.red + "[!] A target directory is required")
+        print("")
+        print(Format.bold + "Usage:")
+        print("")
+        print("\(TAB)$ snub suggest " + (Format.red+"TARGET_DIRECTORY"))
+        print("")
+        print("\(TAB)  Suggests one or more appropriate .gitignore files for the given" + (Format.red + " `TARGET_DIRECTORY`") + ".")
+    }
 }
 
-// MARK: Help
+// MARK: Help Option
 extension CommandHandler {
-    private func handleHelp(args: [String]) -> Bool {
+    private func handleHelpOption(args: [String]) -> Bool {
         if args.count == 1 {
             printHelp()
             return true
