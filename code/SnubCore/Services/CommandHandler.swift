@@ -1,5 +1,5 @@
 //
-//  CommandLineHandler.swift
+//  CommandHandler.swift
 //  SnubCore
 //
 //  Created by Ashok Gelal on 10/19/15.
@@ -24,6 +24,7 @@ class CommandHandler {
             if(try handleLucky(args)) { return }
             if(try handleAdd(args)) { return }
             if(try handleAppend(args)) { return }
+            if(try handleCat(args)) { return }
         } catch {
             printHelp()
         }
@@ -60,6 +61,50 @@ class CommandHandler {
             return true
         }
         return false
+    }
+}
+
+// MARK: Add
+extension CommandHandler {
+    private func handleCat(args: [String]) throws -> Bool {
+        guard args[1] == "cat" else {
+            return false
+        }
+        
+        guard args.count > 2 else {
+            printCatHelp()
+            return true
+        }
+        
+        var output = ""
+        var error = ""
+        let ids = args[2].characters.split { $0 == "+" }.map(String.init)
+        try ids.forEach {
+            id in
+            do {
+                output = try (output + GitIgnoreFileManager.sharedInstance.getGitIgnoreContentsForId(id) + "\n")
+            } catch GitIgnoreError.SourceGitIgnoreNotFound {
+                error = error + "The gitignore type '\(id)' doesn't exist\n"
+            }
+        }
+        if error != "" {
+            print(Format.red + error)
+        } else {
+            print(Format.green + output)
+        }
+        return true
+    }
+    
+    private func printCatHelp() {
+        print(Format.red + "[!] At least 1 gitignore type is required")
+        print("")
+        print(Format.bold + "Usage:")
+        print("")
+        print("\(TAB)$ snub cat " + (Format.red+"<TYPE1+TYPE2+...>"))
+        print("")
+        print("\(TAB)  Reads one or more .gitignore files of" + (Format.red + " `TYPE` ") + "and writes them to the standard output.")
+        print("")
+        print("\(TAB)  To print more than 1 type of .gitignore files, separate them using a `+` such as `Xcode+OSX`.")
     }
 }
 
@@ -292,7 +337,7 @@ extension CommandHandler {
         print(makeCommand("list"))
         print(makeCommand("add") + " <type1+type2+...> [target]   " + makeExample("snub add xcode+osx ."))
         print(makeCommand("append") + " <type1+type2+...> [target]" + makeExample("snub append xcode+osx ."))
-        print(makeCommand("print") + " <type1+type2+...>          " + makeExample("snub print xcode+osx"))
+        print(makeCommand("cat") + " <type1+type2+...>          " + makeExample("snub cat xcode+osx"))
         print(makeCommand("suggest") + " [target]")
         print(makeCommand("lucky") + " [target]")
         print(makeCommand("help") + " <command>                   " + makeExample("snub help add"))
