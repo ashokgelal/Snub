@@ -19,7 +19,7 @@ DEPENDENCIES:
   - FuzzySearch (from `https://github.com/ashokgelal/FuzzySearch`)
   - PDKTZipArchive (from `https://github.com/ashokgelal/PDKTZipArchive`)
   - Sparkle (~> 1.10)
-  - SwiftRegExp (~> 1.2)
+  - SwiftRegExp (from `https://github.com/ashokgelal/SwiftRegExp`)
 
 EXTERNAL SOURCES:
   Async:
@@ -31,6 +31,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/ashokgelal/FuzzySearch
   PDKTZipArchive:
     :git: https://github.com/ashokgelal/PDKTZipArchive
+  SwiftRegExp:
+    :git: https://github.com/ashokgelal/SwiftRegExp
 
 CHECKOUT OPTIONS:
   Async:
@@ -45,6 +47,9 @@ CHECKOUT OPTIONS:
   PDKTZipArchive:
     :commit: d123ebf984d610b6d7e5a340797cd55a8c118cf7
     :git: https://github.com/ashokgelal/PDKTZipArchive
+  SwiftRegExp:
+    :commit: f6a2842498f3deb944f7146508e6e451d5d6ccd8
+    :git: https://github.com/ashokgelal/SwiftRegExp
 
 SPEC CHECKSUMS:
   Async: 2aaa4263645846a8ea1c5829067fb2f8e694af36

@@ -33,7 +33,6 @@
 		CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A21BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3AA1BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A31BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
 		CDBDE3AB1BD46AB000EF5DB9 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A41BD46AB000EF5DB9 /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3AD1BD46B2D00EF5DB9 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3AC1BD46B2D00EF5DB9 /* RegExp.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +66,6 @@
 		CDBDE3A21BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualStudioCodeProjectDetector.swift; path = ProjectDetectors/VisualStudioCodeProjectDetector.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3A31BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualStudioProjectDetector.swift; path = ProjectDetectors/VisualStudioProjectDetector.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3A41BD46AB000EF5DB9 /* XcodeProjectDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XcodeProjectDetector.swift; path = ProjectDetectors/XcodeProjectDetector.swift; sourceTree = SOURCE_ROOT; };
-		CDBDE3AC1BD46B2D00EF5DB9 /* RegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +135,6 @@
 		CDBDE37F1BD4697600EF5DB9 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				CDBDE3AC1BD46B2D00EF5DB9 /* RegExp.swift */,
 				CDBDE3811BD4697600EF5DB9 /* Finder.swift */,
 			);
 			path = Vendors;
@@ -326,7 +323,6 @@
 				CDBDE3921BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift in Sources */,
 				CDBDE38E1BD469FC00EF5DB9 /* Enums.swift in Sources */,
 				CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */,
-				CDBDE3AD1BD46B2D00EF5DB9 /* RegExp.swift in Sources */,
 				CDBDE3891BD469CE00EF5DB9 /* MagicStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
