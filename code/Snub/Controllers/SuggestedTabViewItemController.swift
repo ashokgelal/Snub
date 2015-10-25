@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Async
+import AsyncSwift
 import SnubCore
 import CocoaLumberjack
 

@@ -7,9 +7,9 @@
 //
 
 import Cocoa
-import Async
 import SnubCore
 import CocoaLumberjack
+import AsyncSwift
 
 class ContentViewController: NSViewController {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!

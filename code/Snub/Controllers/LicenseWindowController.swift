@@ -9,7 +9,7 @@
 import Cocoa
 import CocoaLumberjack
 import SnubCore
-import Async
+import AsyncSwift
 
 class LicenseWindowController: NSWindowController {
     @IBOutlet weak var contentView: NSView!

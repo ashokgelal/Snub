@@ -1,5 +1,5 @@
 PODS:
-  - Async (1.3.1)
+  - AsyncSwift (1.4.2)
   - CocoaLumberjack/Core (2.1.0-beta)
   - CocoaLumberjack/Default (2.1.0-beta):
     - CocoaLumberjack/Core
@@ -13,7 +13,7 @@ PODS:
   - SwiftRegExp (1.2)
 
 DEPENDENCIES:
-  - Async (from `https://github.com/JohnCoates/Async.git`)
+  - AsyncSwift
   - CocoaLumberjack/Swift (from `https://github.com/CocoaLumberjack/CocoaLumberjack.git`,
     tag `2.1.0-beta`)
   - FuzzySearch (from `https://github.com/ashokgelal/FuzzySearch`)
@@ -22,8 +22,6 @@ DEPENDENCIES:
   - SwiftRegExp (from `https://github.com/ashokgelal/SwiftRegExp`)
 
 EXTERNAL SOURCES:
-  Async:
-    :git: https://github.com/JohnCoates/Async.git
   CocoaLumberjack:
     :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
     :tag: 2.1.0-beta
@@ -35,9 +33,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/ashokgelal/SwiftRegExp
 
 CHECKOUT OPTIONS:
-  Async:
-    :commit: 23d9de3675f8357e7ad7d4c8b8b7d7caf9b73570
-    :git: https://github.com/JohnCoates/Async.git
   CocoaLumberjack:
     :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
     :tag: 2.1.0-beta
@@ -52,7 +47,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ashokgelal/SwiftRegExp
 
 SPEC CHECKSUMS:
-  Async: 2aaa4263645846a8ea1c5829067fb2f8e694af36
+  AsyncSwift: 3316df38ee85d6b01ede507d682d92fb5511504e
   CocoaLumberjack: 89ff78bbc0723eec8f761f1274993e0699facab8
   FuzzySearch: 01d50002dc7a34001cd895ed18816e58bf6879ae
   PDKTZipArchive: 60211ac8eb1655ef23001b450de1f55b3fbfeac7

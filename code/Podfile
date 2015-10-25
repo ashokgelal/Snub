@@ -7,16 +7,18 @@ xcodeproj 'SnubCore/SnubCore.xcodeproj'
 target 'SnubCore' do
     pod 'CocoaLumberjack/Swift', :git => 'https://github.com/CocoaLumberjack/CocoaLumberjack.git', :tag => '2.1.0-beta'
     pod 'PDKTZipArchive', :git => 'https://github.com/ashokgelal/PDKTZipArchive'
-    pod 'SwiftRegExp', '~> 1.3'
+    #pod 'SwiftRegExp', '~> 1.3'
+    pod 'SwiftRegExp', :git => 'https://github.com/ashokgelal/SwiftRegExp'
 end
 
 target 'Snub' do
     xcodeproj 'Snub/Snub.xcodeproj'
     pod 'CocoaLumberjack/Swift', :git => 'https://github.com/CocoaLumberjack/CocoaLumberjack.git', :tag => '2.1.0-beta'
     pod 'PDKTZipArchive', :git => 'https://github.com/ashokgelal/PDKTZipArchive'
-    pod 'Async', :git => 'https://github.com/JohnCoates/Async.git'
+    pod 'AsyncSwift'
     pod 'FuzzySearch', :git => 'https://github.com/ashokgelal/FuzzySearch'
-    pod 'SwiftRegExp', '~> 1.3'
+    pod 'SwiftRegExp', :git => 'https://github.com/ashokgelal/SwiftRegExp'
+    #pod 'SwiftRegExp', '~> 1.3'
     pod 'Sparkle', '~> 1.10'
 end
 

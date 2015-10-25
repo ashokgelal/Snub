@@ -7,7 +7,7 @@
 //
 
 import SnubCore
-import Async
+import AsyncSwift
 import CocoaLumberjack
 
 @NSApplicationMain
