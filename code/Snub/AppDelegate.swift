@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     private let contentPopover = NSPopover()
     private var eventMonitor: EventMonitor?
+    private var licenseController: LicenseWindowController!
     
     override init() {
         bootstrapper = Bootstrapper.sharedInstance
@@ -23,8 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
-        setupPopover()
+        licenseController = LicenseWindowController()
+        licenseController.licenseWindowControllerDelegate = self
+        licenseController.verify()
         DDLogVerbose("Application finish launching")
     }
 }
@@ -33,6 +35,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: ContentViewControllerDelegate {
     func performDismissContentViewController(sender: AnyObject?) {
         closePopover(sender)
+    }
+}
+
+// MARK: LicenseWindowControllerDelegate
+extension AppDelegate: LicenseWindowControllerDelegate {
+    func didFinishVerifyingLicense(licenseInfo: LicenseInfo?, error: NSError?) {
+        if let err = error {
+            DDLogWarn("Error verifying remote license \(err.localizedDescription)")
+        } else {
+            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.key, forKey: "licenseKey")
+            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.email, forKey: "licenseeEmail")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            if contentPopover.contentViewController == nil {
+                Async.background { [unowned self] in self.bootstrapper.setupForUI() }
+                Async.main { [unowned self] in self.setupPopover() }
+            }
+        }
     }
 }
 

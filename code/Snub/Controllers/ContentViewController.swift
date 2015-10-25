@@ -21,7 +21,7 @@ class ContentViewController: NSViewController {
     weak var contentViewControllerDelegate: ContentViewControllerDelegate!
     
     @IBOutlet weak var statusImage: NSImageView!
-    private var aboutWindowController: AboutWindowController!
+    private var aboutWindowController: NSWindowController!
     private var currentGitIgnoreFilePaths: Array<NSURL?> = []
     
     override func viewDidAppear() {

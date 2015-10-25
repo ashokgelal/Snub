@@ -35,7 +35,7 @@ public class GitIgnoreFileManager {
     private func setupApplicationSupportDirectory() -> String {
         let fm = NSFileManager.defaultManager()
         let appDirectoryPath = fm.getApplicationDirectoryPath()
-        if(fm.checkIfDirectoryExists(appDirectoryPath)) {
+        if fm.checkIfDirectoryExists(appDirectoryPath)  {
             DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
             return appDirectoryPath
         }

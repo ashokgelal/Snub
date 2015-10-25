@@ -15,14 +15,17 @@ class AboutWindowController: NSWindowController {
     @IBOutlet weak var versionLbl: NSTextField!
     @IBOutlet weak var licenseLbl: NSTextField!
     @IBOutlet weak var contentView: NSView!
+    private var licenseWindowController: NSWindowController!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         self.contentView.wantsLayer = true
         self.contentView.layer!.cornerRadius = 10.0
         self.contentView.layer!.backgroundColor = NSColor.whiteColor().CGColor
         self.window?.backgroundColor = NSColor.whiteColor()
-        self.window?.center()
         versionLbl.stringValue = "Version \(MagicStrings.APP_VERSION)"
+        let licensee = NSUserDefaults.standardUserDefaults().stringForKey("licenseeEmail") ?? "Snub"
+        licenseLbl.stringValue = "Licensed to \(licensee)"
     }
 }
 
@@ -41,5 +44,8 @@ extension AboutWindowController {
     }
     
     @IBAction func showRegistration(sender: AnyObject) {
+        self.window?.close()
+        licenseWindowController = LicenseWindowController(windowNibName: "LicenseWindow")
+        licenseWindowController.showWindow(self)
     }
 }
