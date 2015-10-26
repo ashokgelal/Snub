@@ -7,9 +7,8 @@
 //
 
 import Cocoa
-import Async
 import SnubCore
-import CocoaLumberjack
+import AsyncSwift
 
 class ContentViewController: NSViewController {
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
@@ -21,7 +20,7 @@ class ContentViewController: NSViewController {
     weak var contentViewControllerDelegate: ContentViewControllerDelegate!
     
     @IBOutlet weak var statusImage: NSImageView!
-    private var aboutWindowController: AboutWindowController!
+    private var aboutWindowController: NSWindowController!
     private var currentGitIgnoreFilePaths: Array<NSURL?> = []
     
     override func viewDidAppear() {
@@ -37,7 +36,7 @@ class ContentViewController: NSViewController {
             do {
                 gitIgnoreFilesWithTheirPaths = try GitIgnoreTypeDetector.instance.detect(selectedFolders)
             } catch let error as NSError {
-                DDLogError("Error detecting .gitignore types: \(error.localizedDescription)")
+                logx.warning("Error detecting .gitignore types: \(error.localizedDescription)")
             }
             }.main { [unowned self] in
                 self.progressIndicator.stopAnimation(self)
@@ -81,7 +80,7 @@ class ContentViewController: NSViewController {
                 }
             } catch let error as NSError {
                 outputVal = "[Error identifying .gitignore's type]"
-                DDLogError("Error identifying: \(error.localizedDescription)")
+                logx.warning("Error identifying: \(error.localizedDescription)")
             }
         } else if filePaths.count > 1 {
             outputVal = "Multiple .gitignore files detected"
@@ -124,9 +123,9 @@ extension ContentViewController {
             do {
                 try NSFileManager.defaultManager().trashItemAtURL($0!, resultingItemURL: nil)
                 succeeded = true
-                DDLogVerbose("Deleted file \(path)")
+                logx.notice("Deleted file \(path)")
             } catch let error as NSError {
-                DDLogWarn("Error deleting file \(path): \(error.localizedDescription)")
+                logx.warning("Error deleting file \(path): \(error.localizedDescription)")
             }
         }
         if succeeded {
@@ -147,7 +146,7 @@ extension ContentViewController {
         currentGitIgnoreFilePaths.forEach {
             let path = $0!.path!
             NSWorkspace.sharedWorkspace().openFile(path)
-            DDLogVerbose("Opened TextEdtior to edit \(path)")
+            logx.notice("Opened TextEdtior to edit \(path)")
         }
     }
 }

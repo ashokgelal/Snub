@@ -49,3 +49,11 @@ public extension String {
         return (self as NSString).stringByAbbreviatingWithTildeInPath
     }
 }
+
+// MARK: Date Extensions
+public extension NSDate {
+    func daysFrom(date: NSDate) -> Int {
+        return NSCalendar.currentCalendar().components(.Day, fromDate: date, toDate: self, options: []).day
+    }
+}
+

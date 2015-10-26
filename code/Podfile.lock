@@ -1,32 +1,20 @@
 PODS:
-  - Async (1.3.1)
-  - CocoaLumberjack/Core (2.1.0-beta)
-  - CocoaLumberjack/Default (2.1.0-beta):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.1.0-beta):
-    - CocoaLumberjack/Default
-  - CocoaLumberjack/Swift (2.1.0-beta):
-    - CocoaLumberjack/Extensions
+  - AsyncSwift (1.4.2)
   - FuzzySearch (1.1.0)
+  - LogKit (2.1.0)
   - PDKTZipArchive (0.3.5)
   - Sparkle (1.11.0)
   - SwiftRegExp (1.2)
 
 DEPENDENCIES:
-  - Async (from `https://github.com/JohnCoates/Async.git`)
-  - CocoaLumberjack/Swift (from `https://github.com/CocoaLumberjack/CocoaLumberjack.git`,
-    tag `2.1.0-beta`)
+  - AsyncSwift
   - FuzzySearch (from `https://github.com/ashokgelal/FuzzySearch`)
+  - LogKit
   - PDKTZipArchive (from `https://github.com/ashokgelal/PDKTZipArchive`)
   - Sparkle (~> 1.10)
   - SwiftRegExp (from `https://github.com/ashokgelal/SwiftRegExp`)
 
 EXTERNAL SOURCES:
-  Async:
-    :git: https://github.com/JohnCoates/Async.git
-  CocoaLumberjack:
-    :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
-    :tag: 2.1.0-beta
   FuzzySearch:
     :git: https://github.com/ashokgelal/FuzzySearch
   PDKTZipArchive:
@@ -35,12 +23,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/ashokgelal/SwiftRegExp
 
 CHECKOUT OPTIONS:
-  Async:
-    :commit: 23d9de3675f8357e7ad7d4c8b8b7d7caf9b73570
-    :git: https://github.com/JohnCoates/Async.git
-  CocoaLumberjack:
-    :git: https://github.com/CocoaLumberjack/CocoaLumberjack.git
-    :tag: 2.1.0-beta
   FuzzySearch:
     :commit: 631e9dac3e7edb83e7be76b74ad3f960940f672a
     :git: https://github.com/ashokgelal/FuzzySearch
@@ -52,9 +34,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ashokgelal/SwiftRegExp
 
 SPEC CHECKSUMS:
-  Async: 2aaa4263645846a8ea1c5829067fb2f8e694af36
-  CocoaLumberjack: 89ff78bbc0723eec8f761f1274993e0699facab8
+  AsyncSwift: 3316df38ee85d6b01ede507d682d92fb5511504e
   FuzzySearch: 01d50002dc7a34001cd895ed18816e58bf6879ae
+  LogKit: 17c255d8fe777bf06af27e5150f4dccfda137445
   PDKTZipArchive: 60211ac8eb1655ef23001b450de1f55b3fbfeac7
   Sparkle: cf10103ef35fd89caa35373bfd772c5d6f9c7d73
   SwiftRegExp: a59efb97a7e33f302e82312fd8c8644ac6e8da97

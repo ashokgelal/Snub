@@ -7,8 +7,7 @@
 //
 
 import SnubCore
-import Async
-import CocoaLumberjack
+import AsyncSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     private let contentPopover = NSPopover()
     private var eventMonitor: EventMonitor?
+    private var licenseController: LicenseWindowController!
     
     override init() {
         bootstrapper = Bootstrapper.sharedInstance
@@ -23,9 +23,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
-        setupPopover()
-        DDLogVerbose("Application finish launching")
+        licenseController = LicenseWindowController()
+        licenseController.licenseWindowControllerDelegate = self
+        licenseController.verify()
+        logx.info("Application finish launching")
+    }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return contentPopover.contentViewController == nil
     }
 }
 
@@ -33,6 +38,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: ContentViewControllerDelegate {
     func performDismissContentViewController(sender: AnyObject?) {
         closePopover(sender)
+    }
+}
+
+// MARK: LicenseWindowControllerDelegate
+extension AppDelegate: LicenseWindowControllerDelegate {
+    func didFinishVerifyingLicense(licenseInfo: LicenseInfo?, error: NSError?) {
+        if let err = error {
+            logx.warning("Error verifying remote license \(err.localizedDescription)")
+        } else {
+            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.key, forKey: "licenseKey")
+            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.email, forKey: "licenseeEmail")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            if contentPopover.contentViewController == nil {
+                Async.background { [unowned self] in self.bootstrapper.setupForUI() }
+                Async.main { [unowned self] in self.setupPopover() }
+            }
+        }
     }
 }
 
@@ -45,11 +68,11 @@ extension AppDelegate {
             button.toolTip = MagicStrings.APPNAME
         }
         contentPopover.animates = false
-        let contentViewController = ContentViewController(nibName: "ContentViewController", bundle: nil)
+        let contentViewController = ContentViewController(nibName: "ContentView", bundle: nil)
         contentViewController?.contentViewControllerDelegate = self
         contentPopover.contentViewController = contentViewController
         setupEventMonitor()
-        DDLogVerbose("Finished setting up status item")
+        logx.info("Finished setting up status item")
     }
     
     private func setupEventMonitor() {
@@ -59,7 +82,7 @@ extension AppDelegate {
                 self.closePopover(event)
             }
         }
-        DDLogVerbose("Finished setting up event monitor")
+        logx.info("Finished setting up event monitor")
     }
     
     func togglePopover(sender: AnyObject?) {

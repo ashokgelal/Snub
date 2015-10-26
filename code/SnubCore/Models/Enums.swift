@@ -10,6 +10,12 @@ public enum GitIgnoreError: ErrorType {
     case SourceGitIgnoreNotFound
 }
 
+public enum LicenseError: ErrorType {
+    case LicenseFileNotFound
+    case LicenseCorrupted
+    case ErrorReadingLicenseFileContents
+}
+
 enum Format: String {
     case black = "\u{001B}[0;30m"
     case red = "\u{001B}[0;31m"

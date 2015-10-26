@@ -8,7 +8,6 @@
 
 import Foundation
 import ScriptingBridge
-import CocoaLumberjack
 
 public class FinderSelectionProvider {
     
@@ -19,11 +18,11 @@ public class FinderSelectionProvider {
     public func getSelectedFolders() -> [NSURL] {
         guard let finder = SBApplication(bundleIdentifier: "com.apple.finder") as? FinderApplication,
             let result = finder.selection else {
-                DDLogInfo("No items selected")
+                logx.info("No items selected")
                 return []
         }
         guard let selection = result.get() else {
-            DDLogInfo("No items selected")
+            logx.info("No items selected")
             return []
         }
         

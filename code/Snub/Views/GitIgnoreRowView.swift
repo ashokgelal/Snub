@@ -41,3 +41,8 @@ extension GitIgnoreRowView {
 @objc protocol ContentViewControllerDelegate {
     func performDismissContentViewController(sender: AnyObject?)
 }
+
+@objc protocol LicenseWindowControllerDelegate {
+    func didFinishVerifyingLicense(licenseInfo: LicenseInfo?, error: NSError?)
+    //func didFinishVerifyingLocalLicense(licenseInfo: LicenseInfo?, error: NSError?)
+}

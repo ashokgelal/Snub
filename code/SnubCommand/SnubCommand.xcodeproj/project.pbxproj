@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDE1EDEE1BD48E3E00828508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1EDED1BD48E3E00828508 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		CDE1EDEE1BD48E3E00828508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1EDED1BD48E3E00828508 /* main.m */; };
 		CDE1EE101BD48F1800828508 /* snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE1EDE11BD48D7F00828508 /* snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CDEFBC191BD4977000365797 /* SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; };
 		CDEFBC1A1BD4988800365797 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -322,11 +322,8 @@
 					"$(PROJECT_DIR)",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks @executable_path";
-				OTHER_LDFLAGS = (
-					"-framework",
-					"\"CocoaLumberjack\"",
-					"$(inherited)",
-				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -339,11 +336,8 @@
 					"$(PROJECT_DIR)",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path";
-				OTHER_LDFLAGS = (
-					"-framework",
-					"\"CocoaLumberjack\"",
-					"$(inherited)",
-				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -356,6 +350,7 @@
 				INFOPLIST_FILE = SnubCommandBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubCommandBundle;
 				PRODUCT_NAME = $PROJECT_NAME;
 				SKIP_INSTALL = YES;
@@ -371,6 +366,7 @@
 				INFOPLIST_FILE = SnubCommandBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnaapps.SnubCommandBundle;
 				PRODUCT_NAME = $PROJECT_NAME;
 				SKIP_INSTALL = YES;
