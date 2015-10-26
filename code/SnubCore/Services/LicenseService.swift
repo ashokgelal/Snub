@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CocoaLumberjack
 
 public class LicenseService {
     private let licenseValuesSeparator = "#"
@@ -44,7 +43,7 @@ public class LicenseService {
             
             do {
                 guard error == nil else {
-                    DDLogError(error!.localizedDescription)
+                    logx.error(error!.localizedDescription)
                     throw error!
                 }
                
@@ -89,26 +88,26 @@ public class LicenseService {
     private func readLicenseKey() throws -> LicenseInfo {
         let licenseFilePath = getLicenseFilePath()
         guard NSFileManager.defaultManager().checkIfFileExists(licenseFilePath) else {
-            DDLogWarn("\(self.licenseFilename) file doesn't exist")
+            logx.warning("\(self.licenseFilename) file doesn't exist")
             throw LicenseError.LicenseFileNotFound
         }
         do {
             let contents = try String(contentsOfFile: licenseFilePath)
             let vals = contents.characters.split { $0 == "#" }.map(String.init)
             guard vals.count == 3 else {
-                DDLogWarn("Error reading the contents of \(self.licenseFilename)")
+                logx.warning("Error reading the contents of \(self.licenseFilename)")
                 throw LicenseError.LicenseCorrupted
             }
             guard let date = getDateFormatter().dateFromString(vals[2]) else {
-                DDLogWarn("Invalid date string \(vals[2])")
+                logx.warning("Invalid date string \(vals[2])")
                 throw LicenseError.LicenseCorrupted
             }
-            DDLogInfo("Successfully verified Remote License")
+            logx.info("Successfully verified local License")
             return LicenseInfo(key: vals[0], email: vals[1], checkedDate: date)
         } catch let error as LicenseError {
             throw error
         } catch {
-            DDLogWarn("Error reading the contents of \(self.licenseFilename)")
+            logx.warning("Error reading the contents of \(self.licenseFilename)")
             throw LicenseError.LicenseFileNotFound
         }
     }

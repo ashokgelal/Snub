@@ -10,7 +10,6 @@ import Cocoa
 import AsyncSwift
 import FuzzySearch
 import SnubCore
-import CocoaLumberjack
 
 class MasterGitIgnoreTabViewItemController: NSViewController {
     @IBInspectable var cellIdentifier: String!
@@ -76,9 +75,9 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
                     try GitIgnoreFileManager.sharedInstance.addGitIgnoreWithId(result.id, toPath: $0)
                     succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                    DDLogError("Didn't find source .gitignore with id: \(result.id)")
+                    logx.warning("Didn't find source .gitignore with id: \(result.id)")
                 } catch let error as NSError {
-                    DDLogError("Error adding .gitignore: \(error.localizedDescription)")
+                    logx.warning("Error adding .gitignore: \(error.localizedDescription)")
                 }
             }
         } .main { [unowned self] in
@@ -100,9 +99,9 @@ extension MasterGitIgnoreTabViewItemController: GitIgnoreRowViewDelegate {
                     try GitIgnoreFileManager.sharedInstance.appendGitIgnoreWithId(result.id, toPath: $0)
                     succeeded = true
                 } catch GitIgnoreError.SourceGitIgnoreNotFound {
-                    DDLogError("Didn't find source .gitignore with id: \(result.id)")
+                    logx.warning("Didn't find source .gitignore with id: \(result.id)")
                 } catch let error as NSError {
-                    DDLogError("Error appending .gitignore: \(error.localizedDescription)")
+                    logx.warning("Error appending .gitignore: \(error.localizedDescription)")
                 }
             }
             }.main { [unowned self] in

@@ -7,33 +7,25 @@
 //
 
 import Foundation
-import CocoaLumberjack
+import LogKit
+
+public var logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: false, minimumPriorityLevel: .Error)])
 
 @objc public class Bootstrapper : NSObject {
     public static let sharedInstance = Bootstrapper()
     
-    private override init() {
-        super.init()
-        setupLogger()
-    }
-    
-    private func setupLogger(){
-        DDLog.addLogger(DDASLLogger.sharedInstance())
-        DDLog.addLogger(DDTTYLogger.sharedInstance())
-        DDTTYLogger.sharedInstance().colorsEnabled = true
-    }
+    private override init() { super.init() }
     
     public func setupForUI() {
-        defaultDebugLevel = DDLogLevel.Verbose
-        DDLogVerbose("Setting up Snub for UI");
+        logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: true, minimumPriorityLevel: .All)])
+        logx.info("Setting up Snub for UI");
         GitIgnoreFileManager.sharedInstance
     }
     
     public func setupForCommandLine() {
-        defaultDebugLevel = DDLogLevel.Error
-        DDLogVerbose("Setting up Snub for Command");
+        logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: false, minimumPriorityLevel: .Error)])
+        logx.info("Setting up Snub for Command");
         GitIgnoreFileManager.sharedInstance
         CommandHandler.sharedInstance.run()
     }
 }
-

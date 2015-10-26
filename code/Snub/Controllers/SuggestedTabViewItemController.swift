@@ -9,7 +9,6 @@
 import Cocoa
 import AsyncSwift
 import SnubCore
-import CocoaLumberjack
 
 class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
     override func loadSelectedFolders(selectedFolders: [NSURL]) {
@@ -33,12 +32,12 @@ class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
                     outputVal = "Was able to determine project types"
                 }
             } catch let error as NSError {
-                DDLogError("Error identifying: \(error.localizedDescription)")
+                logx.warning("Error identifying: \(error.localizedDescription)")
             }
         } else if selectedFolders.count > 1 {
             outputVal = "Snub suggestion only works with 1 selected project"
         }
-        DDLogVerbose(outputVal)
+        logx.info(outputVal)
         return items
     }
 }

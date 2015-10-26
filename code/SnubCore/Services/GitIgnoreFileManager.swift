@@ -8,7 +8,6 @@
 
 import Foundation
 import PDKTZipArchive
-import CocoaLumberjack
 
 public class GitIgnoreFileManager {
     public static let sharedInstance = GitIgnoreFileManager()
@@ -17,17 +16,17 @@ public class GitIgnoreFileManager {
         let applicationSupportPath = setupApplicationSupportDirectory()
         let unzippedPath = (applicationSupportPath as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         if(NSFileManager.defaultManager().checkIfDirectoryExists(unzippedPath)) {
-            DDLogVerbose("\(MagicStrings.MASTER_GITIGNORE_NAME) folder already unzipped")
+            logx.info("\(MagicStrings.MASTER_GITIGNORE_NAME) folder already unzipped")
         }
         else {
             if let url = NSBundle.mainBundle().URLForResource(MagicStrings.MASTER_GITIGNORE_NAME, withExtension: "zip") {
                 if(PDKTZipArchive.unzipFileAtPath(url.path, toDestination: applicationSupportPath)) {
-                    DDLogVerbose("Successfully unzipped \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
+                    logx.info("Successfully unzipped \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 } else {
-                    DDLogError("Cannot unzip \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
+                    logx.critical("Cannot unzip \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 }
             } else {
-                DDLogError("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.\nIf you are running from command line, make sure to run the UI at least once.")
+                logx.critical("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.\nIf you are running from command line, make sure to run the UI at least once.")
             }
         }
     }
@@ -36,16 +35,16 @@ public class GitIgnoreFileManager {
         let fm = NSFileManager.defaultManager()
         let appDirectoryPath = fm.getApplicationDirectoryPath()
         if fm.checkIfDirectoryExists(appDirectoryPath)  {
-            DDLogVerbose("App Support Directory \(appDirectoryPath) already exists")
+            logx.info("App Support Directory \(appDirectoryPath) already exists")
             return appDirectoryPath
         }
         
         do {
             let fm = NSFileManager.defaultManager()
             try fm.createDirectoryAtPath(appDirectoryPath, withIntermediateDirectories: false, attributes: nil)
-            DDLogVerbose("Successfully created App Support Directory \(appDirectoryPath)")
+            logx.info("Successfully created App Support Directory \(appDirectoryPath)")
         } catch {
-            DDLogError("Cannot create a directory \(appDirectoryPath)")
+            logx.critical("Cannot create a directory \(appDirectoryPath)")
         }
         return appDirectoryPath
     }
@@ -67,7 +66,7 @@ public class GitIgnoreFileManager {
                 try fm.removeItemAtPath(backupFilePath)
             }
             try fm.moveItemAtPath(destinationFullPath, toPath: backupFilePath)
-            DDLogInfo("Found and copied old .gitignore file to \(backupFilePath)")
+            logx.info("Found and copied old .gitignore file to \(backupFilePath)")
         }
         
         let netGitIgnoreContents = try String(contentsOfFile: sourceGitIgnorePath)
@@ -75,7 +74,7 @@ public class GitIgnoreFileManager {
         
         let contents = "\(headerBrand)\n\(netGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
-        DDLogVerbose("Successfully copied \(id) .gitignore to \(destinationFullPath)")
+        logx.notice("Successfully copied \(id) .gitignore to \(destinationFullPath)")
         return destinationFullPath
     }
     
@@ -92,7 +91,7 @@ public class GitIgnoreFileManager {
         
         let contents = "\(existingGitIgnoreContents)\n\n\(headerBrand)\n\(newGitIgnoreContents)"
         try contents.writeToFile(destinationFullPath, atomically: true, encoding: NSUTF8StringEncoding)
-        DDLogVerbose("Successfully appended \(id) .gitignore to \(destinationFullPath)")
+        logx.notice("Successfully appended \(id) .gitignore to \(destinationFullPath)")
         return destinationFullPath
     }
     

@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import CocoaLumberjack
 import SnubCore
 import AsyncSwift
 
@@ -39,32 +38,32 @@ class LicenseWindowController: NSWindowController {
     func verify() {
         do {
             guard let verification = try licenseService.checkLocalLicenseKey() else {
-                DDLogError("No local license")
+                logx.warning("No local license")
                 showWindow(self)
                 return
             }
-            guard verification.email == "" else {
-                DDLogVerbose("Local license verified; email: \(verification.email); key: \(verification.key)")
+            if verification.email != "" {
+                logx.info("Local license verified; email: \(verification.email); key: \(verification.key)")
                 self.licenseWindowControllerDelegate?.didFinishVerifyingLicense(verification, error: nil)
                 return
             }
-            DDLogVerbose("Empty email; re-verifying the key")
+            logx.info("Empty email; re-verifying the key")
             licenseService.verifyLicenseKey(verification.key) {
                 [unowned self]
                 (licenseInfo, error) in
-                DDLogVerbose("Re-verification completed")
+                logx.info("Re-verification completed")
                 if error == nil {
                     self.licenseWindowControllerDelegate?.didFinishVerifyingLicense(verification, error: nil)
                 } else {
-                    DDLogError("Re-verification failed. Showing License window. Error is: \(error?.localizedDescription)")
+                    logx.warning("Re-verification failed. Showing License window. Error is: \(error?.localizedDescription)")
                     self.showWindow(self)
                 }
             }
         } catch let error as LicenseError {
-            DDLogWarn("License error while verifying license: \(error)")
+            logx.warning("License error while verifying license: \(error)")
             showWindow(self)
         } catch let error as NSError {
-            DDLogWarn("Error while verifying license: \(error.localizedDescription)")
+            logx.warning("Error while verifying license: \(error.localizedDescription)")
             showWindow(self)
         }
     }
@@ -85,11 +84,11 @@ class LicenseWindowController: NSWindowController {
                 [unowned self]
                 (licenseInfo, error) in
                 if error == nil {
-                    DDLogVerbose("Registration completed")
+                    logx.notice("Registration completed")
                     self.licenseWindowControllerDelegate?.didFinishVerifyingLicense(licenseInfo, error: error)
                     Async.main { self.close() }
                 } else {
-                    DDLogWarn("Error registering")
+                    logx.warning("Error registering")
                     Async.main { self.errorLbl.hidden = false }
                 }
             }

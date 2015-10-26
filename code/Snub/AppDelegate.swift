@@ -8,7 +8,6 @@
 
 import SnubCore
 import AsyncSwift
-import CocoaLumberjack
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -27,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         licenseController = LicenseWindowController()
         licenseController.licenseWindowControllerDelegate = self
         licenseController.verify()
-        DDLogVerbose("Application finish launching")
+        logx.info("Application finish launching")
     }
 }
 
@@ -42,7 +41,7 @@ extension AppDelegate: ContentViewControllerDelegate {
 extension AppDelegate: LicenseWindowControllerDelegate {
     func didFinishVerifyingLicense(licenseInfo: LicenseInfo?, error: NSError?) {
         if let err = error {
-            DDLogWarn("Error verifying remote license \(err.localizedDescription)")
+            logx.warning("Error verifying remote license \(err.localizedDescription)")
         } else {
             NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.key, forKey: "licenseKey")
             NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.email, forKey: "licenseeEmail")
@@ -69,7 +68,7 @@ extension AppDelegate {
         contentViewController?.contentViewControllerDelegate = self
         contentPopover.contentViewController = contentViewController
         setupEventMonitor()
-        DDLogVerbose("Finished setting up status item")
+        logx.info("Finished setting up status item")
     }
     
     private func setupEventMonitor() {
@@ -79,7 +78,7 @@ extension AppDelegate {
                 self.closePopover(event)
             }
         }
-        DDLogVerbose("Finished setting up event monitor")
+        logx.info("Finished setting up event monitor")
     }
     
     func togglePopover(sender: AnyObject?) {
