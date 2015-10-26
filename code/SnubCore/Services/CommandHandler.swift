@@ -13,7 +13,15 @@ class CommandHandler {
     private init() {}
     private let TAB = "    "
     
+    private lazy var licenseService: LicenseService = {
+        return LicenseService(reverificationDays: 45)
+    }()
+    
     func run() {
+        verify()
+    }
+    
+    private func continueWithRun() {
         let args = NSProcessInfo.processInfo().arguments
         
         if(handleHelpOption(args)) { return }
@@ -30,6 +38,38 @@ class CommandHandler {
             printHelp()
         }
         printHelp()
+    }
+    
+    private func verify() {
+        do {
+            guard let verification = try licenseService.checkLocalLicenseKey() else {
+                throw LicenseError.LicenseFileNotFound
+            }
+            
+            if verification.email != "" {
+                continueWithRun()
+                return
+            }
+            
+            print(Format.green + "Initializing Snub Command")
+            licenseService.verifyLicenseKey(verification.key) {
+                [unowned self]
+                (_, error) in
+                if error == nil {
+                    self.continueWithRun()
+                } else {
+                    self.printLicenseError()
+                }
+            }
+        } catch {
+            printLicenseError()
+        }
+    }
+    
+    private func printLicenseError() {
+        print("")
+        print(Format.magenta + "Couldn't verify license. Make sure to run Snub app at least once")
+        print(Format.magenta + "before running it from the command line.")
     }
     
     private func seeIfArgumentIsAPath(arg: String?) -> NSURL? {
