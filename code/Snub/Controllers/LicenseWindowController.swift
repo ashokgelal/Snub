@@ -19,6 +19,10 @@ class LicenseWindowController: NSWindowController {
     @IBOutlet weak var registerBtn: NSButton!
     weak var licenseWindowControllerDelegate: LicenseWindowControllerDelegate?
     
+    private lazy var licenseService: LicenseService = {
+        return LicenseService(reverificationDays: 30)
+    }()
+    
     convenience init() {
         self.init(windowNibName: "LicenseWindow")
     }
@@ -33,7 +37,6 @@ class LicenseWindowController: NSWindowController {
     }
     
     func verify() {
-        let licenseService = LicenseService.sharedInstance
         do {
             guard let verification = try licenseService.checkLocalLicenseKey() else {
                 DDLogError("No local license")
@@ -78,7 +81,7 @@ class LicenseWindowController: NSWindowController {
                 registerBtn.enabled = true
             }
             
-            LicenseService.sharedInstance.verifyLicenseKey(key) {
+            licenseService.verifyLicenseKey(key) {
                 [unowned self]
                 (licenseInfo, error) in
                 if error == nil {

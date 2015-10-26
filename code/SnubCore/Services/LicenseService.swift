@@ -10,13 +10,14 @@ import Foundation
 import CocoaLumberjack
 
 public class LicenseService {
-    public static let sharedInstance = LicenseService()
     private let licenseValuesSeparator = "#"
     private let licenseFilename = ".snubmeta"
     private let productPermalink = "lightpaper"
-    private let licenseReverificationDays = 30
+    private let licenseReverificationDays: Int
     
-    private init() {}
+    public init(reverificationDays: Int) {
+        licenseReverificationDays = reverificationDays
+    }
 
     public func checkLocalLicenseKey() throws -> LicenseInfo? {
         let licenseInfo = try readLicenseKey()
