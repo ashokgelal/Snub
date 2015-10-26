@@ -33,6 +33,14 @@ class LicenseWindowController: NSWindowController {
         contentView.layer!.backgroundColor = NSColor.whiteColor().CGColor
         registerBtn.keyEquivalent = "\r"
         window?.backgroundColor = NSColor.whiteColor()
+        window?.delegate = self
+    }
+    
+    override func showWindow(sender: AnyObject?) {
+        if NSApp.activationPolicy() != NSApplicationActivationPolicy.Regular {
+            NSApp.setActivationPolicy(NSApplicationActivationPolicy.Regular)
+        }
+        super.showWindow(sender)
     }
     
     func verify() {
@@ -98,6 +106,15 @@ class LicenseWindowController: NSWindowController {
     @IBAction func visitSnubSite(sender: AnyObject) {
         if let url = NSBundle.mainBundle().objectForInfoDictionaryKey("SnubHomepage") as? String {
             NSWorkspace.sharedWorkspace().openURL(NSURL(string: url)!)
+        }
+    }
+}
+
+// MARK: NSWindowDelegate
+extension LicenseWindowController: NSWindowDelegate {
+    func windowWillClose(notification: NSNotification) {
+        if NSApp.activationPolicy() != NSApplicationActivationPolicy.Accessory {
+            NSApp.setActivationPolicy(NSApplicationActivationPolicy.Accessory)
         }
     }
 }

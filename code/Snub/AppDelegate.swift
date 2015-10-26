@@ -28,6 +28,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         licenseController.verify()
         logx.info("Application finish launching")
     }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return contentPopover.contentViewController == nil
+    }
 }
 
 // MARK: ContentViewControllerDelegate

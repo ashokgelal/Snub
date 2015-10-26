@@ -19,10 +19,10 @@ class AboutWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        self.contentView.wantsLayer = true
-        self.contentView.layer!.cornerRadius = 10.0
-        self.contentView.layer!.backgroundColor = NSColor.whiteColor().CGColor
-        self.window?.backgroundColor = NSColor.whiteColor()
+        contentView.wantsLayer = true
+        contentView.layer!.cornerRadius = 10.0
+        contentView.layer!.backgroundColor = NSColor.whiteColor().CGColor
+        window?.backgroundColor = NSColor.whiteColor()
         versionLbl.stringValue = "Version \(MagicStrings.APP_VERSION)"
         let licensee = NSUserDefaults.standardUserDefaults().stringForKey("licenseeEmail") ?? "Snub"
         licenseLbl.stringValue = "Licensed to \(licensee)"
