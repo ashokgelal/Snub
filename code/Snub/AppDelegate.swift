@@ -23,14 +23,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        licenseController = LicenseWindowController()
-        licenseController.licenseWindowControllerDelegate = self
-        licenseController.verify()
+        // verifyLicense()
+        setup()
         logx.info("Application finish launching")
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return contentPopover.contentViewController == nil
+    }
+    
+    private func verifyLicense() {
+        licenseController = LicenseWindowController()
+        licenseController.licenseWindowControllerDelegate = self
+        licenseController.verify()
     }
 }
 
@@ -52,10 +57,14 @@ extension AppDelegate: LicenseWindowControllerDelegate {
             NSUserDefaults.standardUserDefaults().synchronize()
             
             if contentPopover.contentViewController == nil {
-                Async.background { [unowned self] in self.bootstrapper.setupForUI() }
-                Async.main { [unowned self] in self.setupPopover() }
+                setup()
             }
         }
+    }
+    
+    private func setup() {
+        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
+        Async.main { [unowned self] in self.setupPopover() }
     }
 }
 

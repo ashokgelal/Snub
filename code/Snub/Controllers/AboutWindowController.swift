@@ -24,8 +24,8 @@ class AboutWindowController: NSWindowController {
         contentView.layer!.backgroundColor = NSColor.whiteColor().CGColor
         window?.backgroundColor = NSColor.whiteColor()
         versionLbl.stringValue = "Version \(MagicStrings.APP_VERSION)"
-        let licensee = NSUserDefaults.standardUserDefaults().stringForKey("licenseeEmail") ?? "Snub"
-        licenseLbl.stringValue = "Licensed to \(licensee)"
+//        let licensee = NSUserDefaults.standardUserDefaults().stringForKey("licenseeEmail") ?? "Snub"
+//        licenseLbl.stringValue = "Licensed to \(licensee)"
     }
 }
 

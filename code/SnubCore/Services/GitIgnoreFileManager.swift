@@ -12,7 +12,9 @@ import PDKTZipArchive
 public class GitIgnoreFileManager {
     public static let sharedInstance = GitIgnoreFileManager()
     
-    private init() {
+    private init() { }
+    
+    public func setup() throws {
         let applicationSupportPath = setupApplicationSupportDirectory()
         let unzippedPath = (applicationSupportPath as NSString).stringByAppendingPathComponent(MagicStrings.MASTER_GITIGNORE_NAME)
         if(NSFileManager.defaultManager().checkIfDirectoryExists(unzippedPath)) {
@@ -26,7 +28,7 @@ public class GitIgnoreFileManager {
                     logx.critical("Cannot unzip \(MagicStrings.MASTER_GITIGNORE_NAME).zip")
                 }
             } else {
-                logx.critical("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.\nIf you are running from command line, make sure to run the UI at least once.")
+                throw GitIgnoreError.GitIgnoreMasterNotFound
             }
         }
     }

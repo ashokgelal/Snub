@@ -8,25 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
-		CD37427C1BD806F100DC3FCB /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD37427A1BD806F100DC3FCB /* LicenseWindowController.swift */; settings = {ASSET_TAGS = (); }; };
-		CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */; settings = {ASSET_TAGS = (); }; };
-		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; settings = {ASSET_TAGS = (); }; };
+		CD37427C1BD806F100DC3FCB /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD37427A1BD806F100DC3FCB /* LicenseWindowController.swift */; };
+		CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */; };
+		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; };
 		CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDF4BA761BD47F33008145F1 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; settings = {ASSET_TAGS = (); }; };
-		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E281BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E441BD477A800CAF500 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentView.xib */; settings = {ASSET_TAGS = (); }; };
-		CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E521BD47A4900CAF500 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
-		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; settings = {ASSET_TAGS = (); }; };
+		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; };
+		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; };
+		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; };
+		CDAB6E281BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */; };
+		CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */; };
+		CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E2A1BD4778D00CAF500 /* EventMonitor.swift */; };
+		CDAB6E451BD477A800CAF500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E441BD477A800CAF500 /* Extensions.swift */; };
+		CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */; };
+		CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */; };
+		CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentView.xib */; };
+		CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E521BD47A4900CAF500 /* Assets.xcassets */; };
+		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
-		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; settings = {ASSET_TAGS = (); }; };
-		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; settings = {ASSET_TAGS = (); }; };
+		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; };
+		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

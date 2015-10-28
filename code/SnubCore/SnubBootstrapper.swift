@@ -19,13 +19,21 @@ public var logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: false, min
     public func setupForUI() {
         logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: true, minimumPriorityLevel: .All)])
         logx.info("Setting up Snub for UI");
-        GitIgnoreFileManager.sharedInstance
+        do {
+            try GitIgnoreFileManager.sharedInstance.setup()
+        } catch {
+            logx.critical("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.")
+        }
     }
     
     public func setupForCommandLine() {
         logx = LXLogger(endpoints: [LXConsoleEndpoint(synchronous: false, minimumPriorityLevel: .Error)])
         logx.info("Setting up Snub for Command");
-        GitIgnoreFileManager.sharedInstance
-        CommandHandler.sharedInstance.run()
+        do {
+            try GitIgnoreFileManager.sharedInstance.setup()
+            CommandHandler.sharedInstance.run()
+        } catch {
+            logx.critical("\(MagicStrings.MASTER_GITIGNORE_NAME).zip file is missing.\nMake sure to run the UI at least once.")
+        }
     }
 }

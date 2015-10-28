@@ -8,6 +8,7 @@
 
 public enum GitIgnoreError: ErrorType {
     case SourceGitIgnoreNotFound
+    case GitIgnoreMasterNotFound
 }
 
 public enum LicenseError: ErrorType {

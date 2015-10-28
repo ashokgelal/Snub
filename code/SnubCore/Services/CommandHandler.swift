@@ -18,7 +18,8 @@ class CommandHandler {
     }()
     
     func run() {
-        verify()
+        // verifyLicense()
+        continueWithRun()
     }
     
     private func continueWithRun() {
@@ -40,7 +41,7 @@ class CommandHandler {
         printHelp()
     }
     
-    private func verify() {
+    private func verifyLicense() {
         do {
             guard let verification = try licenseService.checkLocalLicenseKey() else {
                 throw LicenseError.LicenseFileNotFound
