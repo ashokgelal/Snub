@@ -35,38 +35,6 @@
                     <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="checkIcon" id="kZP-Xe-eFz"/>
                 </imageView>
-                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ey-tWz">
-                    <rect key="frame" x="244" y="301" width="40" height="20"/>
-                    <animations/>
-                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" id="MXu-ta-Q1r">
-                        <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="systemBold" size="12"/>
-                        <menu key="menu" id="TSt-q6-Mwq">
-                            <items>
-                                <menuItem state="on" image="gearIcon" hidden="YES" id="qbn-Er-I0Y"/>
-                                <menuItem title="About Snub" id="wOU-lp-EFh">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="showAboutWindow:" target="-2" id="uMj-6s-jHh"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="QY3-zl-CjP"/>
-                                <menuItem title="Check for Updates..." id="pUb-AG-puD">
-                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                    <connections>
-                                        <action selector="checkForUpdates:" target="gxR-mH-bYL" id="bNk-zo-rPH"/>
-                                    </connections>
-                                </menuItem>
-                                <menuItem isSeparatorItem="YES" id="gzg-Xw-E44"/>
-                                <menuItem title="Quit Snub" keyEquivalent="q" id="ISG-hb-c9j">
-                                    <connections>
-                                        <action selector="quitSnub:" target="-2" id="Bl4-f0-rg8"/>
-                                    </connections>
-                                </menuItem>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="TKs-AX-vHQ">
                     <rect key="frame" x="0.0" y="259" width="292" height="5"/>
                     <animations/>
@@ -410,6 +378,44 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="ejS-ey-tWz">
+                    <rect key="frame" x="244" y="301" width="40" height="20"/>
+                    <animations/>
+                    <popUpButtonCell key="cell" type="recessed" bezelStyle="recessed" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" pullsDown="YES" altersStateOfSelectedItem="NO" selectedItem="KWm-Xz-PT9" id="MXu-ta-Q1r">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="systemBold" size="12"/>
+                        <menu key="menu" id="TSt-q6-Mwq">
+                            <items>
+                                <menuItem state="on" image="gearIcon" hidden="YES" id="qbn-Er-I0Y"/>
+                                <menuItem title="About Snub" id="wOU-lp-EFh">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="showAboutWindow:" target="-2" id="uMj-6s-jHh"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="QY3-zl-CjP"/>
+                                <menuItem title="Check for Updates..." id="pUb-AG-puD">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="checkForUpdates:" target="gxR-mH-bYL" id="bNk-zo-rPH"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem title="Send Feedback..." id="KWm-Xz-PT9">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="sendFeedback:" target="-2" id="AOl-jv-b3b"/>
+                                    </connections>
+                                </menuItem>
+                                <menuItem isSeparatorItem="YES" id="gzg-Xw-E44"/>
+                                <menuItem title="Quit Snub" keyEquivalent="q" id="ISG-hb-c9j">
+                                    <connections>
+                                        <action selector="quitSnub:" target="-2" id="Bl4-f0-rg8"/>
+                                    </connections>
+                                </menuItem>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mLn-xp-phb" secondAttribute="trailing" id="2ad-92-2sV"/>

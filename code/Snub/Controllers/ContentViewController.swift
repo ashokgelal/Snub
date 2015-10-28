@@ -159,4 +159,12 @@ extension ContentViewController {
             logx.notice("Opened TextEdtior to edit \(path)")
         }
     }
+    
+    @IBAction func sendFeedback(sender: AnyObject) {
+        self.contentViewControllerDelegate.performDismissContentViewController(self)
+        let fm = BITHockeyManager.sharedHockeyManager().feedbackManager
+        fm.requireUserName = BITFeedbackUserDataElement.Optional
+        fm.requireUserEmail = BITFeedbackUserDataElement.Required
+        fm.showFeedbackWindow()
+    }
 }
