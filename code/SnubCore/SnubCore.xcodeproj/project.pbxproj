@@ -8,33 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		494FD046505CD51DD1CF59F7 /* Pods_SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A1EDB7F2DF58CDA8B7529 /* Pods_SnubCore.framework */; };
-		CD6BB3201BDD889D005A2DC6 /* LicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6BB31F1BDD889D005A2DC6 /* LicenseInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		CD6BB3201BDD889D005A2DC6 /* LicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6BB31F1BDD889D005A2DC6 /* LicenseInfo.swift */; };
 		CD84F8821BD46300008DC230 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD84F8811BD46300008DC230 /* ScriptingBridge.framework */; };
-		CDAA1C081BD5E8B7005E393C /* CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA1C071BD5E8B7005E393C /* CommandHandler.swift */; settings = {ASSET_TAGS = (); }; };
-		CDB9B1CD1BDC21C6003FB086 /* LicenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9B1CC1BDC21C6003FB086 /* LicenseService.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3751BD4671C00EF5DB9 /* SnubBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */; settings = {ASSET_TAGS = (); }; };
+		CD8D7FD51BE0812000FBCB06 /* snub in Resources */ = {isa = PBXBuildFile; fileRef = CD8D7FD41BE0812000FBCB06 /* snub */; };
+		CDAA1C081BD5E8B7005E393C /* CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA1C071BD5E8B7005E393C /* CommandHandler.swift */; };
+		CDB9B1CD1BDC21C6003FB086 /* LicenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9B1CC1BDC21C6003FB086 /* LicenseService.swift */; };
+		CDBDE3751BD4671C00EF5DB9 /* SnubBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */; };
 		CDBDE3771BD4683C00EF5DB9 /* SnubCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CDBDE3741BD4671C00EF5DB9 /* SnubCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE3791BD468FA00EF5DB9 /* Vendors */; settings = {ASSET_TAGS = (); }; };
-		CDBDE37C1BD4692800EF5DB9 /* Services in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE37B1BD4692800EF5DB9 /* Services */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3831BD4697600EF5DB9 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3811BD4697600EF5DB9 /* Finder.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3861BD469A600EF5DB9 /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3851BD469A600EF5DB9 /* GitIgnoreFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3891BD469CE00EF5DB9 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3881BD469CE00EF5DB9 /* MagicStrings.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE38C1BD469EF00EF5DB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38B1BD469EF00EF5DB9 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE38E1BD469FC00EF5DB9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38D1BD469FC00EF5DB9 /* Enums.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3901BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38F1BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3921BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3911BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3941BD46A3A00EF5DB9 /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3931BD46A3A00EF5DB9 /* ProjectDetectionResult.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3961BD46A4600EF5DB9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3951BD46A4600EF5DB9 /* Protocols.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3981BD46A6700EF5DB9 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3971BD46A6700EF5DB9 /* FinderSelectionProvider.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE39B1BD46A7200EF5DB9 /* GitIgnoreTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3991BD46A7200EF5DB9 /* GitIgnoreTypeDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE39C1BD46A7200EF5DB9 /* ProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39A1BD46A7200EF5DB9 /* ProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3A51BD46AB000EF5DB9 /* JetBrainsProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39E1BD46AB000EF5DB9 /* JetBrainsProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3A61BD46AB000EF5DB9 /* SublimeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39F1BD46AB000EF5DB9 /* SublimeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3A71BD46AB000EF5DB9 /* TextMateProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A01BD46AB000EF5DB9 /* TextMateProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3A81BD46AB000EF5DB9 /* VagrantProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A11BD46AB000EF5DB9 /* VagrantProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A21BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3AA1BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A31BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
-		CDBDE3AB1BD46AB000EF5DB9 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A41BD46AB000EF5DB9 /* XcodeProjectDetector.swift */; settings = {ASSET_TAGS = (); }; };
+		CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE3791BD468FA00EF5DB9 /* Vendors */; };
+		CDBDE37C1BD4692800EF5DB9 /* Services in Resources */ = {isa = PBXBuildFile; fileRef = CDBDE37B1BD4692800EF5DB9 /* Services */; };
+		CDBDE3831BD4697600EF5DB9 /* Finder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3811BD4697600EF5DB9 /* Finder.swift */; };
+		CDBDE3861BD469A600EF5DB9 /* GitIgnoreFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3851BD469A600EF5DB9 /* GitIgnoreFileManager.swift */; };
+		CDBDE3891BD469CE00EF5DB9 /* MagicStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3881BD469CE00EF5DB9 /* MagicStrings.swift */; };
+		CDBDE38C1BD469EF00EF5DB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38B1BD469EF00EF5DB9 /* Extensions.swift */; };
+		CDBDE38E1BD469FC00EF5DB9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38D1BD469FC00EF5DB9 /* Enums.swift */; };
+		CDBDE3901BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE38F1BD46A0D00EF5DB9 /* GitIgnoreFileFinder.swift */; };
+		CDBDE3921BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3911BD46A1F00EF5DB9 /* GitIgnoreFileItem.swift */; };
+		CDBDE3941BD46A3A00EF5DB9 /* ProjectDetectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3931BD46A3A00EF5DB9 /* ProjectDetectionResult.swift */; };
+		CDBDE3961BD46A4600EF5DB9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3951BD46A4600EF5DB9 /* Protocols.swift */; };
+		CDBDE3981BD46A6700EF5DB9 /* FinderSelectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3971BD46A6700EF5DB9 /* FinderSelectionProvider.swift */; };
+		CDBDE39B1BD46A7200EF5DB9 /* GitIgnoreTypeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3991BD46A7200EF5DB9 /* GitIgnoreTypeDetector.swift */; };
+		CDBDE39C1BD46A7200EF5DB9 /* ProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39A1BD46A7200EF5DB9 /* ProjectDetector.swift */; };
+		CDBDE3A51BD46AB000EF5DB9 /* JetBrainsProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39E1BD46AB000EF5DB9 /* JetBrainsProjectDetector.swift */; };
+		CDBDE3A61BD46AB000EF5DB9 /* SublimeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE39F1BD46AB000EF5DB9 /* SublimeProjectDetector.swift */; };
+		CDBDE3A71BD46AB000EF5DB9 /* TextMateProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A01BD46AB000EF5DB9 /* TextMateProjectDetector.swift */; };
+		CDBDE3A81BD46AB000EF5DB9 /* VagrantProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A11BD46AB000EF5DB9 /* VagrantProjectDetector.swift */; };
+		CDBDE3A91BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A21BD46AB000EF5DB9 /* VisualStudioCodeProjectDetector.swift */; };
+		CDBDE3AA1BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A31BD46AB000EF5DB9 /* VisualStudioProjectDetector.swift */; };
+		CDBDE3AB1BD46AB000EF5DB9 /* XcodeProjectDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3A41BD46AB000EF5DB9 /* XcodeProjectDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		CD64FF571BD4521400A2E715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6BB31F1BDD889D005A2DC6 /* LicenseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicenseInfo.swift; path = Models/LicenseInfo.swift; sourceTree = SOURCE_ROOT; };
 		CD84F8811BD46300008DC230 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		CD8D7FD41BE0812000FBCB06 /* snub */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = snub; sourceTree = "<group>"; };
 		CDAA1C071BD5E8B7005E393C /* CommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandHandler.swift; path = Services/CommandHandler.swift; sourceTree = SOURCE_ROOT; };
 		CDB9B1CC1BDC21C6003FB086 /* LicenseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicenseService.swift; path = Services/LicenseService.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnubBootstrapper.swift; sourceTree = SOURCE_ROOT; };
@@ -106,6 +108,7 @@
 		CD64FF481BD4521400A2E715 = {
 			isa = PBXGroup;
 			children = (
+				CD8D7FD41BE0812000FBCB06 /* snub */,
 				CD64FF541BD4521400A2E715 /* SnubCore */,
 				CD64FF531BD4521400A2E715 /* Products */,
 				8003038E8B6A86CEF66E42FA /* Pods */,
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8D7FD51BE0812000FBCB06 /* snub in Resources */,
 				CDBDE37C1BD4692800EF5DB9 /* Services in Resources */,
 				CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */,
 			);
