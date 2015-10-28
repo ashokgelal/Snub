@@ -25,6 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // verifyLicense()
         setup()
+        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("03f39e4fb2f0444b9a827990e92b219e")
+        // Do some additional configuration if needed here
+        BITHockeyManager.sharedHockeyManager().startManager()
         logx.info("Application finish launching")
     }
     

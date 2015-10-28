@@ -12,6 +12,8 @@
 		CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */; };
 		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; };
 		CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDF4BA761BD47F33008145F1 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD8D7FD81BE0839D00FBCB06 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */; };
+		CD8D7FD91BE083A600FBCB06 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CD9455891BD7621000636351 /* Acknowledgements.pdf */; };
 		CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94558B1BD7624600636351 /* AboutWindowController.swift */; };
 		CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB6E241BD4778200CAF500 /* ContentViewController.swift */; };
@@ -53,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD8D7FD91BE083A600FBCB06 /* HockeySDK.framework in CopyFiles */,
 				CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +73,7 @@
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = ../../sign/dsa_pub.pem; sourceTree = "<group>"; };
+		CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
 		CD9455891BD7621000636351 /* Acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Acknowledgements.pdf; sourceTree = SOURCE_ROOT; };
 		CD94558B1BD7624600636351 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Controllers/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
 		CDAB6E241BD4778200CAF500 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = Controllers/ContentViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -97,6 +101,7 @@
 			files = (
 				CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */,
 				BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */,
+				CD8D7FD81BE0839D00FBCB06 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +195,7 @@
 		DD52A8540352116A1A124BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */,
 				CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */,
 				CDE27A5D1BCE221E004B4107 /* CoreServices.framework */,
 				CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */,
@@ -223,6 +229,7 @@
 				B1171C3C91AD55580311FF2A /* Embed Pods Frameworks */,
 				C234E93A563041E7D7AF7446 /* Copy Pods Resources */,
 				CD8B79121BD76FFB00BDCCD1 /* CopyFiles */,
+				CD8D7FD61BE0837500FBCB06 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,6 +353,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Snub/Pods-Snub-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CD8D7FD61BE0837500FBCB06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-Mac/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -476,6 +496,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -493,6 +517,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
