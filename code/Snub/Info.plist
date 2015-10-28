@@ -5,7 +5,7 @@
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUFeedURL</key>
-	<string>https://dl.dropboxusercontent.com/u/83257/Updaters/Pokemon/appcast.xml</string>
+	<string>https://dl.dropboxusercontent.com/u/83257/Updaters/Snub/appcast.xml</string>
 	<key>SnubHomepage</key>
 	<string>http://snub.ashokgelal.com</string>
 	<key>CFBundleDevelopmentRegion</key>
