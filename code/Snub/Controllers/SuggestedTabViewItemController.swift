@@ -29,7 +29,7 @@ class SuggestedTabViewItemController: MasterGitIgnoreTabViewItemController {
             do {
                 items = try ProjectDetector.sharedInstance.identify(selectedFolders.first!)
                 if(items.count > 0) {
-                    outputVal = "Was able to determine project types"
+                    outputVal = "Snub was able to determine project types"
                 }
             } catch let error as NSError {
                 logx.warning("Error identifying: \(error.localizedDescription)")

@@ -24,7 +24,10 @@ class ContentViewController: NSViewController {
     private var currentGitIgnoreFilePaths: Array<NSURL?> = []
     
     override func viewDidAppear() {
-        let selectedFolders = FinderSelectionProvider.instance.getSelectedFolders()
+        setupSelectedFolders(FinderSelectionProvider.instance.getSelectedFolders())
+    }
+    
+    private func setupSelectedFolders(selectedFolders: [NSURL]) {
         showSelectedFolder(selectedFolders)
         guard selectedFolders.count > 0 else {
             currentGitIgnoreLbl.stringValue = "[No folders selected]"
@@ -55,13 +58,10 @@ class ContentViewController: NSViewController {
     
     private func showSelectedFolder(selectedFolders: [NSURL]) {
         var outputVal = "[No folders selected]"
-        selectedPathBtn.enabled = false
         if(selectedFolders.count == 1) {
             outputVal = selectedFolders.first!.path!.stringByAbbreviatingWithTildeInPath()
-            selectedPathBtn.enabled = true
         } else if(selectedFolders.count > 1) {
             outputVal = "\(selectedFolders.count) folders selected"
-            selectedPathBtn.enabled = true
         }
         selectedPathBtn.title = outputVal
         selectedPathBtn.toolTip = outputVal
@@ -98,7 +98,7 @@ extension ContentViewController {
     }
     
     @IBAction func showAboutWindow(sender: AnyObject) {
-        self.contentViewControllerDelegate.performDismissContentViewController(self)
+        contentViewControllerDelegate.performDismissContentViewController(self)
         aboutWindowController = AboutWindowController(windowNibName: "AboutWindow")
         aboutWindowController.showWindow(self)
     }
@@ -110,9 +110,19 @@ extension ContentViewController {
         gitIgnoreSelectionTab.selectTabViewItemAtIndex(sender.selectedSegment)
     }
     
-    @IBAction func openSelectedFolders(sender: AnyObject) {
-        suggestedTabViewItemController.selectedFolders.forEach {
-            NSWorkspace.sharedWorkspace().openURL($0)
+    @IBAction func openFolders(sender: AnyObject) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseDirectories = true
+        openPanel.canChooseFiles = false
+        openPanel.allowsMultipleSelection = false
+        openPanel.beginWithCompletionHandler {
+            [unowned self]
+            result in
+            guard result == NSModalResponseOK else {
+                return
+            }
+            logx.notice("Selecting directory")
+            self.setupSelectedFolders(openPanel.URLs )
         }
     }
     
