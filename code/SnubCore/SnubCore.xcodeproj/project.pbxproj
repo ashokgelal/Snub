@@ -10,7 +10,6 @@
 		494FD046505CD51DD1CF59F7 /* Pods_SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285A1EDB7F2DF58CDA8B7529 /* Pods_SnubCore.framework */; };
 		CD6BB3201BDD889D005A2DC6 /* LicenseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6BB31F1BDD889D005A2DC6 /* LicenseInfo.swift */; };
 		CD84F8821BD46300008DC230 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD84F8811BD46300008DC230 /* ScriptingBridge.framework */; };
-		CD8D7FD51BE0812000FBCB06 /* snub in Resources */ = {isa = PBXBuildFile; fileRef = CD8D7FD41BE0812000FBCB06 /* snub */; };
 		CDAA1C081BD5E8B7005E393C /* CommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA1C071BD5E8B7005E393C /* CommandHandler.swift */; };
 		CDB9B1CD1BDC21C6003FB086 /* LicenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9B1CC1BDC21C6003FB086 /* LicenseService.swift */; };
 		CDBDE3751BD4671C00EF5DB9 /* SnubBootstrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */; };
@@ -46,7 +45,6 @@
 		CD64FF571BD4521400A2E715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6BB31F1BDD889D005A2DC6 /* LicenseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicenseInfo.swift; path = Models/LicenseInfo.swift; sourceTree = SOURCE_ROOT; };
 		CD84F8811BD46300008DC230 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
-		CD8D7FD41BE0812000FBCB06 /* snub */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = snub; sourceTree = "<group>"; };
 		CDAA1C071BD5E8B7005E393C /* CommandHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandHandler.swift; path = Services/CommandHandler.swift; sourceTree = SOURCE_ROOT; };
 		CDB9B1CC1BDC21C6003FB086 /* LicenseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicenseService.swift; path = Services/LicenseService.swift; sourceTree = SOURCE_ROOT; };
 		CDBDE3731BD4671C00EF5DB9 /* SnubBootstrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnubBootstrapper.swift; sourceTree = SOURCE_ROOT; };
@@ -108,7 +106,6 @@
 		CD64FF481BD4521400A2E715 = {
 			isa = PBXGroup;
 			children = (
-				CD8D7FD41BE0812000FBCB06 /* snub */,
 				CD64FF541BD4521400A2E715 /* SnubCore */,
 				CD64FF531BD4521400A2E715 /* Products */,
 				8003038E8B6A86CEF66E42FA /* Pods */,
@@ -267,7 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8D7FD51BE0812000FBCB06 /* snub in Resources */,
 				CDBDE37C1BD4692800EF5DB9 /* Services in Resources */,
 				CDBDE37A1BD468FA00EF5DB9 /* Vendors in Resources */,
 			);

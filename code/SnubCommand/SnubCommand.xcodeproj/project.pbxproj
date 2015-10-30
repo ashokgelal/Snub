@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDBE62761BE0989E006612C1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CDE1EDEE1BD48E3E00828508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE1EDED1BD48E3E00828508 /* main.m */; };
 		CDE1EE101BD48F1800828508 /* snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE1EDE11BD48D7F00828508 /* snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CDEFBC191BD4977000365797 /* SnubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEFBC181BD4977000365797 /* SnubCore.framework */; };
@@ -24,6 +25,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CDBE62751BE09895006612C1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDBE62761BE0989E006612C1 /* SnubCore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CDE1EDDF1BD48D7F00828508 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +146,7 @@
 				CDE1EDDD1BD48D7F00828508 /* Sources */,
 				CDE1EDDE1BD48D7F00828508 /* Frameworks */,
 				CDE1EDDF1BD48D7F00828508 /* CopyFiles */,
+				CDBE62751BE09895006612C1 /* CopyFiles */,
 			);
 			buildRules = (
 			);

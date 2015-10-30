@@ -26,6 +26,8 @@
 		CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E501BD47A0200CAF500 /* ContentView.xib */; };
 		CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDAB6E521BD47A4900CAF500 /* Assets.xcassets */; };
 		CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBBF721BD47C0D00DD515E /* MainMenu.xib */; };
+		CDBE62781BE098D9006612C1 /* snub in Resources */ = {isa = PBXBuildFile; fileRef = CDBE62771BE098D9006612C1 /* snub */; };
+		CDBE62791BE098E5006612C1 /* snub in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDBE62771BE098D9006612C1 /* snub */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CDE27A5C1BCE1B7B004B4107 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */; };
 		CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDEFBC231BD49C4700365797 /* gitignore-master.zip */; };
 		CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF3FBC41BD7457000472F09 /* AboutWindow.xib */; };
@@ -57,6 +59,7 @@
 			files = (
 				CD8D7FD91BE083A600FBCB06 /* HockeySDK.framework in CopyFiles */,
 				CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */,
+				CDBE62791BE098E5006612C1 /* snub in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,7 @@
 		CDAB6E501BD47A0200CAF500 /* ContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContentView.xib; path = Views/ContentView.xib; sourceTree = SOURCE_ROOT; };
 		CDAB6E521BD47A4900CAF500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		CDBBBF731BD47C0D00DD515E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
+		CDBE62771BE098D9006612C1 /* snub */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = snub; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Snub-cusytgygldlzuudgkyzeuordujax/Build/Products/Debug/snub"; sourceTree = "<group>"; };
 		CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		CDE27A5D1BCE221E004B4107 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		CDEFBC231BD49C4700365797 /* gitignore-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "gitignore-master.zip"; sourceTree = SOURCE_ROOT; };
@@ -137,6 +141,7 @@
 				CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */,
 				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
 				CDEFBC231BD49C4700365797 /* gitignore-master.zip */,
+				CDBE62771BE098D9006612C1 /* snub */,
 				CD9455891BD7621000636351 /* Acknowledgements.pdf */,
 				CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */,
 				CDAB6E521BD47A4900CAF500 /* Assets.xcassets */,
@@ -195,8 +200,8 @@
 		DD52A8540352116A1A124BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */,
 				CDF4BA711BD47F33008145F1 /* SnubCore.xcodeproj */,
+				CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */,
 				CDE27A5D1BCE221E004B4107 /* CoreServices.framework */,
 				CDE27A5B1BCE1B7B004B4107 /* ScriptingBridge.framework */,
 				01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */,
@@ -298,6 +303,7 @@
 				CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */,
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
 				CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */,
+				CDBE62781BE098D9006612C1 /* snub in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */,
 				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
 				CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */,
