@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
-		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; };
+		CD846E7C1C3242B6001929A9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD846E7B1C3242B6001929A9 /* dsa_pub.pem */; };
 		CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDF4BA761BD47F33008145F1 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD8D7FD81BE0839D00FBCB06 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */; };
 		CD8D7FD91BE083A600FBCB06 /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -71,7 +71,7 @@
 		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = ../../sign/dsa_pub.pem; sourceTree = "<group>"; };
+		CD846E7B1C3242B6001929A9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
 		CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-Mac/HockeySDK.framework"; sourceTree = "<group>"; };
 		CD9455891BD7621000636351 /* Acknowledgements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Acknowledgements.pdf; sourceTree = SOURCE_ROOT; };
 		CD94558B1BD7624600636351 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutWindowController.swift; path = Controllers/AboutWindowController.swift; sourceTree = SOURCE_ROOT; };
@@ -137,9 +137,9 @@
 				CDAB6E4A1BD4789500CAF500 /* AppDelegate.swift */,
 				CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */,
 				CDEFBC231BD49C4700365797 /* gitignore-master.zip */,
+				CD846E7B1C3242B6001929A9 /* dsa_pub.pem */,
 				CDBE62771BE098D9006612C1 /* snub */,
 				CD9455891BD7621000636351 /* Acknowledgements.pdf */,
-				CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */,
 				CDAB6E521BD47A4900CAF500 /* Assets.xcassets */,
 			);
 			path = Snub;
@@ -294,10 +294,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */,
 				CDAB6E531BD47A4900CAF500 /* Assets.xcassets in Resources */,
 				CD94558A1BD7621000636351 /* Acknowledgements.pdf in Resources */,
 				CDBE62781BE098D9006612C1 /* snub in Resources */,
+				CD846E7C1C3242B6001929A9 /* dsa_pub.pem in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */,
 				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
 				CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */,

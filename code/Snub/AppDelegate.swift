@@ -33,6 +33,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func setup() {
         Async.background { [unowned self] in self.bootstrapper.setupForUI() }
         Async.main { [unowned self] in self.setupPopover() }
+        
+        // Uncomment the following and add your HockeyApp API Key
+        // BITHockeyManager.sharedHockeyManager().configureWithIdentifier("")
+        // BITHockeyManager.sharedHockeyManager().startManager()
     }
 }
 
