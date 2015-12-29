@@ -3,7 +3,7 @@
 //  Snub
 //
 //  Created by Ashok Gelal on 10/13/15.
-//  Copyright © 2015 RnA Apps. All rights reserved.
+//  Copyright © 2015 Ashok Gelal. All rights reserved.
 //
 
 import SnubCore
@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
     private let contentPopover = NSPopover()
     private var eventMonitor: EventMonitor?
-    private var licenseController: LicenseWindowController!
     
     override init() {
         bootstrapper = Bootstrapper.sharedInstance
@@ -23,22 +22,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // verifyLicense()
         setup()
-        BITHockeyManager.sharedHockeyManager().configureWithIdentifier("03f39e4fb2f0444b9a827990e92b219e")
-        // Do some additional configuration if needed here
-        BITHockeyManager.sharedHockeyManager().startManager()
-        logx.info("Application finish launching")
+        logx.debug("Application finish launching")
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
         return contentPopover.contentViewController == nil
     }
     
-    private func verifyLicense() {
-        licenseController = LicenseWindowController()
-        licenseController.licenseWindowControllerDelegate = self
-        licenseController.verify()
+    private func setup() {
+        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
+        Async.main { [unowned self] in self.setupPopover() }
     }
 }
 
@@ -46,28 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: ContentViewControllerDelegate {
     func performDismissContentViewController(sender: AnyObject?) {
         closePopover(sender)
-    }
-}
-
-// MARK: LicenseWindowControllerDelegate
-extension AppDelegate: LicenseWindowControllerDelegate {
-    func didFinishVerifyingLicense(licenseInfo: LicenseInfo?, error: NSError?) {
-        if let err = error {
-            logx.warning("Error verifying remote license \(err.localizedDescription)")
-        } else {
-            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.key, forKey: "licenseKey")
-            NSUserDefaults.standardUserDefaults().setObject(licenseInfo?.email, forKey: "licenseeEmail")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            if contentPopover.contentViewController == nil {
-                setup()
-            }
-        }
-    }
-    
-    private func setup() {
-        Async.background { [unowned self] in self.bootstrapper.setupForUI() }
-        Async.main { [unowned self] in self.setupPopover() }
     }
 }
 

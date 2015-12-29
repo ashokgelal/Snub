@@ -3,7 +3,7 @@
 //  SnubCore
 //
 //  Created by Ashok Gelal on 10/24/15.
-//  Copyright © 2015 RnA Apps. All rights reserved.
+//  Copyright © 2015 Ashok Gelal. All rights reserved.
 //
 
 import Foundation

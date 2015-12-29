@@ -3,7 +3,7 @@
 //  Snub
 //
 //  Created by Ashok Gelal on 10/14/15.
-//  Copyright © 2015 RnA Apps. All rights reserved.
+//  Copyright © 2015 Ashok Gelal. All rights reserved.
 //
 
 import Cocoa

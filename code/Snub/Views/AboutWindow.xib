@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9059"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="Snub" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="se5-gp-TjO" id="5UN-ji-MIl"/>
-                <outlet property="licenseLbl" destination="0EM-c6-Omr" id="1ZP-fu-O8e"/>
                 <outlet property="titleLbl" destination="8s4-ET-gdV" id="fpJ-OQ-Rf1"/>
                 <outlet property="versionLbl" destination="4di-aZ-wC7" id="gtY-YG-4vn"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -23,12 +22,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="530" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="adU-mj-jPB" userLabel="iconBtn">
-                        <rect key="frame" x="20" y="28" width="128" height="152"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="128" id="tTb-J7-uSy"/>
-                        </constraints>
-                        <animations/>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adU-mj-jPB" userLabel="iconBtn">
+                        <rect key="frame" x="20" y="28" width="146" height="152"/>
                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="aboutLogo" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="dU4-Ln-x9e">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -37,53 +32,32 @@
                             <action selector="visitSnubSite:" target="-2" id="feu-s4-xax"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8s4-ET-gdV" userLabel="titleField">
-                        <rect key="frame" x="176" y="127" width="336" height="53"/>
-                        <animations/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8s4-ET-gdV" userLabel="titleField">
+                        <rect key="frame" x="188" y="129" width="324" height="51"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Snub" id="Dyf-BO-JWX">
-                            <font key="font" metaFont="systemUltraLight" size="44"/>
+                            <font key="font" size="44" name="HelveticaNeue-UltraLight"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4di-aZ-wC7" userLabel="versionField">
-                        <rect key="frame" x="176" y="105" width="336" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="22" id="Ptw-P0-cFL"/>
-                        </constraints>
-                        <animations/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4di-aZ-wC7" userLabel="versionField">
+                        <rect key="frame" x="188" y="107" width="324" height="22"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Version 1.0.0 (1)" id="HGp-Sb-2O4">
-                            <font key="font" metaFont="systemThin" size="13"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" red="0.20000000000000001" green="0.53725490200000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-c6-Omr" userLabel="licenseField">
-                        <rect key="frame" x="176" y="83" width="336" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="22" id="zuG-Rt-geY"/>
-                        </constraints>
-                        <animations/>
-                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="© RnA Apps" id="iwN-c9-ZfI">
-                            <font key="font" metaFont="systemThin" size="13"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-c6-Omr" userLabel="licenseField">
+                        <rect key="frame" x="188" y="85" width="324" height="22"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="© Ashok Gelal (@ashokgelal)" id="iwN-c9-ZfI">
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" white="0.0" alpha="0.79659796099290781" colorSpace="deviceWhite"/>
                             <color key="backgroundColor" red="0.20000000000000001" green="0.53725490200000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textFieldCell>
                     </textField>
-                    <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lUp-t0-UCQ">
-                        <rect key="frame" x="252" y="13" width="113" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Registration" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KzX-5m-Hvq">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="showRegistration:" target="-2" id="4fM-JW-VEQ"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="md7-1n-pV0">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="md7-1n-pV0">
                         <rect key="frame" x="365" y="13" width="151" height="32"/>
-                        <animations/>
                         <buttonCell key="cell" type="push" title="Acknowledgments" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vk3-wd-xCw">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -93,25 +67,6 @@
                         </connections>
                     </button>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="bottom" secondItem="adU-mj-jPB" secondAttribute="bottom" constant="28" id="4yh-Ua-oIF"/>
-                    <constraint firstAttribute="trailing" secondItem="8s4-ET-gdV" secondAttribute="trailing" constant="20" symbolic="YES" id="83N-2R-cGB"/>
-                    <constraint firstAttribute="trailing" secondItem="md7-1n-pV0" secondAttribute="trailing" constant="20" symbolic="YES" id="96U-7a-qBj"/>
-                    <constraint firstItem="4di-aZ-wC7" firstAttribute="top" secondItem="8s4-ET-gdV" secondAttribute="bottom" id="Bdz-bi-hqi"/>
-                    <constraint firstItem="8s4-ET-gdV" firstAttribute="leading" secondItem="adU-mj-jPB" secondAttribute="trailing" constant="30" id="HrF-YC-KdK"/>
-                    <constraint firstItem="0EM-c6-Omr" firstAttribute="top" secondItem="4di-aZ-wC7" secondAttribute="bottom" id="Ub8-sE-DdD"/>
-                    <constraint firstAttribute="bottom" secondItem="lUp-t0-UCQ" secondAttribute="bottom" constant="20" symbolic="YES" id="VQj-wB-6nk"/>
-                    <constraint firstItem="adU-mj-jPB" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="gWv-rx-RH3"/>
-                    <constraint firstItem="4di-aZ-wC7" firstAttribute="trailing" secondItem="8s4-ET-gdV" secondAttribute="trailing" id="gXa-wv-vOL"/>
-                    <constraint firstItem="4di-aZ-wC7" firstAttribute="leading" secondItem="8s4-ET-gdV" secondAttribute="leading" id="iR6-LG-2Z0"/>
-                    <constraint firstItem="8s4-ET-gdV" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="10" id="m63-hl-1SY"/>
-                    <constraint firstAttribute="bottom" secondItem="md7-1n-pV0" secondAttribute="bottom" constant="20" symbolic="YES" id="mZP-hY-ne3"/>
-                    <constraint firstItem="0EM-c6-Omr" firstAttribute="trailing" secondItem="4di-aZ-wC7" secondAttribute="trailing" id="mfL-H5-gcZ"/>
-                    <constraint firstItem="adU-mj-jPB" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="10" id="r8U-QP-piq"/>
-                    <constraint firstItem="0EM-c6-Omr" firstAttribute="leading" secondItem="4di-aZ-wC7" secondAttribute="leading" id="rh9-FV-8T0"/>
-                    <constraint firstItem="md7-1n-pV0" firstAttribute="leading" secondItem="lUp-t0-UCQ" secondAttribute="trailing" constant="12" symbolic="YES" id="vB1-GQ-SlK"/>
-                </constraints>
-                <animations/>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>

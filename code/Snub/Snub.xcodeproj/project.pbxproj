@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BE64E7691B88562F526399E8 /* Pods_Snub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F7EBFCB6D4497639EBC0D6 /* Pods_Snub.framework */; };
-		CD37427C1BD806F100DC3FCB /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD37427A1BD806F100DC3FCB /* LicenseWindowController.swift */; };
-		CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */; };
 		CD8B790B1BD76BE200BDCCD1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CD8B790A1BD76BE200BDCCD1 /* dsa_pub.pem */; };
 		CD8B79131BD7700500BDCCD1 /* SnubCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDF4BA761BD47F33008145F1 /* SnubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD8D7FD81BE0839D00FBCB06 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D7FD71BE0839D00FBCB06 /* HockeySDK.framework */; };
@@ -70,8 +68,6 @@
 		08A37E63274F3F7540B11A29 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
 		4C4E8E02C1F126C7912A1C05 /* Pods-Snub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.release.xcconfig"; sourceTree = "<group>"; };
 		94AD24F7ACEB62CB6A1CB5B9 /* Pods-Snub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snub/Pods-Snub.debug.xcconfig"; sourceTree = "<group>"; };
-		CD37427A1BD806F100DC3FCB /* LicenseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicenseWindowController.swift; path = Controllers/LicenseWindowController.swift; sourceTree = SOURCE_ROOT; };
-		CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenseWindow.xib; path = Views/LicenseWindow.xib; sourceTree = SOURCE_ROOT; };
 		CD623B1D1BD472A1000C3A42 /* Snub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snub-Bridging-Header.h"; sourceTree = "<group>"; };
 		CD62A8091BCE0FB9009D6B62 /* Snub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD62A8131BCE0FB9009D6B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,7 +150,6 @@
 			children = (
 				CDAB6E501BD47A0200CAF500 /* ContentView.xib */,
 				CDF3FBC41BD7457000472F09 /* AboutWindow.xib */,
-				CD37427E1BD8073300DC3FCB /* LicenseWindow.xib */,
 				CDBBBF721BD47C0D00DD515E /* MainMenu.xib */,
 				CDAB6E4C1BD478BC00CAF500 /* GitIgnoreRowView.swift */,
 			);
@@ -168,7 +163,6 @@
 				CDAB6E241BD4778200CAF500 /* ContentViewController.swift */,
 				CDAB6E251BD4778200CAF500 /* MasterGitIgnoreTabViewItemController.swift */,
 				CDAB6E261BD4778200CAF500 /* SuggestedTabViewItemController.swift */,
-				CD37427A1BD806F100DC3FCB /* LicenseWindowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -306,7 +300,6 @@
 				CDBE62781BE098D9006612C1 /* snub in Resources */,
 				CDAB6E511BD47A0200CAF500 /* ContentView.xib in Resources */,
 				CDF3FBC61BD7457000472F09 /* AboutWindow.xib in Resources */,
-				CD37427F1BD8073300DC3FCB /* LicenseWindow.xib in Resources */,
 				CDEFBC241BD49C4700365797 /* gitignore-master.zip in Resources */,
 				CDBBBF741BD47C0D00DD515E /* MainMenu.xib in Resources */,
 			);
@@ -385,7 +378,6 @@
 				CDAB6E301BD4778D00CAF500 /* EventMonitor.swift in Sources */,
 				CDAB6E291BD4778200CAF500 /* SuggestedTabViewItemController.swift in Sources */,
 				CDAB6E4B1BD4789500CAF500 /* AppDelegate.swift in Sources */,
-				CD37427C1BD806F100DC3FCB /* LicenseWindowController.swift in Sources */,
 				CD94558C1BD7624600636351 /* AboutWindowController.swift in Sources */,
 				CDAB6E4D1BD478BC00CAF500 /* GitIgnoreRowView.swift in Sources */,
 				CDAB6E271BD4778200CAF500 /* ContentViewController.swift in Sources */,
